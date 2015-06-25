@@ -29,22 +29,11 @@ a {
 .jumbotron {
   height: 250px;
   text-align: center;
-
-}
-
-.jumbotron .bg {
+  background-image: url('http://www.taste.com.au/images/recipes/agt/2010/03/24246_l.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("http://www.taste.com.au/images/recipes/agt/2010/03/24246_l.jpg");
-  /*background-color: rgba(0, 0, 255, 0.5);*/
-  opacity: 0.5;
-}
-
-.jumbotron .content {
-    /*position: absolute;*/
-    width: 100%;
-    height: 100%;
-    background-color: none;
+  opacity: 0.8;
+  color: #000;
 }
 
 
@@ -84,16 +73,26 @@ a {
 .by  {
   font-size: 1em;
 }
+.tab-content{
+width:500px;
+
+}
 
 /* ###########   meal details page ######################### */
 
-.col-md-6 img {
+.col-md-12 img {
   height:250px;
   margin-bottom: 20px;
+  margin-left: 25%;
+  margin-right: 0 auto;
 }
 h3{
   margin-top: 0px;
   color: #000;
+}
+h5{
+
+    text-align: center;
 }
 
 .row {
@@ -130,7 +129,7 @@ h3{
 
 footer {
   color: white;
-  /*position: fixed;*/
+
   bottom: 0;
   width: 100%;
   text-align: center;
@@ -138,3 +137,21 @@ footer {
   min-height: 50px;
   padding-top: 15px;
 }
+
+/*//////////////////////////Weekly Planner Page ////////////////*/
+
+.daysList{
+  text-align: center;
+  list-style-type: none;
+}
+.col-md-12 h2 {
+  text-align: center;
+}/*
+///////////////////////SHOPPING LIST PAGE//////////////*/
+
+.table{
+  text-align: center;
+margin-left: 25%;
+margin-right: 25%;
+}
+

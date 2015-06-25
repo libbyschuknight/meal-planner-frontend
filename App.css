@@ -44,19 +44,38 @@ a {
   text-align: center;
 }
 
-
-.col-md-4 img{
-height: 150px;
-width: 250px;
-
+.col-md-4 {
+  text-align: center;
+  /*border: 1px solid gray;*/
+  /*margin: 0 auto;*/
+  margin-bottom: 20px;
 }
 
 
+.col-md-4 img{
+  height: 175px;
+  /*width: 250px;*/
+}
+
+.col-md-4 p {
+  text-align: center;
+  width: 250px;
+  margin: 0 auto;
+  color: #303030;
+}
+
+.title  {
+  font-size: 1.5em;
+}
+
+.by  {
+  font-size: 1em;
+}
 
 
 #footer {
     color: white;
-    position: fixed;
+    /*position: fixed;*/
     bottom: 0;
     width: 100%;
     text-align: center;

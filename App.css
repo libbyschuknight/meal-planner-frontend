@@ -5,9 +5,13 @@
 }
 
 .navbar{
+
   background-color: #303030;
   margin-bottom: 0;
   border-radius: 0;
+ /* position:fixed;*/
+  width:100%;
+
 }
 
 a {
@@ -72,13 +76,56 @@ a {
   font-size: 1em;
 }
 
+/* ###########   meal details page ######################### */
 
-#footer {
-    color: white;
-    /*position: fixed;*/
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    background-color: #303030;
-    min-height: 50px;
+.col-md-6 img {
+  height:250px;
+  margin-bottom: 20px;
+}
+h3{
+  margin-top: 0px;
+}
+
+.row {
+  margin-left: 0 auto;
+  margin-right: 0 auto;
+}
+
+
+.col-md-6 {
+  /*border: 1px solid pink;*/
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  /*width: 40%;*/
+}
+
+.col-md-6 p {
+  margin: 0 auto;
+  width: 500px;
+}
+
+
+.list-group {
+  box-shadow: none;
+/*overflow:hidden; overflow-y:scroll;*/
+  height: 580px;
+}
+
+.list-group-item {
+  border: none;
+  margin-top: 2px;
+  padding: 5px;
+}
+
+
+footer {
+  color: white;
+  /*position: fixed;*/
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #303030;
+  min-height: 50px;
+  padding-top: 15px;
 }

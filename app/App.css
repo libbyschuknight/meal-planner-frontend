@@ -52,7 +52,8 @@ a {
   text-align: center;
   /*border: 1px solid gray;*/
   /*margin: 0 auto;*/
-  margin-bottom: 20px;
+  margin-bottom: 0px;
+
 }
 
 
@@ -63,7 +64,7 @@ a {
 
 .col-md-4 p {
   text-align: center;
-  width: 250px;
+  width: 50px;
   margin: 0 auto;
   color: #303030;
 }

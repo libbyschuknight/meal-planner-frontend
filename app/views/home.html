@@ -1,0 +1,25 @@
+
+
+<div class="main">
+
+  <div class="jumbotron">
+    <h1>Welcome to Roa Meals</h1>
+    <p>We hope you have a pleasent experience.</p>
+    <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p> -->
+  </div>
+
+
+  <div id="section" class="containter" ng-controller="MainController">
+    <h1>POPULAR MEALS</h1>
+    <hr>
+      <ul class="row list-group" >
+          <li class="col-md-4 col-sm-6 list-group-item" ng-repeat="meal in mealsInfo">
+            <img ng-src='{{ meal.ImageUrl }}'>
+            <h3> {{ meal.Name }} </h3>
+            <p> by {{ meal.User}} </p>
+          </li>
+      </ul>
+      <br>
+  </div>
+
+</div>

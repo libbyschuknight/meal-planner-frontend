@@ -2,5 +2,6 @@ app.controller("MealController", ["$scope", "meals", '$routeParams', function($s
   meals.success(function(data) {
     console.log(data)
     $scope.detail = data[$routeParams.id];
+    console.log($scope.detail);
   });
 }]);

@@ -25,7 +25,12 @@ app.config(['$routeProvider', function($routeProvider) {
     controller: "controllers/RegisterController",
     templateUrl: "views/Register.html"
   })
-  .otherwise({redirectTo: '/'
+   .when("/Login", {
+    controller: "controllers/LoginController",
+    templateUrl: "views/Login.html"
+  })
+  .otherwise({redirectTo: '/index'
+
   });
 
 }]);

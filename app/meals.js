@@ -1,5 +1,5 @@
 app.factory('meals', ['$http', function($http) {
-  return $http.get('http://roameals.azurewebsites.net/api/meals')
+  return $http.get('http://s3.amazonaws.com/codecademy-content/courses/ltp4/forecast-api/forecast.json')
   .success(function(data) {
     console.log(data)
     return data;

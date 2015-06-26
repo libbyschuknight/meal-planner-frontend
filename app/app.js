@@ -19,7 +19,7 @@ app.config(['$routeProvider', function($routeProvider) {
   })
   .when("/meal-details/:id", {
     controller: "MealController",
-    templateUrl: "views/meal-details.html"
+    templateUrl: "views/MealDetails.html"
   })
   .otherwise({redirectTo: '/'
   });

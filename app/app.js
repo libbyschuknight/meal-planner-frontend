@@ -13,13 +13,17 @@ var app = angular.module('MealsApp', ['ngRoute'])
 
 app.config(['$routeProvider', function($routeProvider) {
   $routeProvider
-  .when("/", {
+  .when("/index", {
     controller: "MainController",
     templateUrl: "views/home.html"
   })
   .when("/meal-details/:id", {
     controller: "MealController",
     templateUrl: "views/MealDetails.html"
+  })
+   .when("/Register", {
+    controller: "controllers/RegisterController",
+    templateUrl: "views/Register.html"
   })
   .otherwise({redirectTo: '/'
   });

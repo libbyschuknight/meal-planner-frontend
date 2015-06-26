@@ -23,9 +23,11 @@
     <script src="app.js"></script>
     <script src="services/userAuthenticationService.js"></script>
     <script src="services/meals.js"></script>
-    
+
     <script src="controllers/main_controller.js"></script>
-      
+    <script src="controllers/meal_controller.js"></script>
+
+
   </head>
 
   <body ng-app="MealsApp">
@@ -66,14 +68,8 @@
     </nav>
 
 
-    <div class="jumbotron">
-      <h1>Welcome to Roa Meals</h1>
-      <p>We hope you have a pleasent experience.</p>
-      <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p> -->
-    </div>
 
-
-
+    <!--  ### user information - NAME -->
     <div id="section" ng-controller="main-controller">
       <h1>  {{ UserName }}  POPULAR MEALS</h1>
       <hr>
@@ -87,7 +83,8 @@
         <br>
 
 
-    </div>
+    <div ng-view></div>
+
 
 
     <footer>

@@ -29,13 +29,7 @@ a {
 .jumbotron {
   height: 250px;
   text-align: center;
-<<<<<<< HEAD
   background-image: url('http://www.taste.com.au/images/recipes/agt/2010/03/24246_l.jpg');
-=======
-  /*opacity: 0.5;*/
-  background-color: gray;
-  background-image: url("https://lovemynutbutt.files.wordpress.com/2013/12/cooking_at_home.jpg");
->>>>>>> master
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 0.8;
@@ -56,8 +50,7 @@ a {
   text-align: center;
   /*border: 1px solid gray;*/
   /*margin: 0 auto;*/
-  margin-bottom: 0px;
-
+  margin-bottom: 20px;
 }
 
 
@@ -68,7 +61,7 @@ a {
 
 .col-md-4 p {
   text-align: center;
-  width: 50px;
+  width: 250px;
   margin: 0 auto;
   color: #303030;
 }

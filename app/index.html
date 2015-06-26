@@ -74,14 +74,13 @@
     <div id="section" ng-controller="main-controller">
       <h1>POPULAR MEALS</h1>
       <hr>
-        <div class="row" ng-repeat="meal in mealsInfo">
-            <div class="col-md-4">
+        <ul class="row list-group" >
+            <li class="col-md-4 col-sm-6 list-group-item" ng-repeat="meal in mealsInfo">
               <img ng-src='{{ meal.ImageUrl }}'>
-
               <h3> {{ meal.Name }} </h3>
               <p> by {{ meal.User}} </p>
-            </div>
-        </div>
+            </li>
+        </ul>
         <br>
 
 

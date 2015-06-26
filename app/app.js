@@ -1,9 +1,8 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('myApp', [
+var app = angular.module('MealsApp', [
   'ngRoute'
-]).
-config(['$routeProvider', function($routeProvider) {
+]).config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/index'});
 }]);

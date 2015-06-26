@@ -155,3 +155,45 @@ footer {
   margin-right: 25%;
 }
 
+#content {
+  padding-bottom:100px; /* Height of the footer element */
+}
+
+#footer{
+
+width:100%;
+  height:100px;
+  position:absolute;
+  bottom:0;
+  left:0;
+}
+
+/*///////////////////ADD MEAL PAGE //////////////////////*/
+#heading{
+text-align: center;
+}
+#indgredientheading{text-align: center;margin-top: 15px;}
+#newmealname{
+margin-left: 25%;
+margin-right: 25%;
+text-align: center;
+
+}
+.form-inline{
+  margin-top: 10px;
+width:600px;
+margin-left: 34%;
+}
+.btn {
+margin-top: 10px;
+  margin-left: 45%
+}
+/*
+#ingredientlist{
+
+  overflow-y: scroll;
+  height: 200px;
+  width: 250px;
+  list-style-type: none;
+}*/
+

@@ -16,7 +16,7 @@ app.config(['$routeProvider', function($routeProvider) {
     controller: "main-controller",
     templateUrl: "views/home.html"
   })
-  .when("/", {
+  .when("/meal-details/:id", {
     controller: "meal-controller",
     templateUrl: "views/meal-details.html"
   })

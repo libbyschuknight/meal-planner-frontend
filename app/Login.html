@@ -24,7 +24,8 @@
 
 
     <script src="App.js"></script>
-    <script src="Register.js"></script>
+    <script src="Login.js"></script>
+     
   </head>
 
   <body ng-app="MealsApp">
@@ -65,16 +66,18 @@
     </nav>
 
 
-    <div class="jumbotron" ng-controller="RegisterCtrl">
+    <div class="jumbotron" ng-controller="LoginCtrl">
       <h1>Welcome to Roa Meals</h1>
-      <p>We hope you have a pleasent experience.</p>    
-      <input type="text" id="txt" ng-model="text">
-     <input type="password" id="pswd" ng-model="pswd">
-       <input type="password" id="conpswd" ng-model="conpswd">
-    <input type="button" id="submit" value="go" ng-click="register()">
+      <p>We hope you have a pleasent experience.</p>   
+		
+    <input type="text" id="username" ng-model="username">
+     <input type="password" id="password" ng-model="password">
+       
+    <input type="button" id="log" value="login" ng-click="login()">
+	
+	 <input type="button"  value="Register" ng-click="Register()">
     </div>
-
-
+    
     <footer>
       Copyright &copy RoaMeals.com
     </footer>

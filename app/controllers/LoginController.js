@@ -1,7 +1,7 @@
 var menuApp = angular.module('MealsApp');
 
 menuApp.controller('LoginCtrl', function ($scope, $http, $window) {
-   
+
     $scope.login = function () {
 
 
@@ -16,7 +16,7 @@ menuApp.controller('LoginCtrl', function ($scope, $http, $window) {
 
         var q = "grant_type=password&username=" + encodeURIComponent($scope.username) + "&password=" + encodeURIComponent($scope.password);
 
-       
+
         $http({
             method: 'POST',
             url: 'http://roameals.azurewebsites.net/Token',
@@ -26,7 +26,7 @@ menuApp.controller('LoginCtrl', function ($scope, $http, $window) {
             $window.sessionStorage.setItem('tokenKey', data.access_token);
             console.log("sucess.......");
             console.log("Token", data.access_token);
-            $window.location.href = 'C:/Deepa/Projects/FinalProject/meal-planner-frontend/app/index.html';
+            $window.location.href = 'http://roameals.azurewebsites.net/app/Index.html';
         }).error(function (data) {
             console.log("Error..." + data);
         });
@@ -37,10 +37,10 @@ menuApp.controller('LoginCtrl', function ($scope, $http, $window) {
     };
 	$scope.Register=function()
     {
-	 $window.location.href = 'C:/Deepa/Projects/FinalProject/meal-planner-frontend/app/Register.html';
+	 $window.location.href = 'http://roameals.azurewebsites.net/app/Register.html';
     };
-   
-    
+
+
 });
 
 

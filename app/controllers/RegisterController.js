@@ -15,7 +15,7 @@ menuApp.controller('RegisterCtrl', function ($scope, $http,$window) {
         $http.post("http://roameals.azurewebsites.net/api/Account/Register", postdata)
         .success(function () {
             console.log("sucess.......")
-              $window.location.href = 'C:/Deepa/Projects/FinalProject/meal-planner-frontend/app/Login.html';
+              $window.location.href = 'http://roameals.azurewebsites.net/app/Login.html';
         })
         .error(function (data) {
             console.log("Error..." + data);
@@ -40,8 +40,8 @@ menuApp.controller('RegisterCtrl', function ($scope, $http,$window) {
              console.log("error getting user info");
          });
     };
-    
-    
+
+
 
 
 

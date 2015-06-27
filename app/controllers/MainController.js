@@ -35,5 +35,24 @@ app.controller("MainController",
         console.log("error: ", data);
       })
   }
+
+      $scope.getShoppingList = function() {
+      var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
+      $http({
+        method: 'GET',
+        url: 'http://roameals.azurewebsites.net/api/MealPlans',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': authoriz
+        }
+      })
+      .success(function(data){
+        console.log("SHOPPING LIST SUCCESS");
+        console.log(data);
+        })
+      .error(function(data){
+        console.log("error: ", data);
+      })
+  }
 }]);
 

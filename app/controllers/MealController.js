@@ -3,15 +3,15 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     $scope.detail = data[$routeParams.id];
     console.log($scope.detail);
   });
-  
+
  $scope.AddToMealPlan = function() {
 
   	var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
     var meal = $scope.detail;
     var id = meal.Id;
     console.log(id);
-    console.log("ttttttttttttttttttttttttttttttttttttt"); 
-    console.log(authoriz) 
+    console.log("ttttttttttttttttttttttttttttttttttttt");
+    console.log(authoriz)
 
 $http({
       url: "http://roameals.azurewebsites.net/api/MealPlans/AddTo",
@@ -24,7 +24,9 @@ $http({
     })
     .success(function(data){
       console.log("yolo swag");
-
+    })
+    .error(function(data) {
+      console.log("add meal error", data);
     })
   }
 }]);

@@ -4,8 +4,8 @@
       <h1>WEEKLY PLANNER</h1>
       <hr>
         <div class="row">
-            <div class="col-md-12">
-                <h2>Planned Meals</h2>
+            <div class="col-md-12" ng-controller="MealController">
+                <h2>Planned Meals {{ mealPlan }}</h2>
                 <ul class = "daysList">
                   <li>Monday : (insert meal here)</li>
                   <li>Tuesday: (insert meal here)</li>
@@ -14,10 +14,9 @@
                   <li>Friday: (insert meal here)</li>
                   <li>Saturday: (insert meal here)</li>
                   <li>Sunday: (insert meal here)</li>
-
+                </ul>
             </div>
-
-
+ <button ng-controller= "MainController"><a href="#ShoppingList" ng-click="getShoppingList()">My Shopping List</a><button>
 
     </div>
 

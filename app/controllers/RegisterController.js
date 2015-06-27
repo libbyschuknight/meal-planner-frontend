@@ -14,38 +14,21 @@ console.log("eferer")
 
         $http.post("http://roameals.azurewebsites.net/api/Account/Register", postdata)
         .success(function () {
-            console.log("sucess.......")
+            console.log("sucessfully Registered.......")
               $window.location.href = '#Login';
         })
         .error(function (data) {
-            console.log("Error..." + data);
+            console.log("Error Registering..." + data);
         });
 
     };
-    $scope.getMealPlan = function() {
-			 
-		var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
-		$http({
-			    method: 'GET',
-			    url: 'http://roameals.azurewebsites.net/api/MealPlans',
-			    headers: {
-				          'Content-Type': 'application/json',
-				          'Authorization': authoriz
-			        	 }
-			 })
-
-        	.success(function(data){
-
-			console.log("fuck yeah")
-			console.log(data)
-
-    	})
 
 
 
 
 
-    }
+
+
 });
 
 

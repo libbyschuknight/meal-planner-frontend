@@ -33,8 +33,8 @@ app.config(['$routeProvider', function($routeProvider) {
     controller: "MealController",
     templateUrl: "views/WeekPlanner.html"
   })
-   .when("/ShoppingList/:id", {
-    controller: "MainController",
+   .when("/ShoppingList", {
+    controller: "MealController",
     templateUrl: "views/ShoppingList.html"
   })
    .when("/Logout", {

@@ -2,8 +2,17 @@
 
 * {
   font-family: 'Montserrat', sans-serif;
+
+
+  /*border: 1px solid gray;*/
 }
 
+
+}
+.Username
+{
+  color: white;
+}
 .navbar{
 
   background-color: #303030;

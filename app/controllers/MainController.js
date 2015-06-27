@@ -1,9 +1,9 @@
 var app = angular.module('MealsApp');
 app.controller("MainController",
-  ["$scope", "meals", "userAuthenticationService", function($scope, meals, userAuthenticationService, $window) {
+  ["$scope", "$http", "meals", "userAuthenticationService", "$window", function($scope, $http, meals, userAuthenticationService, $window) {
     meals.success(function(data) {
       $scope.mealsInfo = data;
-      console.log($scope.mealsInfo);
+      // console.log($scope.mealsInfo);
 
       var userResponse = userAuthenticationService.GetUserName();
       userResponse.success(function(data)
@@ -16,4 +16,24 @@ app.controller("MainController",
          //  $window.location.href = '#Login';
       });
     });
+
+    $scope.getMealPlan = function() {
+      var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
+      $http({
+        method: 'GET',
+        url: 'http://roameals.azurewebsites.net/api/MealPlans',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': authoriz
+        }
+      })
+      .success(function(data){
+        console.log("fuck yeah");
+        console.log(data);
+        })
+      .error(function(data){
+        console.log("error: ", data);
+      })
+  }
 }]);
+

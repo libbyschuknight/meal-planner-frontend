@@ -26,7 +26,3 @@ app.controller("MealController", ["$scope", "meals", '$routeParams', function($s
 
 
 
-
-
-
-

@@ -14,11 +14,11 @@ console.log("eferer")
 
         $http.post("http://roameals.azurewebsites.net/api/Account/Register", postdata)
         .success(function () {
-            console.log("sucess.......")
+            console.log("sucessfully Registered.......")
               $window.location.href = '#Login';
         })
         .error(function (data) {
-            console.log("Error..." + data);
+            console.log("Error Registering..." + data);
         });
 
     };

@@ -1,6 +1,6 @@
 // var menuApp = angular.module('MealsApp');
 
-app.controller('LoginController', function ($scope, $http, $window) {
+app.controller('LoginController', function ($scope, $http, $window,$rootScope) {
 // angular.module('MealsApp', []).controller('LoginController', function ($scope, $http, $window) {
     $scope.login = function () {
 
@@ -24,11 +24,14 @@ app.controller('LoginController', function ($scope, $http, $window) {
             headers: { 'Content-Type': 'application/x-www-form-urlencoded'}
         }).success(function (data) {
             $window.sessionStorage.setItem('tokenKey', data.access_token);
-            console.log("sucess.......");
+            console.log("sucessfully logedIn.......");
             console.log("Token", data.access_token);
+                console.log(data.userName)
+            $rootScope.$emit("logged-in", data.userName)
+           
             $window.location.href = '#Index';
         }).error(function (data) {
-            console.log("Error..." + data);
+            console.log("Error Logging in ..." + data);
              //$window.location.href = '#Login';
              $scope.errormessage="Incorrect UserName or Password";
         });

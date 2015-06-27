@@ -1,6 +1,6 @@
 var app = angular.module('MealsApp');
 app.controller("MainController",
-  ["$scope", "$http", "meals", "userAuthenticationService", "$window", function($scope, $http, meals, userAuthenticationService, $window) {
+  ["$scope", "$http", "meals", "userAuthenticationService", "$window","$rootScope", function($scope, $http, meals, userAuthenticationService, $window,$rootScope) {
     meals.success(function(data) {
       $scope.mealsInfo = data;
       // console.log($scope.mealsInfo);
@@ -12,7 +12,7 @@ app.controller("MainController",
       })
       .error(function(data){
         // have made this error message below an emptu string so we don't have "error" coming up on the home page when viewing with no user logged in
-        $scope.UserName = "";
+
          //  $window.location.href = '#Login';
       });
     });
@@ -37,5 +37,16 @@ app.controller("MainController",
         console.log("error: ", data);
       })
   }
+  var logindisplay=function(event, dataforme)
+  {
+    console.log("y is this not working",dataforme)
+    $scope.UserName=dataforme
+  }
+   var logoutdisplay=function(event, dataforme )
+  {
+    $scope.UserName=" ";
+  }
+  $rootScope.$on("logged-in", logindisplay);
+    $rootScope.$on("logged-out", logoutdisplay);
 }]);
 

@@ -22,7 +22,33 @@ console.log("eferer")
         });
 
     };
+    $scope.getMealPlan = function() {
+			 
+		var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
+		$http({
+			    method: 'GET',
+			    url: 'http://roameals.azurewebsites.net/api/MealPlans',
+			    headers: {
+				          'Content-Type': 'application/json',
+				          'Authorization': authoriz
+			        	 }
+			 })
+
+        	.success(function(data){
+
+			console.log("fuck yeah")
+			console.log(data)
+
+    	})
+
+
+
+
+
+    }
 });
+
+
 
     // var DisplayLogin=function()
     // {

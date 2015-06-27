@@ -27,3 +27,7 @@
   var menuApp = angular.module('MealsApp');
   menuApp.factory('userAuthenticationService', ['$http','$window', userAuthenticationService]);
 }());
+
+
+//http://localhost:62555/
+//http://roameals.azurewebsites.net/

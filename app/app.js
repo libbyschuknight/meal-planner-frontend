@@ -29,6 +29,10 @@ app.config(['$routeProvider', function($routeProvider) {
     controller: "controllers/LoginController",
     templateUrl: "views/Login.html"
   })
+   .when("/WeekSummary", {
+    controller: "MealController",
+    templateUrl: "WeekPlanner.html"
+  })
   .otherwise({redirectTo: '/index'
 
   });

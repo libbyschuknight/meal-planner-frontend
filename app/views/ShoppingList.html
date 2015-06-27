@@ -1,42 +1,28 @@
-
-
-<div id="section">
-      <h1>Shopping List</h1>
+<div id="section" class="container" ng-controller="MainController">
+      <h1>{{ detail.Ingredients }}</h1>
       <hr>
       <div class = "row">
         <div class="col-md-8">
-          <table class = "table">
+          <table class="table" ng-repeat="ingredient in detail.Ingredients">
             <tr>
-              <td>Quantity</td>
-              <td>Item</td>
-              <td>I already have this ingredient</td>
+              <td>{{ ingredient.Quantity }} </td>
+              <td>{{ detail }} </td>
+              <td></td>
             </tr>
             <tr>
-              <td>5</td>
-              <td>Broccali</td>
               <td>
                 <form action="demo_form.asp" method="get">
                 <input type="checkbox" name="vehicle" value="Bike">
-
                 </form>
-              <br>
+                <br>
               </td>
             </tr>
-            <tr>
-              <td>2</td>
-              <td>Eggs</td>
-              <td>
-                <form action="demo_form.asp" method="get">
-                <input type="checkbox" name="vehicle" value="Bike">
-
-                </form>
-              <br>
-              </td>
-            </tr>
-            </table>
+          </table>
 
         </div>
       </div>
+</div>
+
 
 
 

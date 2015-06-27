@@ -31,11 +31,11 @@ app.config(['$routeProvider', function($routeProvider) {
   })
    .when("/WeekPlanner", {
     controller: "MealController",
-    templateUrl: "WeekPlanner.html"
+    templateUrl: "views/WeekPlanner.html"
   })
-   .when("/ShoppingList", {
-    controller: "MealController",
-    templateUrl: "ShoppingList.html"
+   .when("/ShoppingList/:id", {
+    controller: "MainController",
+    templateUrl: "views/ShoppingList.html"
   })
    .when("/Logout", {
   controller: "LogoutController",

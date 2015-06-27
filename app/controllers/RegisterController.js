@@ -12,7 +12,7 @@ console.log("eferer")
 
         console.log(postdata);
 
-        $http.post("http://localhost:62555/api/Account/Register", postdata)
+        $http.post("http://roameals.azurewebsites.net/api/Account/Register", postdata)
         .success(function () {
             console.log("sucess.......")
               $window.location.href = '#Login';

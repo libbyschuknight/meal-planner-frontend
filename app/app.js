@@ -22,11 +22,11 @@ app.config(['$routeProvider', function($routeProvider) {
     templateUrl: "views/MealDetails.html"
   })
    .when("/Register", {
-    controller: "controllers/RegisterController",
+    controller: "RegisterController",
     templateUrl: "views/Register.html"
   })
    .when("/Login", {
-    controller: "controllers/LoginController",
+    controller: "LoginController",
     templateUrl: "views/Login.html"
   })
    .when("/WeekPlanner", {

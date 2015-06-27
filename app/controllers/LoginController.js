@@ -1,7 +1,7 @@
-var menuApp = angular.module('MealsApp');
+// var menuApp = angular.module('MealsApp');
 
-menuApp.controller('LoginCtrl', function ($scope, $http, $window) {
-
+app.controller('LoginController', function ($scope, $http, $window) {
+// angular.module('MealsApp', []).controller('LoginController', function ($scope, $http, $window) {
     $scope.login = function () {
 
 
@@ -26,9 +26,11 @@ menuApp.controller('LoginCtrl', function ($scope, $http, $window) {
             $window.sessionStorage.setItem('tokenKey', data.access_token);
             console.log("sucess.......");
             console.log("Token", data.access_token);
-            $window.location.href = 'http://roameals.azurewebsites.net/app/Index.html';
+            $window.location.href = '#Index';
         }).error(function (data) {
             console.log("Error..." + data);
+             //$window.location.href = '#Login';
+             $scope.errormessage="Incorrect UserName or Password";
         });
 
 
@@ -37,7 +39,7 @@ menuApp.controller('LoginCtrl', function ($scope, $http, $window) {
     };
 	$scope.Register=function()
     {
-	 $window.location.href = 'http://roameals.azurewebsites.net/app/Register.html';
+	 $window.location.href = '#Register';
     };
 
 

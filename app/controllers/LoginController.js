@@ -26,9 +26,10 @@ menuApp.controller('LoginCtrl', function ($scope, $http, $window) {
             $window.sessionStorage.setItem('tokenKey', data.access_token);
             console.log("sucess.......");
             console.log("Token", data.access_token);
-            $window.location.href = 'http://roameals.azurewebsites.net/app/Index.html';
+            $window.location.href = '#Index';
         }).error(function (data) {
             console.log("Error..." + data);
+             $window.location.href = 'http://roameals.azurewebsites.net/app/Index.html';
         });
 
 

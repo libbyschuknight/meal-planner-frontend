@@ -18,7 +18,7 @@ app.config(['$routeProvider', function($routeProvider) {
     templateUrl: "views/home.html"
   })
   .when("/MealDetails/:id", {
-    controller: "MealController",
+    controller: "controllers/MealController",
     templateUrl: "views/MealDetails.html"
   })
    .when("/Register", {

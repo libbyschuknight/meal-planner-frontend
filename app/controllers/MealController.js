@@ -29,6 +29,26 @@ $http({
       console.log("add meal error", data);
     })
   }
+
+  $scope.getMealPlan = function() {
+      var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
+      $http({
+        method: 'GET',
+        url: 'http://roameals.azurewebsites.net/api/MealPlans',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': authoriz
+        }
+      })
+      .success(function(data){
+        console.log("GETTING MEAL PLAN");
+        console.log(data);
+        })
+      .error(function(data){
+        console.log("error: ", data);
+      })
+  }
+
 }]);
 
 

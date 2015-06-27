@@ -37,6 +37,10 @@ app.config(['$routeProvider', function($routeProvider) {
     controller: "MealController",
     templateUrl: "views/ShoppingList.html"
   })
+    .when("/addAMeal", {
+    controller: "MealController",
+    templateUrl: "views/addAMeal.html"
+  })
    .when("/Logout", {
   controller: "LogoutController",
     templateUrl: "views/Logout.html"

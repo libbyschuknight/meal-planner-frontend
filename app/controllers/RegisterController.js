@@ -1,5 +1,5 @@
-var menuApp = angular.module('MealsApp');
-menuApp.controller('RegisterController', ["$scope", "meals", "userAuthenticationService", function ($scope, $http,$window) {
+//var menuApp = angular.module('MealsApp');
+app.controller('RegisterController', function ($scope, $http,$window) {
 console.log("eferer")
     $scope.register = function () {
 
@@ -22,7 +22,7 @@ console.log("eferer")
         });
 
     };
-}]);
+});
 
     // var DisplayLogin=function()
     // {

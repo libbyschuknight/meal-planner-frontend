@@ -26,7 +26,7 @@ app.config(['$routeProvider', function($routeProvider) {
     templateUrl: "views/Register.html"
   })
    .when("/Login", {
-    controller: "controllers/LoginController",
+    controller: "LoginController",
     templateUrl: "views/Login.html"
   })
   .otherwise({redirectTo: '/index'

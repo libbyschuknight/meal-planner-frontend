@@ -55,17 +55,17 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li class="active" ng-controller="MealController"><a href="#WeekPlanner" ng-click="getMealPlan()">Weekly Plan<span class="sr-only">(current)</span></a></li>
-            <li class="active"><a href="#">About us<span class="sr-only">(current)</span></a></li>
+            <li class="active" ng-controller="MealController"><a href="#addAMeal">Add A Meal<span class="sr-only">(current)</span></a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
             <li ng-controller="MainController" class="Username "></li>
-            <li><a href="#Register">Sign-Up</a></li>
+            <li><a href="#Register">Register</a></li>
 
 
-            <li><a href="#Login">Log-In</a></li>
+            <li><a href="#Login">Log In</a></li>
             <li ng-controller="LogoutController">
-              <a href="#Logout">Log-Out</a>
+              <a href="#Logout">Log Out</a>
             </li>
 
             <li>

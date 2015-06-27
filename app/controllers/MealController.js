@@ -30,7 +30,8 @@ $http({
     })
   }
 
-  $scope.getMealPlan = function() {
+
+$scope.getMealPlan = function() {
       var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
       $http({
         method: 'GET',
@@ -42,6 +43,27 @@ $http({
       })
       .success(function(data){
         console.log("GETTING MEAL PLAN");
+        mealPlan = data;
+        console.log(mealPlan);
+
+        })
+      .error(function(data){
+        console.log("error: ", data);
+      })
+  }
+
+  $scope.addAMeal = function() {
+      var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
+      $http({
+        method: 'POST',
+        url: 'http://roameals.azurewebsites.net/api/Meals',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': authoriz
+        }
+      })
+      .success(function(data){
+        console.log("ADDING A MEAL");
         console.log(data);
         })
       .error(function(data){

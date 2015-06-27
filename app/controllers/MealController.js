@@ -1,25 +1,30 @@
-app.controller("MealController", ["$scope", "meals", '$routeParams', function($scope, meals, $routeParams) {
+app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$window', function($scope, $http, meals, $routeParams, $window) {
   meals.success(function(data) {
     $scope.detail = data[$routeParams.id];
     console.log($scope.detail);
   });
 
   $scope.AddToMealPlan = function() {
+
+  	var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
     var meal = $scope.detail;
     var id = meal.Id;
-    var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
+    console.log(id);
+    console.log("ttttttttttttttttttttttttttttttttttttt"); 
+    console.log(authoriz) 
 
-    $http({
+$http({
+      url: "http://localhost:62555/api/MealPlans/AddTo",
       method: "POST",
-      url: "http://roameals.azurewebsites.net/api/MealPlans/AddTo",
-      data: id,
+      data: meal,
       headers: {
         'Content-Type': 'application/json',
         'Authorization': authoriz
       }
     })
     .success(function(data){
-      console.log(data);
+      console.log("yolo swag");
+
     })
   }
 }]);

@@ -19,7 +19,7 @@ app.controller('LoginController', function ($scope, $http, $window) {
 
         $http({
             method: 'POST',
-            url: 'http://roameals.azurewebsites.net/Token',
+            url: 'http://localhost:62555/Token',
             data: q,
             headers: { 'Content-Type': 'application/x-www-form-urlencoded'}
         }).success(function (data) {

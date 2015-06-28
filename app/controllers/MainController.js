@@ -3,7 +3,7 @@ app.controller("MainController",
   ["$scope", "$http", "meals", "userAuthenticationService", "$window","$rootScope", function($scope, $http, meals, userAuthenticationService, $window,$rootScope) {
     meals.success(function(data) {
       $scope.mealsInfo = data;
-       // console.log($scope.mealsInfo);
+
 
       var userResponse = userAuthenticationService.GetUserName();
       userResponse.success(function(data)
@@ -40,6 +40,7 @@ app.controller("MainController",
 
         $scope.arrayOfIng = data;        
     	})
+
       .error(function(data){
         console.log("error: ", data);
       })

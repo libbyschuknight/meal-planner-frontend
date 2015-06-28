@@ -10,19 +10,11 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
                     $window.location.href = '#Login';
       }
 
- $scope.AddToMealPlan = function(day) {
+ $scope.AddToMealPlan = function() {
 
   	var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
     var meal = $scope.detail;
     var id = meal.Id;
-    
-    var data={
-      meal: $scope.detail,
-      Day:day
-        }
-        
-        var mealdata=JSON.stringify(data);
-        console.log("day included",data);
 
    
 

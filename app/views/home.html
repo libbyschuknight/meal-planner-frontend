@@ -11,14 +11,14 @@
 
 
   <div id="section" class="container" ng-controller="MainController">
-    <h1 ng-Messages="$error"> {{ UserName }} POPULAR MEALS</h1>
+    <h1 ng-Messages="$error"> POPULAR MEALS</h1>
 
     <hr>
       <ul class="row list-group" >
           <li class="col-md-4 col-sm-6 list-group-item" ng-repeat="meal in mealsInfo">
             <a href="#MealDetails/{{$index}}"><img ng-src='{{ meal.ImageUrl }}'></a>
             <h3> {{ meal.Name }} </h3>
-            <p> by {{ meal.User}} </p>
+  
           </li>
       </ul>
       <br>

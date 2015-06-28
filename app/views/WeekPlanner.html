@@ -22,7 +22,10 @@
         </tr>
 
         <tr>
-          <td ng-repeat="meal in showMealPlan.Meals"> {{meal.Name}}</td>
+          <td ng-repeat="meal in showMealPlan.Meals"> 
+            {{meal.Name}} 
+            </br>
+            <a href="#WeekPlanner" value="delete" ng-click="deleteMeal($index)" style="color:red;text-decoration:underline">delete</a></td>
         </tr>
       </table>
     </div>

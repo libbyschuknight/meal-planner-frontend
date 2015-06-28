@@ -1,13 +1,12 @@
 
 
-<div class="main">
+<div class="container">
 
-  <div class="jumbotron">
+  <!-- Jumbotron Header -->
+  <header class="jumbotron hero-spacer">
     <h1>Welcome to Roa Meals</h1>
     <p>We hope you have a pleasent experience.</p>
-
-  </div>
-
+  </header>
 
 
   <div id="section" class="container" ng-controller="MainController">
@@ -18,7 +17,7 @@
           <li class="col-md-4 col-sm-6 list-group-item" ng-repeat="meal in mealsInfo">
             <a href="#MealDetails/{{$index}}"><img ng-src='{{ meal.ImageUrl }}'></a>
             <h3> {{ meal.Name }} </h3>
-  
+
           </li>
       </ul>
       <br>

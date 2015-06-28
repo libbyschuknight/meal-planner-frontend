@@ -1,90 +1,38 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>
-        Roa Meals
-    </title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="App.css">
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  </head>
-
-  <body>
-
-    <nav class="navbar">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">Roa Meals</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">How it Works <span class="sr-only">(current)</span></a></li>
-            <li class="active"><a href="#">About us<span class="sr-only">(current)</span></a></li>
-          </ul>
-
-          <form class="navbar-form navbar-right" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Find a meal">
-            </div>
-            <button type="search" class="btn btn-default">Submit</button>
-          </form>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Sign-Up</a></li>
-           <li><a href="#">Log-In</a></li>
-            </li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
 <div id="content">
   <div id="heading"><h1>Create Meal</h1> <hr></div>
       <form id="newmealname">
             MEALNAME
           <br>
-          <input type="text" name="NAME">
+          <input type="text" name="NAME" ng-model="mealName">
           <br>
             DESCRIPTION
           <br>
-          <input type="text" name="DESCRIPTION">
+          <input type="text" name="DESCRIPTION" ng-model="description">
           <br>
             IMAGE
           <br>
-          <input type="text" name="IMAGE URL">
+          <input type="text" name="IMAGE URL" ng-model="imageurl">
       </form>
           <h3 id ="indgredientheading">ADD A INGREDIENT:</h3>
       <form class="form-inline">
 
         <div class="form-group">
             <label class="sr-only">QUANTITY</label>
-            <input type="number" class="form-control" id="quantity" placeholder="Ingredient quantity.">
+            <input type="number" class="form-control" id="quantity" placeholder="Ingredient quantity." ng-model="quantity">
               </div>
           <div class="form-group">
             <label class="sr-only">INGREDIENT NAME</label>
-            <input type="text" class="form-control" id="ingredientname" placeholder="Ingredient name.">
+            <input type="text" class="form-control" id="ingredientname" placeholder="Ingredient name." ng-model="ingredientName">
           </div>
 
           <div class="form-group">
             <label class="sr-only">MEASUREMENT</label>
-            <input type="number" class="form-control" id="quantity" placeholder="Measurement.">
+            <input type="number" class="form-control" id="quantity" placeholder="Measurement." ng-model="measurement">
           </div>
 
-
-
-
       </form>
-      <button type="submit" class="btn btn-default">submit</button>
+      <button type="submit" ng-click="addAMeal()"class="btn btn-default">Add Meal</button>
     <!-- <ul id="ingredientlist">
       <li>
       <form id="newmealingredients">
@@ -249,13 +197,3 @@
 
     </ul>
       </form> -->
-
-    <div id = "footer">
-    <footer>
-      Copyright &copy RoaMeals.com
-    </footer>
-  </div>
-</body>
-
-
-</html>

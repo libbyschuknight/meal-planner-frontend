@@ -17,7 +17,9 @@ app.controller("MainController",
       });
     });
 
-    $scope.getMealPlan = function() {
+
+
+      $scope.getShoppingList = function() {
       var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
       $http({
         method: 'GET',
@@ -28,7 +30,7 @@ app.controller("MainController",
         }
       })
       .success(function(data){
-        console.log("fuck yeah");
+        console.log("SHOPPING LIST SUCCESS");
         console.log(data);
         })
       .error(function(data){

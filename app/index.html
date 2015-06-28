@@ -73,8 +73,8 @@
             <li>
               <form class="navbar-form navbar-right" role="search">
                 <!-- <div class="form-group"> -->
-                  <input type="text" class="form-control" placeholder="Find a meal">
-                  <button type="search" class="btn btn-default">Submit</button>
+                  <input type="text" class="form-control" ng-model="search"placeholder="Search Meals">
+                  <button type="search" class="btn btn-default" ng-click="searchMeals()"> <a href="#SearchedMeals">Search</a></button>
                 <!-- </div> -->
               </form>
             </li>

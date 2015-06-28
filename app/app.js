@@ -45,6 +45,10 @@ app.config(['$routeProvider', function($routeProvider) {
   controller: "LogoutController",
     templateUrl: "views/home.html"
   })
+    .when("/SearchedMeals", {
+  controller: "MainController",
+    templateUrl: "views/SearchedMeals.html"
+  })
   .otherwise({redirectTo: '/index'
 
   });

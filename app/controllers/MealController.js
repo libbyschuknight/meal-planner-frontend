@@ -2,7 +2,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
 
   meals.success(function(data) {
     $scope.detail = data[$routeParams.id];
-    console.log($scope.detail);
+    console.log("hello",$scope.detail);
   });
 
       if($window.sessionStorage.length==0)
@@ -15,9 +15,8 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
   	var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
     var meal = $scope.detail;
     var id = meal.Id;
-    console.log(id);
-    console.log("ttttttttttttttttttttttttttttttttttttt");
-    console.log(authoriz)
+
+   
 
   $http({
       url: "http://roameals.azurewebsites.net/api/MealPlans/AddTo",
@@ -59,10 +58,12 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
   $scope.showMealPlan = "";
 
 
-var IngredientList = [];
-  var localName = $scope.ingredientName;
+    var IngredientList = [];
+
+    var localName = $scope.ingredientName;
     var localQuantity =  $scope.quantity;
     var localMeasurement = $scope.measurement; 
+   
 
 $scope.newIngred = function() {
 
@@ -70,6 +71,8 @@ $scope.newIngred = function() {
                         Name : $scope.ingredientName,
                         Quantity : $scope.quantity,
                         Measurement : $scope.measurement
+
+
                     
                    }
     IngredientList.push(ingredient);
@@ -98,6 +101,7 @@ $scope.newIngred = function() {
               {
                 Name : $scope.mealName,
                 Description : $scope.description,
+                ImageUrl : $scope.imageurl,
                 Ingredients : IngredientList
               }
 

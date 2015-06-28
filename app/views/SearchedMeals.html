@@ -1,0 +1,15 @@
+
+
+<div class="main">
+    <hr>
+      <ul class="row list-group" >
+          <li class="col-md-4 col-sm-6 list-group-item" ng-model="search" ng-repeat="meal in mealsInfo | filter:search">
+            <a href="#MealDetails/{{$index}}"><img ng-src='{{ meal.ImageUrl }}'></a>
+            <h3> {{ meal.Name }} </h3>
+            <p> {{ meal.User}} </p>
+          </li>
+      </ul>
+      <br>
+  </div>
+
+</div>

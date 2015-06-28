@@ -49,8 +49,10 @@ $scope.getMealPlan = function() {
       })
       .success(function(data){
         console.log("GETTING MEAL PLAN");
-        mealPlan = data;
+        $scope.mealPlan ="ffffff"
+        // data;
         console.log(mealPlan);
+    
 
         })
       .error(function(data){

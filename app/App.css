@@ -17,14 +17,19 @@
 
 
 .navbar{
-
   background-color: #303030;
   margin-bottom: 0;
   border-radius: 0;
  /* position:fixed;*/
   width:100%;
-
 }
+
+
+.navbar-toggle {
+  background-color: rgb(255, 255, 255);
+  /*background-image: url("http://www2.psd100.com/ppp/2013/11/0601/Down-button-icon-1106172647.png");*/
+  border: 1px solid transparent;
+ }
 
 a {
   color: white;
@@ -33,8 +38,8 @@ a {
 .container-fluid{
   padding-right: 15px;
   padding-left: 15px;
-  margin-right: 300px;
-  margin-left: 300px;
+  margin-right: 50px;
+  margin-left: 50px;
 }
 
 
@@ -92,6 +97,7 @@ a {
 width:500px;
 
 }
+
 
 /* ###########   meal details page ######################### */
 
@@ -156,13 +162,13 @@ h5{
 .footer{
 
   width:100%;
-  height:100px;
-  /*position:absolute;*/
+  height:50px;
+  position:fixed;
   background-color: #303030;
   bottom:0;
   left:0;
   color: white;
-  padding-top: 15px;
+  padding-top: 7px;
 }
 
 /*//////////////////////////Weekly Planner Page ////////////////*/

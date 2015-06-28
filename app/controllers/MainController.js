@@ -3,7 +3,7 @@ app.controller("MainController",
   ["$scope", "$http", "meals", "userAuthenticationService", "$window","$rootScope", function($scope, $http, meals, userAuthenticationService, $window,$rootScope) {
     meals.success(function(data) {
       $scope.mealsInfo = data;
-      // console.log($scope.mealsInfo);
+      console.log("mealinfo data:",$scope.mealsInfo);
 
       var userResponse = userAuthenticationService.GetUserName();
       userResponse.success(function(data)
@@ -29,10 +29,10 @@ app.controller("MainController",
         }
       })
       .success(function(data){
-        console.log("SHOPPING LIST SUCCESS");
+        // console.log("SHOPPING LIST SUCCESS");
 
 
-        console.log(data);
+        // console.log(data);
 
         $scope.arrayOfIng = data;
 

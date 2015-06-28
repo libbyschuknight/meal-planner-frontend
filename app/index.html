@@ -56,29 +56,25 @@
           <ul class="nav navbar-nav">
             <li class="active" ng-controller="MealController"><a href="#WeekPlanner" ng-click="getMealPlan()">Weekly Plan<span class="sr-only">(current)</span></a></li>
             <li class="active" ng-controller="MealController"><a href="#addAMeal">Add A Meal<span class="sr-only">(current)</span></a></li>
+
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
 
-            <li ng-controller="MainController" class="Username " style="color:white">{{ UserName }}</li>
+             <li ng-controller="MainController" class="Username" style="margin-top: 15px;margin-right:15px;color : white;"> Welcome {{ UserName }} </li>
             <li><a href="#Register">Register</a></li>
 
-
+        
+          
             <li><a href="#Login">Log-In</a></li>
             <li ng-controller="LogoutController" ng-click="logout()">
               <a href="#Logout">Log-Out</a>
 
             </li>
 
-            <li>
-              <form class="navbar-form navbar-right" role="search">
-                <!-- <div class="form-group"> -->
-                  <input type="text" class="form-control" placeholder="Find a meal">
-                  <button type="search" class="btn btn-default">Submit</button>
-                <!-- </div> -->
-              </form>
-            </li>
-          </ul>
+        
+           
+       
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>

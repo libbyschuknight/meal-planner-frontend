@@ -1,22 +1,19 @@
 <div id="section" class="container" ng-controller="MainController">
-      <h1>Shopping List</h1>
-      <hr>
+      <h1>Shopping List </h1>
+    
 
       <div class = "row">
         <div class="col-md-8">
-          <table class="table" ng-repeat="ingredient in detail.Ingredients">
-            <tr>
-              <td>{{ ingredient.Quantity }} </td>
-              <td>{{ detail }} </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>
-                <form action="demo_form.asp" method="get">
-                <input type="checkbox" name="vehicle" value="Bike">
-                </form>
-                <br>
-              </td>
+          <table class="table" >
+            <tr> <th>Ingredient</th>
+              <th>Quantity</th>
+              <th>Measurement</th></tr>
+            <tr ng-repeat="ing in arrayOfIng">
+             
+
+              <td> {{ing.Name}}</td>
+              <td>{{ ing.Quantity}} </td>
+              <td>{{ ing.Measurement}} </td>
             </tr>
           </table>
         </div>

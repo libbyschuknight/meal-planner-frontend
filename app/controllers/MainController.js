@@ -17,13 +17,12 @@ app.controller("MainController",
       });
     });
 
-
-
       $scope.getShoppingList = function() {
+        $scope.arrayOfIng = "test";
       var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
       $http({
         method: 'GET',
-        url: 'http://roameals.azurewebsites.net/api/MealPlans',
+        url: 'http://roameals.azurewebsites.net/api/MealPlans/ShoppingList',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': authoriz
@@ -31,12 +30,20 @@ app.controller("MainController",
       })
       .success(function(data){
         console.log("SHOPPING LIST SUCCESS");
+
+
         console.log(data);
-        })
+
+        $scope.arrayOfIng = data;
+
+;        })
       .error(function(data){
         console.log("error: ", data);
       })
-  }
+  }()
+
+$scope.arrayOfIng=" ";
+
   var logindisplay=function(event, dataforme)
   {
     // console.log("y is this not working",dataforme)

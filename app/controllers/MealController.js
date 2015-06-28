@@ -5,7 +5,10 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     console.log($scope.detail);
   });
 
-
+      if($window.sessionStorage.length==0)
+      {
+                    $window.location.href = '#Login';
+      }
 
  $scope.AddToMealPlan = function() {
 
@@ -46,7 +49,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       })
       .success(function(data){
         $scope.showMealPlan = data;
-        console.log($scope.showMealPlan);
+        // console.log($scope.showMealPlan);
         })
       .error(function(data){
         console.log("error: ", data);
@@ -58,6 +61,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
 
   $scope.addAMeal = function() {
       var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
+
       var data = {
         Name : $scope.mealName,
         Description : $scope.description,

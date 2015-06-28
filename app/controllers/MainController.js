@@ -36,11 +36,14 @@ app.controller("MainController",
 
         $scope.arrayOfIng = data;
 
-        })
+;        })
       .error(function(data){
         console.log("error: ", data);
       })
-  }
+  }()
+
+$scope.arrayOfIng=" ";
+
   var logindisplay=function(event, dataforme)
   {
     console.log("y is this not working",dataforme)

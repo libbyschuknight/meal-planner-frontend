@@ -36,17 +36,26 @@
         <div class="col-md-6">
             <h3>List of Ingredients:</h3>
               <ul class="list-group">
-                  <li class="list-group-item" ng-repeat="ingredient in detail.Ingredients">{{ ingredient.Name }}</li>
-                  <div class="dropdown" ng-controller="MainController">
-                      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      Select Day
-                      <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
-                        <li><a href="#WeekPlanner"  ng-click="AddToMealPlan()">Add</a></li>
-                      </ul>
-                  </div>
-              </ul>
+                <li class="list-group-item" ng-repeat="ingredient in detail.Ingredients">{{ ingredient.Name }}</li>
+
+                <div class="dropdown" ng-controller="MainController">
+                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  Select Day
+                  <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
+
+                   <!--  <li><a href="#WeekPlanner"  ng-click="AddToMealPlan()">Add</a></li> -->
+                    <li><a href="#index" ng-click="AddToMealPlan(0)">Monday</a></li>
+                    <li><a href="#index" ng-click="AddToMealPlan(1)">Tuesday</a></li>
+                    <li><a href="#index" ng-click="AddToMealPlan(2)">Wednesday</a></li>
+                    <li><a href="#index" ng-click="AddToMealPlan(3)">Thursday</a></li>
+                    <li><a href="#index" ng-click="AddToMealPlan(4)">Friday</a></li>
+                    <li><a href="#index" ng-click="AddToMealPlan(5)">Saturday</a></li>
+                    <li><a href="#index" ng-click="AddToMealPlan(6)">Sunday</a></li>
+                  </ul>
+              </div>
+            </ul>
         </div>
             
       </div> 

@@ -11,7 +11,7 @@
 
 
 
-var UserInfo=function($http,$window)
+var UserInfo = function($http,$window)
 {
 
   var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');

@@ -1,10 +1,10 @@
 app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$window', function($scope, $http, meals, $routeParams, $window) {
+
   meals.success(function(data) {
     $scope.detail = data[$routeParams.id];
     console.log($scope.detail);
   });
 
- 
       if($window.sessionStorage.length==0)
       {
                     $window.location.href = '#Login';
@@ -19,7 +19,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     console.log("ttttttttttttttttttttttttttttttttttttt");
     console.log(authoriz)
 
-$http({
+  $http({
       url: "http://roameals.azurewebsites.net/api/MealPlans/AddTo",
       method: "POST",
       data: meal,
@@ -37,7 +37,7 @@ $http({
   }
 
 
-$scope.getMealPlan = function() {
+  $scope.getMealPlan = function() {
       var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
       $http({
         method: 'GET',
@@ -48,17 +48,16 @@ $scope.getMealPlan = function() {
         }
       })
       .success(function(data){
-        console.log("GETTING MEAL PLAN");
-        $scope.mealPlan ="ffffff"
-        // data;
-        console.log(mealPlan);
-    
-
+        $scope.showMealPlan = data;
+        // console.log($scope.showMealPlan);
         })
       .error(function(data){
         console.log("error: ", data);
       })
-  }
+  }()
+
+  $scope.showMealPlan = "";
+
 
 var IngredientList = [];
   var localName = $scope.ingredientName;
@@ -87,6 +86,7 @@ $scope.newIngred = function() {
 
   $scope.addAMeal = function() {
       var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
+
        var ingredient =  {
                             Name : localName,
                             Quantity : localQuantity,
@@ -103,6 +103,8 @@ $scope.newIngred = function() {
 
         console.log(IngredientList);
       
+
+
       var mealData = JSON.stringify(data);
       $http({
         method: 'POST',
@@ -123,7 +125,6 @@ $scope.newIngred = function() {
         console.log("error: ", data);
       })
   }
-
 }]);
 
 

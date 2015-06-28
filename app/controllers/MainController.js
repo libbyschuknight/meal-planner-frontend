@@ -17,8 +17,8 @@ app.controller("MainController",
       });
 
  	$scope.searchMeals = function() {
-  		console.log($scope.search); 
-  		console.log($scope.mealsInfo); 
+  		console.log($scope.search);
+  		console.log($scope.mealsInfo);
 
   	}()
 
@@ -38,7 +38,8 @@ app.controller("MainController",
       })
       .success(function(data){
 
-        $scope.arrayOfIng = data;        
+        $scope.arrayOfIng = data;
+        console.log($scope.arrayOfIng);
     	})
 
       .error(function(data){
@@ -46,7 +47,7 @@ app.controller("MainController",
       })
   }()
 
- 
+
 $scope.arrayOfIng=" ";
 
   var logindisplay=function(event, dataforme)
@@ -61,6 +62,10 @@ $scope.arrayOfIng=" ";
   $rootScope.$on("logged-in", logindisplay);
   $rootScope.$on("logged-out", logoutdisplay);
 
+
+  // $scope.hideRow = function() {
+
+  // }
 
 
 }]);

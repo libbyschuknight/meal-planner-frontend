@@ -10,10 +10,18 @@
           <th>Measurement</th>
         </tr>
 
-        <tr ng-repeat="ing in arrayOfIng">
-          <td> {{ing.Name}}</td>
+        <tr class="this-row" ng-repeat="ing in arrayOfIng" ng-style="myStyle">
+          <td > {{ing.Name}}</td>
           <td>{{ ing.Quantity}} </td>
           <td>{{ ing.Measurement}} </td>
+          <td>
+            <div class="checkbox" ng-click="myStyle={color:'gray'}">
+              <label>
+                <input type="checkbox">Already have
+              </label>
+            </div>
+
+          </td>
         </tr>
       </table>
     </div>

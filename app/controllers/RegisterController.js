@@ -6,8 +6,7 @@ console.log("eferer")
         var data = {
             Email: $scope.text,
             Password: $scope.pswd,
-            ConfirmPassword: $scope.conpswd,
-            Name: $scope.usersname
+            ConfirmPassword: $scope.conpswd
         };
         var postdata = JSON.stringify(data);
 

@@ -59,17 +59,52 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
   $scope.showMealPlan = "";
 
 
+var IngredientList = [];
+  var localName = $scope.ingredientName;
+    var localQuantity =  $scope.quantity;
+    var localMeasurement = $scope.measurement; 
+
+$scope.newIngred = function() {
+
+  var ingredient = {
+                        Name : $scope.ingredientName,
+                        Quantity : $scope.quantity,
+                        Measurement : $scope.measurement
+                    
+                   }
+    IngredientList.push(ingredient);
+
+  
+    $scope.ingredientName = "";
+    $scope.quantity = "";
+    $scope.measurement = "";
+    console.log(IngredientList);
+
+}
+
+
+
   $scope.addAMeal = function() {
       var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
 
-      var data = {
-        Name : $scope.mealName,
-        Description : $scope.description,
-        Ingredients : [{Name : $scope.ingredientName,
-                        Quantity : $scope.quantity,
-                        Measurement : $scope.measurement}],
-                        ImageUrl : $scope.imageurl
-      }
+       var ingredient =  {
+                            Name : localName,
+                            Quantity : localQuantity,
+                            Measurement : localMeasurement
+                         }
+
+        IngredientList.push(ingredient);               
+        var data = 
+              {
+                Name : $scope.mealName,
+                Description : $scope.description,
+                Ingredients : IngredientList
+              }
+
+        console.log(IngredientList);
+      
+
+
       var mealData = JSON.stringify(data);
       $http({
         method: 'POST',
@@ -83,6 +118,8 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       .success(function(data){
         console.log("ADDING A MEAL");
         console.log(data);
+        IngredientList.length = 0;
+        location.reload();
         })
       .error(function(data){
         console.log("error: ", data);

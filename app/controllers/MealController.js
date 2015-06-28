@@ -45,10 +45,8 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
         }
       })
       .success(function(data){
-        console.log("GETTING MEAL PLAN");
-        $scope.mealPlan = data;
-        console.log("meal plan: ", $scope.mealPlan);
         $scope.showMealPlan = data;
+        console.log($scope.showMealPlan);
         })
       .error(function(data){
         console.log("error: ", data);

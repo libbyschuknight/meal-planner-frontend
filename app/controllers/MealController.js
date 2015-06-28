@@ -60,6 +60,7 @@ $scope.getMealPlan = function() {
         Ingredients : [{Name : $scope.ingredientName,
                         Quantity : $scope.quantity,
                         Measurement : $scope.measurement}],
+                        ImageUrl : $scope.imageurl,
         User : { Email : ""}
       }
       var mealData = JSON.stringify(data);

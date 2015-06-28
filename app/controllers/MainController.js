@@ -17,8 +17,6 @@ app.controller("MainController",
       });
     });
 
-
-
       $scope.getShoppingList = function() {
       var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
       $http({

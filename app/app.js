@@ -30,7 +30,7 @@ app.config(['$routeProvider', function($routeProvider) {
     templateUrl: "views/Login.html"
   })
    .when("/WeekPlanner", {
-    controller: "MainController",
+    controller: "MealController",
     templateUrl: "views/WeekPlanner.html"
   })
    .when("/ShoppingList", {

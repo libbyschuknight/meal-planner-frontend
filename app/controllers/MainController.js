@@ -1,4 +1,4 @@
-var app = angular.module('MealsApp');
+// var app = angular.module('MealsApp'); - this is in app.js, don't need here - LIBBY
 app.controller("MainController",
   ["$scope", "$http", "meals", "userAuthenticationService", "$window","$rootScope", function($scope, $http, meals, userAuthenticationService, $window,$rootScope) {
     meals.success(function(data) {
@@ -39,7 +39,7 @@ app.controller("MainController",
   }
   var logindisplay=function(event, dataforme)
   {
-    console.log("y is this not working",dataforme)
+    // console.log("y is this not working",dataforme)
     $scope.UserName=dataforme
   }
    var logoutdisplay=function(event, dataforme )

@@ -1,8 +1,11 @@
 app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$window', function($scope, $http, meals, $routeParams, $window) {
+
   meals.success(function(data) {
     $scope.detail = data[$routeParams.id];
     console.log($scope.detail);
   });
+
+
 
  $scope.AddToMealPlan = function() {
 
@@ -13,7 +16,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     console.log("ttttttttttttttttttttttttttttttttttttt");
     console.log(authoriz)
 
-$http({
+  $http({
       url: "http://roameals.azurewebsites.net/api/MealPlans/AddTo",
       method: "POST",
       data: meal,
@@ -31,7 +34,7 @@ $http({
   }
 
 
-$scope.getMealPlan = function() {
+  $scope.getMealPlan = function() {
       var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
       $http({
         method: 'GET',
@@ -43,14 +46,17 @@ $scope.getMealPlan = function() {
       })
       .success(function(data){
         console.log("GETTING MEAL PLAN");
-        mealPlan = data;
-        console.log(mealPlan);
-
+        $scope.mealPlan = data;
+        console.log("meal plan: ", $scope.mealPlan);
+        $scope.showMealPlan = data;
         })
       .error(function(data){
         console.log("error: ", data);
       })
-  }
+  }()
+
+  $scope.showMealPlan = "";
+
 
   $scope.addAMeal = function() {
       var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
@@ -80,7 +86,6 @@ $scope.getMealPlan = function() {
         console.log("error: ", data);
       })
   }
-
 }]);
 
 

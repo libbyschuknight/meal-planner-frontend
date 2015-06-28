@@ -130,16 +130,22 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
   };
 
   $scope.deleteMeal = function (index) {
-     var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
-    alert("done" + index);
+     var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');    
      $http({
       method: 'POST',
-      url: 'http://roameals.azurewebsites.net/api/MealPlans/DeleteFromMealPlan',
+      url: 'http://roameals.azurewebsites.net/api/MealPlans/DeleteFromMealPlan?mealindex='+index,
       data: index,
       headers: {
         'Content-Type': 'application/json',
         'Authorization': authoriz
-      }});
+      }}).success(function(data)
+      {
+         console.log("deleted successfully ");
+          location.reload();
+      }).error(function(data)
+      {
+         console.log("error deleting ");
+      });
   };
 }]);
 

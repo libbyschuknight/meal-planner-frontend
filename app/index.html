@@ -52,15 +52,47 @@
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <!--   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li class="active" ng-controller="MealController"><a href="#WeekPlanner" ng-click="getMealPlan()">Weekly Plan<span class="sr-only">(current)</span></a></li>
             <li class="active" ng-controller="MealController"><a href="#addAMeal">Add A Meal<span class="sr-only">(current)</span></a></li>
             <li class="active"><a href="#ShoppingList">Shopping List<span class="sr-only">(current)</span></a></li>
+          </ul> -->
+
+
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="#">About Us<span class="sr-only">(current)</span></a></li>
+                  <li><a href="#">View All Meals</a></li>
+                  <li class="dropdown" ng-controller="MainController">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome {{ UserName }}<span class="caret"></span></a>
+                   <!-- <li ng-controller="MainController" class="Username" style="margin-top: 15px;margin-right:15px;color : white;"> Welcome {{ UserName }} </li> -->
+          <ul class="dropdown-menu">
+            <!-- <li><a href="#">Your Shopping List</a></li> -->
+            <li><a href="#ShoppingList">Your Shopping List<span class="sr-only">(current)</span></a></li>
+            <!-- <li><a href="#">Your Weekly Plan</a></li> -->
+            <li ng-controller="MealController"><a href="#WeekPlanner" ng-click="getMealPlan()">Weekly Plan<span class="sr-only">(current)</span></a></li>
+            <li role="separator" class="divider"></li>
+            <li ng-controller="MealController"><a href="#addAMeal">Create Your Own Meal<span class="sr-only">(current)</span></a></li>
+            <!-- <li><a href="#">Create Your Own Meal</a></li> -->
+
+
+
           </ul>
+        </li>
+      </ul>
+
+
+
+
+
+
+
+
 
           <ul class="nav navbar-nav navbar-right">
-             <li ng-controller="MainController" class="Username" style="margin-top: 15px;margin-right:15px;color : white;"> Welcome {{ UserName }} </li>
+<!--              <li ng-controller="MainController" class="Username" style="margin-top: 15px;margin-right:15px;color : white;"> Welcome {{ UserName }} </li> -->
             <li><a href="#Register">Sign Up</a></li>
 
             <li><a href="#Login">Sign In</a></li>

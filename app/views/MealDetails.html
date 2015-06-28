@@ -1,27 +1,40 @@
 <div class="main">
-
-    <div id="section" class="container" ng-controller="MealController">
-      <h1> {{ detail.Name }} </h1>
-
-      <hr>
+  <div id="section" class="container" ng-controller="MealController">
+            <div id="smallplan">
+              <table>
+              <tr>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Sunday</th>
+              </tr>
+              <tr>
+                <td ng-repeat="meal in showMealPlan.Meals"> 
+                {{meal.Name}} 
+                </br>
+                <a href="#WeekPlanner" value="delete" ng-click="deleteMeal($index)" style="color:red;text-decoration:underline">delete</a>
+                </td>
+              </tr>
+              </table>
+            </div>
+      <hr>      
+      <h1 id="foodname"> {{ detail.Name }} </h1>     
       <div class = "row">
-        <div class="col-md-12">
+        <div id="detailspic" class="col-md-12">
           <img ng-src='{{ detail.ImageUrl }}'>
         </div>
-            </div>
 
-
-
-            <div class="row">
-            <div class="col-md-6">
-              <h3>How to Cook:</h3>
-
-              <p>{{ detail.Description }}</p>
-
-            </div>
-            <div class="col-md-6" >
-              <h3>List of Ingredients:</h3>
-
+      </div>
+        <div class="row">
+        <div class="col-md-6">
+                <h3>How to Cook:</h3>
+                <p>{{ detail.Description }}</p>
+        </div>
+        <div class="col-md-6">
+            <h3>List of Ingredients:</h3>
               <ul class="list-group">
                 <li class="list-group-item" ng-repeat="ingredient in detail.Ingredients">{{ ingredient.Name }}</li>
 
@@ -43,9 +56,10 @@
                   </ul>
               </div>
             </ul>
-
         </div>
-
+            
+      </div> 
   </div>
+</div>
 
 

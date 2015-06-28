@@ -21,15 +21,16 @@
           <th>Sunday</th>
         </tr>
 
-        <tr>
-          <td ng-repeat="meal in showMealPlan.Meals"> 
+          <tr>
+            <td ng-repeat="meal in showMealPlan.Meals"> 
             {{meal.Name}} 
             </br>
-            <a href="#WeekPlanner" value="delete" ng-click="deleteMeal($index)" style="color:red;text-decoration:underline">delete</a></td>
-        </tr>
-      </table>
+            <a href="#WeekPlanner" value="delete" ng-click="deleteMeal($index)" style="color:red;text-decoration:underline">delete</a>
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
-  </div>
 
 
 

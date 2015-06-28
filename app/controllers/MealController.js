@@ -54,9 +54,19 @@ $scope.getMealPlan = function() {
 
   $scope.addAMeal = function() {
       var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
+      var data = {
+        Name : $scope.mealName,
+        Description : $scope.description,
+        Ingredients : [{Name : $scope.ingredientName,
+                        Quantity : $scope.quantity,
+                        Measurement : $scope.measurement}],
+                        ImageUrl : $scope.imageurl
+      }
+      var mealData = JSON.stringify(data);
       $http({
         method: 'POST',
         url: 'http://roameals.azurewebsites.net/api/Meals',
+        data: mealData,
         headers: {
           'Content-Type': 'application/json',
           'Authorization': authoriz

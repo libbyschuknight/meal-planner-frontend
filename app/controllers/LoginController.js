@@ -4,6 +4,7 @@ app.controller('LoginController', function ($scope, $http, $window,$rootScope) {
 // angular.module('MealsApp', []).controller('LoginController', function ($scope, $http, $window) {
     $scope.login = function () {
 
+//http://roameals.azurewebsites.net
 
         var data = {
             grant_type: 'password',

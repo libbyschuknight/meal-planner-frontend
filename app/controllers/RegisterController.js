@@ -39,7 +39,7 @@ console.log("eferer")
     //      var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
     //      $http({
     //         method: 'GET',
-    //         url: 'http://roameals.azurewebsites.net/api/Account/UserInfo',
+    //         url: 'http://localhost:8080/api/Account/UserInfo',
     //          headers: { 'Content-Type': 'application/json',
     //                    'Authorization': authoriz }
     //      }).success(function(data)

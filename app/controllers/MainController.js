@@ -3,7 +3,7 @@ app.controller("MainController",
   ["$scope", "$http", "meals", "userAuthenticationService", "$window","$rootScope", function($scope, $http, meals, userAuthenticationService, $window,$rootScope) {
     meals.success(function(data) {
       $scope.mealsInfo = data;
-      console.log("mealinfo data:",$scope.mealsInfo);
+
 
       var userResponse = userAuthenticationService.GetUserName();
       userResponse.success(function(data)
@@ -15,6 +15,14 @@ app.controller("MainController",
 
          //  $window.location.href = '#Login';
       });
+
+ 	$scope.searchMeals = function() {
+  		console.log($scope.search); 
+  		console.log($scope.mealsInfo); 
+
+  	}()
+
+
     });
 
       $scope.getShoppingList = function() {
@@ -29,19 +37,16 @@ app.controller("MainController",
         }
       })
       .success(function(data){
-        // console.log("SHOPPING LIST SUCCESS");
 
+        $scope.arrayOfIng = data;        
+    	})
 
-        // console.log(data);
-
-        $scope.arrayOfIng = data;
-
-;        })
       .error(function(data){
         console.log("error: ", data);
       })
   }()
 
+ 
 $scope.arrayOfIng=" ";
 
   var logindisplay=function(event, dataforme)
@@ -54,6 +59,9 @@ $scope.arrayOfIng=" ";
     $scope.UserName=" ";
   }
   $rootScope.$on("logged-in", logindisplay);
-    $rootScope.$on("logged-out", logoutdisplay);
+  $rootScope.$on("logged-out", logoutdisplay);
+
+
+
 }]);
 

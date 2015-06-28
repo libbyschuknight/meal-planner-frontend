@@ -1,8 +1,10 @@
 
 app.controller('LogoutController', function ($scope, $http, $window,$rootScope) {
-     var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
+
      $scope.logout=function()
      {
+        var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
+     
         $http({
             method: 'POST',
             url: 'http://roameals.azurewebsites.net/api/Account/Logout',

@@ -4,6 +4,12 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     console.log($scope.detail);
   });
 
+ 
+      if($window.sessionStorage.length==0)
+      {
+                    $window.location.href = '#Login';
+      }
+
  $scope.AddToMealPlan = function() {
 
   	var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
@@ -54,6 +60,7 @@ $scope.getMealPlan = function() {
 
   $scope.addAMeal = function() {
       var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
+     
       var data = {
         Name : $scope.mealName,
         Description : $scope.description,

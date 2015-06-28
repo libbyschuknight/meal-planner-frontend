@@ -1,13 +1,13 @@
 <div id="section" class="container" ng-controller="MainController">
       <h1>Shopping List</h1>
-      <hr>
+      <hr>{{arrayOfIng}}
 
       <div class = "row">
         <div class="col-md-8">
           <table class="table" ng-repeat="ingredient in detail.Ingredients">
             <tr>
-              <td>{{ ingredient.Quantity }} </td>
-              <td>{{ detail }} </td>
+              <td ng-model="arrayOfIng" ng-repeat="ing in arrayOfIng"> {{ing}}</td>
+              <td>hi </td>
               <td></td>
             </tr>
             <tr>

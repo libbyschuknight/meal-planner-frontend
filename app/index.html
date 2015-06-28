@@ -54,140 +54,64 @@
 </head>
 
 <body ng-app="MealsApp">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#index">Roa Meals</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li ng-controller="MealController">
-                        <a href="#WeekPlanner" ng-click="getMealPlan()">Weekly Plan<span class="sr-only">(current)</span></a>
-                        </li>
-                    <li ng-controller="MealController">
-                        <a href="#addAMeal">Add A Meal<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li>
-                        <a href="#ShoppingList">Shopping List<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li ng-controller="MainController" class="Username" style="margin-top: 15px;margin-right:15px;color : white;">
-                        Welcome {{ UserName }}
-                    </li>
-                    <li>
-                        <a href="#Register">Sign Up</a>
-                    </li>
-                    <li>
-                        <a href="#Login">Sign In</a>
-                    </li>
-                    <li ng-controller="LogoutController" ng-click="logout()">
-                      <a href="#Logout">Sign Out</a>
-                    </li>
-                    <li>
-                      <form class="navbar-form navbar-right" role="search">
-                        <!-- <div class="form-group"> -->
-                          <input type="text" class="form-control" ng-model="search" placeholder="Search Meals">
-                          <button type="search" class="btn btn-default" ng-click="searchMeals()"> <a href="#SearchedMeals">Search</a></button>
-                        <!-- </div> -->
-                      </form>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <div ng-view></div>
-
-
-    <!-- Page Content -->
     <div class="container">
 
-        <!-- Jumbotron Header -->
-        <header class="jumbotron hero-spacer">
-            <h1>A Warm Welcome!</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-            <p><a class="btn btn-primary btn-large">Call to action!</a>
-            </p>
-        </header>
-
-        <hr>
-
-        <!-- Title -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h3>Latest Features</h3>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Page Features -->
-        <div class="row text-center">
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#index">Roa Meals</a>
                 </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li ng-controller="MealController">
+                            <a href="#WeekPlanner" ng-click="getMealPlan()">Weekly Plan<span class="sr-only">(current)</span></a>
+                            </li>
+                        <li ng-controller="MealController">
+                            <a href="#addAMeal">Add A Meal<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li>
+                            <a href="#ShoppingList">Shopping List<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li ng-controller="MainController" class="Username" style="margin-top: 15px;margin-right:15px;color : white;">
+                            Welcome {{ UserName }}
+                        </li>
+                        <li>
+                            <a href="#Register">Sign Up</a>
+                        </li>
+                        <li>
+                            <a href="#Login">Sign In</a>
+                        </li>
+                        <li ng-controller="LogoutController" ng-click="logout()">
+                          <a href="#Logout">Sign Out</a>
+                        </li>
+                        <li>
+                          <form class="navbar-form navbar-right" role="search">
+                            <!-- <div class="form-group"> -->
+                              <input type="text" class="form-control" ng-model="search" placeholder="Search Meals">
+                              <button type="search" class="btn btn-default" ng-click="searchMeals()"> <a href="#SearchedMeals">Search</a></button>
+                            <!-- </div> -->
+                          </form>
+                        </li>
+                    </ul>
                 </div>
+                <!-- /.navbar-collapse -->
             </div>
+            <!-- /.container -->
+        </nav>
 
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <div ng-view></div>
 
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
 
-        </div>
-        <!-- /.row -->
+
 
         <hr>
 

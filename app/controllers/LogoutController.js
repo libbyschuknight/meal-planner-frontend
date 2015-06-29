@@ -20,6 +20,7 @@ app.controller('LogoutController', function ($scope, $http, $window,$rootScope) 
             //sup.style.display = 'block';
             localStorage.loggedin = "block";
 
+
                 
             // var sin = document.getElementById("signin");
             // sin.style.display = 'block';
@@ -29,7 +30,13 @@ app.controller('LogoutController', function ($scope, $http, $window,$rootScope) 
             // sout.style.display = 'none';
             localStorage.loggedout = "none";
             // console.log("Token", data.access_token);
-            
+        var sup = document.getElementById("signup");
+        sup.style.display = localStorage.loggedin;
+        var sin = document.getElementById("signin");
+        sin.style.display = localStorage.loggedin;
+        var sout = document.getElementById("signout");
+        sout.style.display = localStorage.loggedout;
+
           
          $window.location.href = '#Login';
          //'Content-Type': 'application/x-www-form-urlencoded'

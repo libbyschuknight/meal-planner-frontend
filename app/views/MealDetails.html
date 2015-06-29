@@ -61,7 +61,10 @@
           <div class="col-md-1" ng-repeat="meal in showMealPlan.Meals">
             {{meal.Name}}
             </br>
-            <a href="#WeekPlanner" value="delete" ng-click="deleteMeal($index)">delete</a>
+
+            <button type="button" class="btn btn-default btn-xs dayItem" ng-controller="MainController">
+              <a href="#WeekPlanner" value="delete" ng-click="deleteMeal($index)">delete</a>
+            </button>
           </div>
         </div>
       </div>

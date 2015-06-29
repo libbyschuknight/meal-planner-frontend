@@ -32,12 +32,22 @@ console.log("eferer")
             console.log("sucessfully logedIn.......");
             console.log("Token", data.access_token);
                 console.log(data.Name)
-                var userResponse = userAuthenticationService.GetUserName();
+
+                var sup = document.getElementById("signup");
+                sup.style.display = 'none';
+                var sin = document.getElementById("signin");
+                sin.style.display = 'none';
+                var out = document.getElementById("signout");
+                out.style.display = 'block';
+
+            var userResponse = userAuthenticationService.GetUserName();
               userResponse.success(function(data)
               {
                 console.log("nameee", data.Name)
                 $scope.UserName = data.Name;
                 $rootScope.$emit("logged-in", data.Name)
+                
+               
               })
 
             $window.location.href = '#Index';

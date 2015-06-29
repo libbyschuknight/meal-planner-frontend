@@ -14,6 +14,12 @@ app.controller('LogoutController', function ($scope, $http, $window,$rootScope) 
              $rootScope.$emit("logged-out", "")
             $window.sessionStorage.removeItem('tokenKey', "");
             console.log(" Logged out sucessfully.......");
+            var sup = document.getElementById("signup");
+                sup.style.display = 'block';
+            var sin = document.getElementById("signin");
+                sin.style.display = 'block';
+            var out = document.getElementById("signout");
+            out.style.display = 'none';
             // console.log("Token", data.access_token);
             
           

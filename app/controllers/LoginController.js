@@ -35,6 +35,12 @@ console.log("This is Q", q)
                 console.log("nameee", data.Name)
                 $scope.UserName = data.Name;
                 $rootScope.$emit("logged-in", data.Name)
+                var sup = document.getElementById("signup");
+                sup.style.display = 'none';
+                var sin = document.getElementById("signin");
+                sin.style.display = 'none';
+                var out = document.getElementById("signout");
+                out.style.display = 'block';
               })
             
            

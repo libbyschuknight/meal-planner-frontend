@@ -1,20 +1,9 @@
 
-<<<<<<< HEAD
-  <!-- Jumbotron Header -->
-  <header class="jumbotron hero-spacer">
-    <h1>Welcome to Roa Meals</h1>
-    <p>We hope you have a pleasent experience.</p>
-  </header>
-=======
-
-
-
 <!-- Jumbotron Header -->
 <header class="jumbotron hero-spacer">
   <h1>Welcome to Roa Meals</h1>
   <p>We hope you have a pleasent experience.</p>
 </header>
->>>>>>> master
 
 <!-- Title -->
 <div class="row">
@@ -26,17 +15,11 @@
 
 <!-- hero-feature -->
   <div class="row text-center" ng-controller="MainController">
-<<<<<<< HEAD
-      <div class="col-md-3 col-sm-6" ng-repeat="meal in mealsInfo">
-          <div class="thumbnail">
-            <!-- class="img-responsive" -->
-            <a href="#MealDetails/{{$index}}"><img ng-src='{{ meal.ImageUrl }}' class="img-rounded meals"  alt="Meals"></a>
-=======
+
       <div class="col-md-3 col-sm-6 " ng-repeat="meal in mealsInfo">
           <div class="thumbnail imageBoxShadow mealBox">
             <!-- class="img-responsive" -->
             <a href="#MealDetails/{{$index}}"><img class="mealsImgs" ng-src='{{ meal.ImageUrl }}'></a>
->>>>>>> master
             <div class="caption">
                 <h4>{{ meal.Name }}</h4>
             </div>

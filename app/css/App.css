@@ -5,16 +5,11 @@
 
 
   /*border: 1px solid gray;*/
-}
-
-
-}
+}}
 .Username
 {
   color: white;
-
 }
-
 
 .navbar{
   background-color: #303030;
@@ -55,7 +50,6 @@ a {
   color: #000;
 }
 
-
 #section {
   margin-right: 300px;
   margin-left: 300px;
@@ -72,7 +66,6 @@ a {
   margin-bottom: 0px;
 
 }
-
 
 .col-md-4 img{
   height: 175px;
@@ -105,6 +98,23 @@ width:500px;
 
 
 /* ###########   meal details page ######################### */
+#smallplan th{
+  padding: 10px 50px 0px 50px;
+
+}
+#smallplan td{
+  padding: 0px 50px 0px 50px;
+  font-size: 12px;
+}
+
+#foodname {
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+#detailspic {
+  margin: 0 auto;
+}
 
 .col-md-12 img {
   height:250px;
@@ -112,12 +122,13 @@ width:500px;
   margin-left: 25%;
   margin-right: 0 auto;
 }
+
 h3{
   margin-top: 0px;
   color: #000;
 }
-h5{
 
+h5{
     text-align: center;
 }
 
@@ -125,7 +136,6 @@ h5{
   margin-left: 0 auto;
   margin-right: 0 auto;
 }
-
 
 .col-md-6 {
   /*border: 1px solid pink;*/
@@ -139,7 +149,6 @@ h5{
   width: 500px;
 }
 
-
 .list-group {
   box-shadow: none;
 /*overflow:hidden; overflow-y:scroll;*/
@@ -152,20 +161,7 @@ h5{
   padding: 5px;
 }
 
-
-/*footer {
-  color: white;
-
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-
-  min-height: 50px;
-  padding-top: 15px;
-}*/
-
 .footer{
-
   width:100%;
   height:50px;
   position:fixed;
@@ -208,18 +204,24 @@ h5{
 #heading{
 text-align: center;
 }
-#indgredientheading{text-align: center;margin-top: 15px;}
+
+#indgredientheading{
+  text-align: center;
+  margin-top: 15px;
+}
+
 #newmealname{
 margin-left: 25%;
 margin-right: 25%;
 text-align: center;
-
 }
+
 .form-inline{
   margin-top: 10px;
 width:600px;
 margin-left: 34%;
 }
+
 .btn {
 margin-top: 10px;
   margin-left: 45%

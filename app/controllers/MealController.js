@@ -9,8 +9,9 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     $window.location.href = '#Login';
   }
 
-  $scope.AddToMealPlan = function () {
+  $scope.AddToMealPlan = function (index) {
 
+    console.log(index)
     var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
     var meal = $scope.detail;
     var id = meal.Id;
@@ -20,7 +21,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     $http({
       url: "http://roameals.azurewebsites.net/api/MealPlans/AddTo",
       method: "POST",
-      data: meal,
+      data: meal, 
       headers: {
         'Content-Type': 'application/json',
         'Authorization': authoriz

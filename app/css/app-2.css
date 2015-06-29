@@ -10,13 +10,78 @@
   color: #fff;
 }
 
+
+/* ## for images on details page ## */
+.mealDetailsImg {
+  width: 50%;
+}
+
+/* ## for weekly plan layout ### */
+
+.dayofweek {
+  font-weight: bold;
+}
+
+.seven-cols {
+  text-align: center;
+}
+
+.col-md-1 {
+  margin-top: 15px;
+}
+
+.dayItem {
+  margin-top: 15px;
+}
+
+/* ## for images on home page ##  */
+/*.mealsImgs {
+  width: 75%;
+}
+
+.mealBox {
+  min-height: 300px;
+  height: 300px;
+}*/
+
 .col-md-3{
-	position: relative;
-	width: 300px;
-	height: 290px;
+  width: 292.5px;
+  height: 305px;
 }
 
 .thumbnail a>img {
   width: 500px;
   height: 175px;
+}
+
+/* ## all images expcet jumptron ## */
+.imageBoxShadow img {
+  box-shadow: 0 8px 6px -6px black;
+}
+
+
+/* ### 7 columns on meal details page for  Weekly Plan */
+
+@media (min-width: 768px) {
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1  {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1 {
+    width: 14.285714285714285714285714285714%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1 {
+    width: 14.285714285714285714285714285714%;
+  }
 }

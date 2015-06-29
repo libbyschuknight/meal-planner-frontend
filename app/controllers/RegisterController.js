@@ -1,5 +1,5 @@
 //var menuApp = angular.module('MealsApp');
-app.controller('RegisterController', function ($scope, $http,$window) {
+app.controller('RegisterController', function ($scope, $http,$window, $rootScope) {
 console.log("eferer")
     $scope.register = function () {
 
@@ -7,7 +7,7 @@ console.log("eferer")
             Email: $scope.text,
             Password: $scope.pswd,
             ConfirmPassword: $scope.conpswd,
-            Name: $scope.usersname
+
         };
         var postdata = JSON.stringify(data);
 
@@ -16,7 +16,28 @@ console.log("eferer")
         $http.post("http://roameals.azurewebsites.net/api/Account/Register", postdata)
         .success(function () {
             console.log("sucessfully Registered.......")
-              $window.location.href = '#Login';
+
+        var q = "grant_type=password&username=" + encodeURIComponent($scope.text) + "&password=" + encodeURIComponent($scope.pswd);
+        console.log("This is Q", q);
+
+        $http({
+            method: 'POST',
+            url: 'http://roameals.azurewebsites.net/Token',
+            data: q,
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded'}
+        }).success(function (data) {
+            $window.sessionStorage.setItem('tokenKey', data.access_token);
+            console.log("sucessfully logedIn.......");
+            console.log("Token", data.access_token);
+                console.log(data.userName)   
+                 $rootScope.$emit("logged-in", data.userName)       
+            $window.location.href = '#Index';
+        }).error(function (data) {
+            console.log("Error Logging in ..." + data);
+             $window.location.href = '#Login';
+             $scope.errormessage="Incorrect UserName or Password";
+        });
+  
         })
         .error(function (data) {
             console.log("Error Registering..." + data);
@@ -25,33 +46,4 @@ console.log("eferer")
     };
 
 
-
-
-
-
-
 });
-
-
-
-    // var DisplayLogin=function()
-    // {
-    //      var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
-    //      $http({
-    //         method: 'GET',
-    //         url: 'http://localhost:8080/api/Account/UserInfo',
-    //          headers: { 'Content-Type': 'application/json',
-    //                    'Authorization': authoriz }
-    //      }).success(function(data)
-    //      {
-    //          alert(data.Email);
-    //          console.log(data);
-    //      }).error(function (data) {
-    //          console.log("error getting user info");
-    //      });
-    // }
-
-
-
-
-

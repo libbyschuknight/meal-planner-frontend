@@ -9,3 +9,12 @@
   /*opacity: 0.8;*/
   color: #fff;
 }
+
+
+.mealDetailsImg {
+  width: 25%;
+}
+
+.imageBoxShadow img {
+  box-shadow: 0 8px 6px -6px black;
+}

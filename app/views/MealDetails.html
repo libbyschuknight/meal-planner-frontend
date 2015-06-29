@@ -6,44 +6,49 @@
   <h1> {{ detail.Name }} </h1>
   <hr>
 
-  <div class = "row">
-    <div class="col-md-12">
-      <img ng-src='{{ detail.ImageUrl }}'>
+  <div class="row">
+    <div class="col-md-12 imageBoxShadow">
+      <img class="img-responsive center-block mealDetailsImg" ng-src='{{ detail.ImageUrl }}'>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-8">
       <h3>How to Cook:</h3>
 
       <p>{{ detail.Description }}</p>
     </div>
 
-    <div class="col-md-6" >
+    <div class="col-md-4" >
       <h3>List of Ingredients:</h3>
 
       <ul class="list-group">
         <li class="list-group-item" ng-repeat="ingredient in detail.Ingredients">
           {{ ingredient.Name }}
         </li>
+      </ul>
 
       <div class="dropdown" ng-controller="MainController">
           <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Select Day
-          <span class="caret"></span>
+            Select Day
+            <span class="caret"></span>
           </button>
-          <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
 
-            <li><a href="#WeekPlanner"  ng-click="AddToMealPlan()">Add</a></li>
-         <!--    <li><a href="#index">Tuesday</a></li>
-            <li><a href="#index">Wednesday</a></li>
-            <li><a href="#index">Thursday</a></li>
-            <li><a href="#index">Friday</a></li>
-            <li><a href="#index">Saturday</a></li>
-            <li><a href="#index">Sunday</a></li> -->
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li>
+              <a href="#WeekPlanner"  ng-click="AddToMealPlan()">Add</a>
+            </li>
           </ul>
+      </div>
     </div>
+
+<!-- #### Use for placeholder for weekly plan if pop box that Matt and Sam are doing doesn't work
+    <div class="col-md-4" >
+      <h3>Place holder for weekly plan??</h3>
+    </div> -->
+  </div>
 </div>
+
 
 
 

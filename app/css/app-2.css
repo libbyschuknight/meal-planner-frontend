@@ -11,10 +11,19 @@
 }
 
 
+/* ## for images on details page ## */
 .mealDetailsImg {
   width: 50%;
 }
 
+
+/* ## for images on home page ##  */
+.mealsImgs {
+  width: 75%;
+}
+
+
+/* ## all images expcet jumptron ## */
 .imageBoxShadow img {
   box-shadow: 0 8px 6px -6px black;
 }

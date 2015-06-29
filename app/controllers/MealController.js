@@ -1,6 +1,6 @@
-app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$window', function ($scope, $http, meals, $routeParams, $window) {
+app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$window', function($scope, $http, meals, $routeParams, $window) {
 
-  meals.success(function (data) {
+  meals.success(function(data) {
     $scope.detail = data[$routeParams.id];
     console.log("hello", $scope.detail);
   });
@@ -16,12 +16,10 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     var meal = $scope.detail;
     var id = meal.Id;
 
-
-
     $http({
       url: "http://roameals.azurewebsites.net/api/MealPlans/AddTo",
       method: "POST",
-      data: meal, 
+      data: meal,
       headers: {
         'Content-Type': 'application/json',
         'Authorization': authoriz
@@ -57,13 +55,11 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
 
   $scope.showMealPlan = "";
 
-
   var IngredientList = [];
 
   var localName = $scope.ingredientName;
   var localQuantity = $scope.quantity;
   var localMeasurement = $scope.measurement;
-
 
   $scope.newIngred = function () {
 
@@ -72,19 +68,14 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       Quantity: $scope.quantity,
       Measurement: $scope.measurement
 
-
-
     }
     IngredientList.push(ingredient);
-
 
     $scope.ingredientName = "";
     $scope.quantity = "";
     $scope.measurement = "";
     console.log(IngredientList);
-
   }
-
 
 
   $scope.addAMeal = function () {
@@ -106,7 +97,6 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       };
 
     console.log(IngredientList);
-
 
 
     var mealData = JSON.stringify(data);
@@ -131,7 +121,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
   };
 
   $scope.deleteMeal = function (index) {
-     var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');    
+     var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
      $http({
       method: 'POST',
       url: 'http://roameals.azurewebsites.net/api/MealPlans/DeleteFromMealPlan?mealindex='+index,

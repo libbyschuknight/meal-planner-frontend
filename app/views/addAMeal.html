@@ -1,17 +1,15 @@
 
-
-
 <div id="content">
   <div id="heading"><h1>Create Meal</h1> <hr></div>
 
-      <form id="newmealname">
-          <p>Meal Name</p>
+      <form id="newmealname" class="form-group">
+          <label>Meal Name</label>
           <input type="text" class="form-control" name="NAME" ng-model="mealName">
 
-          <p>Cooking Instructions</p>
+          <label>Cooking Instructions</label>
           <textarea input type="text" class="form-control" rows="3" name="DESCRIPTION" ng-model="description"></textarea>
 
-          <p>Image</p>
+          <label>Image</label>
           <input type="text" class="form-control" name="IMAGE URL" ng-model="imageurl">
       </form>
 

@@ -31,7 +31,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       .error(function (data) {
       console.log("add meal error", data);
     })
-  }()
+  }
 
 
   $scope.getMealPlan = function () {

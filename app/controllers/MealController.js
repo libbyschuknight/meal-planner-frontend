@@ -67,10 +67,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       Name: $scope.ingredientName,
       Quantity: $scope.quantity,
       Measurement: $scope.measurement
-<<<<<<< HEAD
 
-=======
->>>>>>> master
     }
     IngredientList.push(ingredient);
 
@@ -80,10 +77,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     console.log(IngredientList);
   }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> master
   $scope.addAMeal = function () {
     var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
 

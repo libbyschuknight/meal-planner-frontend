@@ -18,10 +18,10 @@ console.log("eferer")
         $http.post("http://roameals.azurewebsites.net/api/Account/Register", postdata)
         .success(function () {
             console.log("sucessfully Registered.......")
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         var q = "grant_type=password&username=" + encodeURIComponent($scope.text) + "&password=" + encodeURIComponent($scope.pswd);
         console.log("This is Q", q);
-         
+
         $http({
             method: 'POST',
             url: 'http://roameals.azurewebsites.net/Token',
@@ -31,7 +31,7 @@ console.log("eferer")
             $window.sessionStorage.setItem('tokenKey', data.access_token);
             console.log("sucessfully logedIn.......");
             console.log("Token", data.access_token);
-                console.log(data.Name)   
+                console.log(data.Name)
                 var userResponse = userAuthenticationService.GetUserName();
               userResponse.success(function(data)
               {
@@ -39,14 +39,14 @@ console.log("eferer")
                 $scope.UserName = data.Name;
                 $rootScope.$emit("logged-in", data.Name)
               })
-                   
+
             $window.location.href = '#Index';
         }).error(function (data) {
             console.log("Error Logging in ..." + data);
              $window.location.href = '#Login';
              $scope.errormessage="Incorrect UserName or Password";
         });
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         })
         .error(function (data) {
             console.log("Error Registering..." + data);

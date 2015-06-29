@@ -12,6 +12,7 @@
         }
       })
       .success(function(data){
+        console.log("ttttttttttttttttttt", data)
         return data;
       })
       .error(function(data){

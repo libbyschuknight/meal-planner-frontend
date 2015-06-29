@@ -1,81 +1,52 @@
 
-app.controller('LogoutController', function ($scope, $http, $window) {
-    // alert("wjefjkwsegflkrehglirhtjoiyohtju");
+app.controller('LogoutController', function ($scope, $http, $window,$rootScope) {
 
-    // $scope.logout = function () {
-        // var data = {
-        //     grant_type: 'password',
-        //     username: $scope.username,
-        //     password: $scope.password,
-        // };
-
-        // var postdata = JSON.stringify(data)
-        // console.log(postdata)
-
-        // var q = "grant_type=password&username=" + encodeURIComponent($scope.username) + "&password=" + encodeURIComponent($scope.password);
-
- var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
+     $scope.logout=function()
+     {
+        var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
+     
         $http({
             method: 'POST',
             url: 'http://roameals.azurewebsites.net/api/Account/Logout',
             
             headers: {'Authorization': authoriz}
         }).success(function () {
-            $window.sessionStorage.setItem('tokenKey', "");
-            console.log("sucess.......");
+             $rootScope.$emit("logged-out", "")
+            $window.sessionStorage.removeItem('tokenKey', "");
+
+            console.log(" Logged out sucessfully.......");
+
+            //var sup = document.getElementById("signup");
+            //sup.style.display = 'block';
+            localStorage.loggedin = "block";
+
+
+                
+            // var sin = document.getElementById("signin");
+            // sin.style.display = 'block';
+            //localStorage.loggedin = sin.style.display;
+
+            // var sout = document.getElementById("signout");
+            // sout.style.display = 'none';
+            localStorage.loggedout = "none";
             // console.log("Token", data.access_token);
+        var sup = document.getElementById("signup");
+        sup.style.display = localStorage.loggedin;
+        var sin = document.getElementById("signin");
+        sin.style.display = localStorage.loggedin;
+        var sout = document.getElementById("signout");
+        sout.style.display = localStorage.loggedout;
+
+          
          $window.location.href = '#Login';
          //'Content-Type': 'application/x-www-form-urlencoded'
         }).error(function () {
-            console.log("Error..." );
-             $window.location.href = '#Login';
+
+            console.log("Error Logging Out..." );
+           
              //$scope.errormessage="Incorrect UserName or Password";
         });
-
-
-
-
-    // };
-    //  $scope.login = function () {
-
-    //     var data = {
-    //         grant_type: 'password',
-    //         username: $scope.username,
-    //         password: $scope.password,
-    //     };
-
-    //     var postdata = JSON.stringify(data)
-    //     console.log(postdata)
-
-    //     var q = "grant_type=password&username=" + encodeURIComponent($scope.username) + "&password=" + encodeURIComponent($scope.password);
-
-
-    //     $http({
-    //         method: 'POST',
-    //         url: 'http://roameals.azurewebsites.net/Token',
-    //         data: q,
-    //         headers: { 'Content-Type': 'application/x-www-form-urlencoded'}
-    //     }).success(function (data) {
-    //         $window.sessionStorage.setItem('tokenKey', data.access_token);
-    //         console.log("sucess.......");
-    //         console.log("Token", data.access_token);
-    //         $window.location.href = '#Index';
-    //     }).error(function (data) {
-    //         console.log("Error..." + data);
-    //          //$window.location.href = '#Login';
-    //          $scope.errormessage="Incorrect UserName or Password";
-    //     });
-
-
-
-
-    // };
-    // $scope.Register=function()
-    // {
-    //  $window.location.href = '#Register';
-    // };
-
-
+    }
 });
 
 

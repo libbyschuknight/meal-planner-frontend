@@ -10,6 +10,3 @@ app.factory('meals', ['$http', function($http) {
 }]);
 
 
-
-// http://roameals.azurewebsites.net/api/Meals
-// http://s3.amazonaws.com/codecademy-content/courses/ltp4/forecast-api/forecast.json

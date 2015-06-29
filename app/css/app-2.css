@@ -72,6 +72,20 @@
   box-shadow: 0 8px 6px -6px black;
 }
 
+
+
+/* ##### FORMS - sign up ########## */
+
+.signup, .login {
+  width: 50%;
+  padding-right: 100px;
+}
+
+
+
+/* ########## MEDIA QUERIS ######################################### */
+
+
 /* ## alignment for images on home page when mobile ## */
 @media(max-width:767px){
 	.col-sm-6{
@@ -81,7 +95,15 @@
   .col-lg-12 {
     text-align: center;
   }
+
+  .signup, .login {
+    width:100%;
+    padding-right: 0;
+  }
+
+
 }
+
 
 /* ### 7 columns on meal details page for  Weekly Plan */
 @media (min-width: 768px) {

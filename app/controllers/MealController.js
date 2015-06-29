@@ -19,7 +19,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
 
 
     $http({
-      url: "http://roameals.azurewebsites.net/api/MealPlans/AddTo/"+index,
+      url: "http://roameals.azurewebsites.net/api/MealPlans/AddTo",
       method: "POST",
       data: meal, 
       headers: {

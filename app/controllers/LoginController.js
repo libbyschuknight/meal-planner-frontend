@@ -16,7 +16,7 @@ app.controller('LoginController', function ($scope, $http, $window,$rootScope) {
         console.log(postdata)
 
         var q = "grant_type=password&username=" + encodeURIComponent($scope.username) + "&password=" + encodeURIComponent($scope.password);
-
+console.log("This is Q", q)
 
         $http({
             method: 'POST',

@@ -6,14 +6,17 @@
   <h1> {{ detail.Name }} </h1>
   <hr>
 
-  <div class="row">
-    <div class="col-md-12 imageBoxShadow">
-      <img class="img-responsive center-block mealDetailsImg" ng-src='{{ detail.ImageUrl }}'>
-    </div>
-  </div>
+<!--   <div class="row">
+
+  </div> -->
 
   <div class="row">
     <div class="col-md-8">
+
+      <div class=" imageBoxShadow">
+        <img class="img-responsive center-block mealDetailsImg" ng-src='{{ detail.ImageUrl }}'>
+      </div>
+
       <h3>How to Cook:</h3>
 
       <p>{{ detail.Description }}</p>

@@ -33,12 +33,19 @@ console.log("eferer")
             console.log("Token", data.access_token);
                 console.log(data.Name)
 
-                var sup = document.getElementById("signup");
-                sup.style.display = 'none';
-                var sin = document.getElementById("signin");
-                sin.style.display = 'none';
-                var out = document.getElementById("signout");
-                out.style.display = 'block';
+                // var sup = document.getElementById("signup");
+                // sup.style.display = 'none';
+                // //localStorage.loggedin = "none";
+                // sup.style.display = localStorage.loggedin;
+                // var sin = document.getElementById("signin");
+                // sin.style.display = 'none';
+                // var sout = document.getElementById("signout");
+                // sout.style.display = 'block';
+                // sout.style.display = localStorage.loggedout;
+
+                localStorage.loggedin = "none";
+                localStorage.loggedout = "block";
+
 
             var userResponse = userAuthenticationService.GetUserName();
               userResponse.success(function(data)

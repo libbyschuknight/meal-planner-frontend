@@ -16,12 +16,10 @@ app.controller("MainController",
          //  $window.location.href = '#Login';
       });
 
- 	$scope.searchMeals = function() {
-  		console.log($scope.search);
-  		console.log($scope.mealsInfo);
-
-  	}()
-
+   	$scope.searchMeals = function() {
+    		console.log("search meals", $scope.search);
+    		console.log("meals info", $scope.mealsInfo);
+    	}()
 
     });
 
@@ -39,7 +37,7 @@ app.controller("MainController",
       .success(function(data){
 
         $scope.arrayOfIng = data;
-        console.log($scope.arrayOfIng);
+        console.log("Array of ingredients", $scope.arrayOfIng);
     	})
 
       .error(function(data){
@@ -48,25 +46,17 @@ app.controller("MainController",
   }()
 
 
-$scope.arrayOfIng=" ";
-
-  var logindisplay=function(event, dataforme)
-  {
-    // console.log("y is this not working",dataforme)
-    $scope.UserName=dataforme
-  }
-   var logoutdisplay=function(event, dataforme )
-  {
-    $scope.UserName=" ";
-  }
-  $rootScope.$on("logged-in", logindisplay);
-  $rootScope.$on("logged-out", logoutdisplay);
-
-
-  // $scope.hideRow = function() {
-
-  // }
-
+  $scope.arrayOfIng=" ";
+    var logindisplay=function(event, dataforme)
+    {
+      $scope.UserName=dataforme
+    }
+     var logoutdisplay=function(event, dataforme )
+    {
+      $scope.UserName=" ";
+    }
+    $rootScope.$on("logged-in", logindisplay);
+    $rootScope.$on("logged-out", logoutdisplay);
 
 }]);
 

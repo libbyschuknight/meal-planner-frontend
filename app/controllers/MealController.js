@@ -55,13 +55,11 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
 
   $scope.showMealPlan = "";
 
-
   var IngredientList = [];
 
   var localName = $scope.ingredientName;
   var localQuantity = $scope.quantity;
   var localMeasurement = $scope.measurement;
-
 
   $scope.newIngred = function () {
 
@@ -69,6 +67,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       Name: $scope.ingredientName,
       Quantity: $scope.quantity,
       Measurement: $scope.measurement
+
     }
     IngredientList.push(ingredient);
 
@@ -76,8 +75,8 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     $scope.quantity = "";
     $scope.measurement = "";
     console.log(IngredientList);
-
   }
+
 
   $scope.addAMeal = function () {
     var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');

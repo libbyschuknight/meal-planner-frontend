@@ -1,5 +1,14 @@
 <div id="section" ng-controller="MealController">
-  <h1> {{ detail.Name }} </h1>
+  <div class="row">
+    <div class="col-md-8">
+      <h1> {{ detail.Name }} </h1>
+    </div>
+    <div class="col-md-4 ingredient-heading">
+      <h3>Ingredients:</h3>
+    </div>
+  </div>
+
+
   <hr>
 
   <div class="row">
@@ -13,8 +22,6 @@
     </div>
 
     <div class="col-md-4" >
-      <h3>List of Ingredients:</h3>
-
       <ul class="list-group">
         <li class="list-group-item" ng-repeat="ingredient in detail.Ingredients">
           {{ ingredient.Name }}
@@ -59,14 +66,20 @@
 
         <div class="row seven-cols">
           <div class="col-md-1" ng-repeat="meal in showMealPlan.Meals">
-            <!-- <a href="#MealDetails/{{$index}}"> -->
-              {{meal.Name}}
-            <!-- </a> -->
-            <p>
 
-            <button type="button" class="btn btn-default btn-xs dayItem" ng-controller="MainController">
-              <a href="#WeekPlanner" value="delete" ng-click="deleteMeal($index)">delete</a>
-            </button>
+            <div class="row weekly-row-height">
+              <a href="#MealDetails/{{$index}}">
+                {{meal.Name}}
+              </a>
+            </div>
+
+            <div class="row">
+              <button type="button" class="btn btn-default btn-xs dayItem" ng-controller="MainController">
+                <a href="#WeekPlanner" value="delete" ng-click="deleteMeal($index)">delete</a>
+              </button>
+           </div>
+
+
           </div>
         </div>
       </div>

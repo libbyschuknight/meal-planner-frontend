@@ -7,7 +7,9 @@ console.log("eferer")
             Email: $scope.text,
             Password: $scope.pswd,
             ConfirmPassword: $scope.conpswd,
+
             Name: $scope.name
+
         };
         var postdata = JSON.stringify(data);
 

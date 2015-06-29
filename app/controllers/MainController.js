@@ -45,7 +45,7 @@ app.controller("MainController",
       .error(function(data){
         console.log("error: ", data);
       })
-  }
+  }()
 
 
 $scope.arrayOfIng=" ";

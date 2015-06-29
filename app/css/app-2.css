@@ -16,6 +16,10 @@
   width: 50%;
 }
 
+.ingredient-heading h3 {
+  margin-top: 30px;
+}
+
 /* ## for weekly plan layout ### */
 
 .dayofweek {

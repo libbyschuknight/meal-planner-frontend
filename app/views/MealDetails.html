@@ -1,5 +1,14 @@
 <div id="section" ng-controller="MealController">
-  <h1> {{ detail.Name }} </h1>
+  <div class="row">
+    <div class="col-md-8">
+      <h1> {{ detail.Name }} </h1>
+    </div>
+    <div class="col-md-4 ingredient-heading">
+      <h3>Ingredients:</h3>
+    </div>
+  </div>
+
+
   <hr>
 
   <div class="row">
@@ -13,8 +22,6 @@
     </div>
 
     <div class="col-md-4" >
-      <h3>List of Ingredients:</h3>
-
       <ul class="list-group">
         <li class="list-group-item" ng-repeat="ingredient in detail.Ingredients">
           {{ ingredient.Name }}

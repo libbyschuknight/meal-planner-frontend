@@ -11,6 +11,7 @@
 }
 
 .col-md-3{
+	position: relative;
 	width: 300px;
 	height: 290px;
 }

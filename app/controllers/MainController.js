@@ -2,7 +2,7 @@
 
 app.controller("MainController",
   ["$scope", "$http", "meals", "userAuthenticationService", "$window","$rootScope", function($scope, $http, meals, userAuthenticationService, $window,$rootScope) {
-   angular.element(document).ready(function () { 
+   angular.element(document).ready(function () {
 
 if($window.sessionStorage.getItem('tokenKey') != null){
 
@@ -28,7 +28,7 @@ if($window.sessionStorage.getItem('tokenKey') != null){
       userResponse.success(function(data)
       {
         $scope.UserName = data.Name;
-        
+
         // var sup = document.getElementById("signup");
         // sup.style.display = localStorage.loggedin;
         // var sin = document.getElementById("signin");
@@ -88,7 +88,13 @@ if($window.sessionStorage.getItem('tokenKey') != null){
     }
     $rootScope.$on("logged-in", logindisplay);
     $rootScope.$on("logged-out", logoutdisplay);
-})
+  })
+
+
+  $scope.toggleCSS = function () {
+    window.print();
+  }
+
 }]);
 
 

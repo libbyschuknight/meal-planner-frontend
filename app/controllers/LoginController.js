@@ -25,6 +25,12 @@ console.log("This is Q", q)
             headers: { 'Content-Type': 'application/x-www-form-urlencoded'}
         }).success(function (data) {
             $window.sessionStorage.setItem('tokenKey', data.access_token);
+            console.log("sucessfully logedIn.......");
+            $scope.errormessage="";
+            console.log("Token", data.access_token);
+                console.log(data.userName)
+            $rootScope.$emit("logged-in", data.userName)
+
             // console.log("sucessfully logedIn.......");
             // console.log("Token", data.access_token);
             //     console.log(data.Name)
@@ -37,6 +43,7 @@ console.log("This is Q", q)
                 $rootScope.$emit("logged-in", data.Name)
               })
             
+
            
             $window.location.href = '#Index';
         }).error(function (data) {

@@ -1,17 +1,17 @@
 app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$window', function($scope, $http, meals, $routeParams, $window) {
 
   meals.success(function(data) {
+    console.log("meals success", data);
     $scope.detail = data[$routeParams.id];
-    console.log("hello", $scope.detail);
+    console.log("Scope detail data", $scope.detail);
   });
 
   if ($window.sessionStorage.length == 0) {
     $window.location.href = '#Login';
   }
 
-  $scope.AddToMealPlan = function (index) {
-
-    console.log(index)
+  $scope.AddToMealPlan = function () {
+    // console.log(index)
     var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
     var meal = $scope.detail;
     var id = meal.Id;
@@ -51,7 +51,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       .error(function (data) {
       console.log("error: ", data);
     })
-  } ()
+  }()
 
   $scope.showMealPlan = "";
 
@@ -67,7 +67,10 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       Name: $scope.ingredientName,
       Quantity: $scope.quantity,
       Measurement: $scope.measurement
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
     }
     IngredientList.push(ingredient);
 
@@ -77,7 +80,10 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     console.log(IngredientList);
   }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
   $scope.addAMeal = function () {
     var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
 

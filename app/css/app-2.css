@@ -61,6 +61,12 @@
 
 
 /* ### 7 columns on meal details page for  Weekly Plan */
+@media(max-width:767px){
+	.col-sm-6{
+		text-align: center;
+		margin: 0 auto;
+	}
+}
 
 @media (min-width: 768px) {
   .seven-cols .col-md-1,

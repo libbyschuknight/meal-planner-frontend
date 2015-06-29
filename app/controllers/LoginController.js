@@ -2,9 +2,10 @@
 
 app.controller('LoginController', function ($scope, $http, $window,$rootScope, userAuthenticationService) {
 // angular.module('MealsApp', []).controller('LoginController', function ($scope, $http, $window) {
+    
+    localStorage.loggedin = "block";
+     localStorage.loggedout = "none";
     $scope.login = function () {
-
-//http://roameals.azurewebsites.net
 
         var data = {
             grant_type: 'password',
@@ -41,6 +42,18 @@ console.log("This is Q", q)
                 console.log("nameee", data.Name)
                 $scope.UserName = data.Name;
                 $rootScope.$emit("logged-in", data.Name)
+                //var sup = document.getElementById("signup");
+                //sup.style.display = "none";
+                localStorage.loggedin = "none";
+                //sup.style.display = localStorage.loggedin;
+
+                //Session["signup"]= sin.style.display = "none";
+                //var sin = document.getElementById("signin");
+                //sin.style.display = 'none';
+                //var sout = document.getElementById("signout");
+                //sout.style.display = 'block';
+               localStorage.loggedout = "block";
+                //sout.style.display = localStorage.loggedout;
               })
             
 

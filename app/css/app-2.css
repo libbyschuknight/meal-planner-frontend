@@ -82,6 +82,15 @@
 }
 
 
+/* ### toogle for shopping list page #####*/
+
+.red {
+    color: red;
+    text-decoration:line-through;
+}
+
+
+
 
 /* ########## MEDIA QUERIS ######################################### */
 

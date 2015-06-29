@@ -9,3 +9,13 @@
   /*opacity: 0.8;*/
   color: #fff;
 }
+
+.col-md-3{
+	width: 292.5px;
+	height: 305px;
+}
+
+.thumbnail a>img {
+  width: 500px;
+  height: 175px;
+}

@@ -8,7 +8,7 @@ app.controller("MainController",
       var userResponse = userAuthenticationService.GetUserName();
       userResponse.success(function(data)
       {
-        $scope.UserName = data.Email;
+        $scope.UserName = data.Name;
       })
       .error(function(data){
         // have made this error message below an emptu string so we don't have "error" coming up on the home page when viewing with no user logged in

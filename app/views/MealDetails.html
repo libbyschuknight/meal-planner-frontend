@@ -4,11 +4,11 @@
 
   <div class="row">
     <div class="col-md-8">
-
       <div class=" imageBoxShadow">
         <img class="img-responsive center-block mealDetailsImg" ng-src='{{ detail.ImageUrl }}'>
       </div>
 
+      <h3>How to Cook:</h3>
       <p>{{ detail.Description }}</p>
     </div>
 
@@ -30,40 +30,41 @@
           </button>
 
           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-             <li><a href="#index" ng-click="AddToMealPlan(0)">Monday</a></li>
-            <li><a href="#index" ng-click="AddToMealPlan(1)">Tuesday</a></li>
-            <li><a href="#index" ng-click="AddToMealPlan(2)">Wednesday</a></li>
-            <li><a href="#index" ng-click="AddToMealPlan(3)">Thursday</a></li>
-            <li><a href="#index" ng-click="AddToMealPlan(4)">Friday</a></li>
-            <li><a href="#index" ng-click="AddToMealPlan(5)">Saturday</a></li>
-            <li><a href="#index" ng-click="AddToMealPlan(6)">Sunday</a></li>
+             <li><a href="#WeekPlanner" ng-click="AddToMealPlan(0)">Monday</a></li>
+            <li><a href="#WeekPlanner" ng-click="AddToMealPlan(1)">Tuesday</a></li>
+            <li><a href="#WeekPlanner" ng-click="AddToMealPlan(2)">Wednesday</a></li>
+            <li><a href="#WeekPlanner" ng-click="AddToMealPlan(3)">Thursday</a></li>
+            <li><a href="#WeekPlanner" ng-click="AddToMealPlan(4)">Friday</a></li>
+            <li><a href="#WeekPlanner" ng-click="AddToMealPlan(5)">Saturday</a></li>
+            <li><a href="#WeekPlanner" ng-click="AddToMealPlan(6)">Sunday</a></li>
           </ul>
       </div>
     </div>
+  </div>
 
-      <!-- #### Use for placeholder for weekly plan if pop box that Matt and Sam are doing doesn't work
-        <div class="col-md-4" >
-          <div id="smallplan">
-            <table>
-            <tr>
-              <th>Monday</th>
-              <th>Tuesday</th>
-              <th>Wednesday</th>
-              <th>Thursday</th>
-              <th>Friday</th>
-              <th>Saturday</th>
-              <th>Sunday</th>
-            </tr>
-            <tr>
-              <td ng-repeat="meal in showMealPlan.Meals">
-              {{meal.Name}}
-              </br>
-              <a href="#WeekPlanner" value="delete" ng-click="deleteMeal($index)" style="color:red;text-decoration:underline">delete</a>
-              </td>
-            </tr>
-            </table>
+  <div class="row">
+      <div class="container">
+        <hr>
+        <h4>Your Weekly Plan of Meals</h4>
+
+        <div class="row seven-cols">
+          <div class="col-md-1 dayofweek">Monday</div>
+          <div class="col-md-1 dayofweek">Tuesday</div>
+          <div class="col-md-1 dayofweek">Wednesday</div>
+          <div class="col-md-1 dayofweek">Thursday</div>
+          <div class="col-md-1 dayofweek">Friday</div>
+          <div class="col-md-1 dayofweek">Saturday</div>
+          <div class="col-md-1 dayofweek">Sunday</div>
+        </div>
+
+        <div class="row seven-cols">
+          <div class="col-md-1" ng-repeat="meal in showMealPlan.Meals">
+            {{meal.Name}}
+            </br>
+            <a href="#WeekPlanner" value="delete" ng-click="deleteMeal($index)">delete</a>
           </div>
-        </div> -->
+        </div>
+      </div>
   </div>
 </div>
 

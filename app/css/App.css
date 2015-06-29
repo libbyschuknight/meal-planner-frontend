@@ -91,6 +91,11 @@ width:500px;
 
 }
 
+.img {
+  width: 500px;
+  height: 175px;
+}
+
 
 /* ###########   meal details page ######################### */
 #smallplan th{
@@ -240,3 +245,5 @@ margin-top: 10px;
   width: 500px;
   margin: 0 auto;
 }
+
+

@@ -26,6 +26,7 @@ console.log("This is Q", q)
         }).success(function (data) {
             $window.sessionStorage.setItem('tokenKey', data.access_token);
             console.log("sucessfully logedIn.......");
+            $scope.errormessage="";
             console.log("Token", data.access_token);
                 console.log(data.userName)
             $rootScope.$emit("logged-in", data.userName)

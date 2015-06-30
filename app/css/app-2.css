@@ -32,7 +32,6 @@ form.navbar-form {margin-right: 15px;}
 }
 
 
-
 .jumbotron p {
   color: #fff;
   text-shadow: 2px 2px 1px #39c0ba;
@@ -66,6 +65,17 @@ form.navbar-form {margin-right: 15px;}
   width: 45px;
 }
 
+.btn-default {
+  background-image: linear-gradient(to bottom,#39c0ba 0,#39c0ba 100%);
+}
+
+.btn-default a {
+  color: #fff;
+}
+
+.btn-default a:hover {
+  color: #1D4D4A;
+}
 
 
 /* ### drop down  nav #### */

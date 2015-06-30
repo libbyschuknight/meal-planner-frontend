@@ -1,0 +1,45 @@
+
+<div id="content">
+  <div id="heading"><h1>Create Meal</h1> <hr></div>
+
+      <form id="newmealname" class="form-group">
+          <label>Meal Name</label>
+          <input type="text" class="form-control" name="NAME" ng-model="mealName">
+
+          <label>Cooking Instructions</label>
+          <textarea input type="text" class="form-control" rows="3" name="DESCRIPTION" ng-model="description"></textarea>
+
+          <label>Image</label>
+          <input type="text" class="form-control" name="IMAGE URL" ng-model="imageurl">
+      </form>
+
+      <h3 id ="indgredientheading">Add an Ingredient</h3>
+
+      <form class="form-inline">
+
+        <div class="form-group" ng-model="ingredientModel">
+            <label class="sr-only">Ingredient Name</label>
+            <input type="text" class="form-control" id="ingredientname" placeholder="Ingredient name" ng-model="ingredientName">
+
+            <label class="sr-only">Quantity</label>
+            <input type="number" class="form-control" id="quantity" placeholder="Ingredient quantity" ng-model="quantity">
+
+         
+            <select class="form-control" id="measurement" ng-model="measurement">
+               <option class="form-control"value="" selected disabled>Measurement</option>
+                <option >Whole</option>     
+                <option>Litres (L)</option>
+                <option>Kilograms (kg)</option>
+                               
+            </select>
+
+            <button type="button" ng-click= "newIngred()" class="btn btn-default" aria-label="Left Align">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+        </div>
+      </form>
+
+      <button type="submit" ng-click="addAMeal()" class="btn btn-default">Add Meal</button>
+  </div>
+</div>
+

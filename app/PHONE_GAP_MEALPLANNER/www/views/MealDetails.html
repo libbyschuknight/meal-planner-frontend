@@ -1,0 +1,100 @@
+<div id="section" ng-controller="MealController">
+  <div class="row">
+    <div class="col-md-8">
+      <h1> {{ detail.Name }} </h1>
+    </div>
+    <div class="col-md-4 ingredient-heading">
+      <h3>Ingredients:</h3>
+    </div>
+  </div>
+
+
+  <hr>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class=" imageBoxShadow">
+        <img class="img-responsive center-block mealDetailsImg" ng-src='{{ detail.ImageUrl }}'>
+      </div>
+
+      <h3>How to Cook:</h3>
+      <p>{{ detail.Description }}</p>
+
+
+      <div class="row center">
+        <div class="col-md-4">
+          <button type="button" class="btn btn-default btn-sm" ng-controller= "MainController">
+            <a href="#index">
+              View All Meals</a>
+          </button>
+        </div>
+
+        <div class="col-md-4">
+          <div class="rating">
+            <p class="likes" ng-click="plusOne(detail.Id)">{{ detail.Likes }}</p>
+            <p>likes</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+         <div class="rating">
+           <p class="dislikes" ng-click="minusOne(detail.Id)">{{ detail.Dislikes }}</p>
+         </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-md-4" >
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="ingredient in detail.Ingredients">
+          {{ ingredient.Name }}
+        </li>
+      </ul>
+
+      <div class="dropdown" ng-controller="MealController">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Select Day
+            <span class="caret"></span>
+          </button>
+
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+             <li><a href="#WeekPlanner" ng-click="AddToMealPlan('Monday')">Monday</a></li>
+            <li><a href="#WeekPlanner" ng-click="AddToMealPlan('Tuesday')">Tuesday</a></li>
+            <li><a href="#WeekPlanner" ng-click="AddToMealPlan('Wednesday')">Wednesday</a></li>
+            <li><a href="#WeekPlanner" ng-click="AddToMealPlan('Thursday')">Thursday</a></li>
+            <li><a href="#WeekPlanner" ng-click="AddToMealPlan('Friday')">Friday</a></li>
+            <li><a href="#WeekPlanner" ng-click="AddToMealPlan('Saturday')">Saturday</a></li>
+            <li><a href="#WeekPlanner" ng-click="AddToMealPlan('Sunday')">Sunday</a></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+      <div class="container">
+        <hr>
+        <h4>Your Weekly Plan of Meals</h4>
+
+       <div class="row seven-cols">
+         <div class="col-md-1 dayofweek" ng-repeat="meal in showMealPlan.MealPlanItems">
+           <p>{{meal.Day}}</p>
+
+           <div class="weekly-row-height">
+             <a href="#MealDetails/{{meal.Meal.Id - 1 }}">
+               {{meal.Meal.Name}}
+             </a>
+           </div>
+
+           <div class="button">
+             <button type="button" class="btn btn-default btn-xs dayItem" ng-controller="MainController">
+               <a href="" value="delete" ng-click="deleteMeal(meal.Id)">delete</a>
+             </button>
+           </div>
+         </div>
+       </div>
+    </div>
+  </div>
+</div>
+

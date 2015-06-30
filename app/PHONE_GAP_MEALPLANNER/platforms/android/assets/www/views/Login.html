@@ -1,0 +1,35 @@
+
+<div class="jumbotron" ng-controller="LoginController">
+	<h1>PikaDish</h1>
+	<p>Weekly Food Planner</p>
+	<!-- <p>{{ errormessage }}</p> -->
+</div>
+
+<div class="container login">
+	<form class="form-horizontal">
+
+		<div class="form-group">
+			<label class="col-sm-4 control-label">Email</label>
+			<div class="col-sm-8">
+				<input type="text" id="username" class="form-control" ng-model="username">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-4 control-label">Password</label>
+			<div class="col-sm-8">
+				<input type="password" id="password" class="form-control" ng-model="password">
+				<p class="login error">{{ errormessage }}</p>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-sm-offset-4 col-sm-8">
+				<input type="button" id="log" class="btn btn-default" value="Sign In" ng-click="login()">
+				<input type="button" value="Sign Up" class="btn btn-default" ng-click="Register()">
+			</div>
+		</div>
+
+	</form>
+</div>
+

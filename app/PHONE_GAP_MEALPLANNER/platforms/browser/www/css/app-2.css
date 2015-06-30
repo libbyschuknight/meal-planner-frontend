@@ -1,0 +1,298 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+
+* {
+  /*border: 1px solid gray;*/
+}
+
+/* Nav color = 39c0ba / Text color = 1D4D4A */
+
+html, body, .thumbnail, .caption {
+  font-family: 'Montserrat', sans-serif;
+  color: #1D4D4A;
+}
+ul .dropdown-menu{width:300px;}
+form.navbar-form {margin-right: 15px;}
+
+.thumbnail .caption {
+  color: #1D4D4A;
+}
+
+.jumbotron {
+  /*height: 250px;*/
+  text-align: center;
+  /*opacity: 0.5;*/
+  /*background-color: gray;*/
+  background-image: url("jumbotroncolor.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*opacity: 0.8;*/
+  color: #fff;
+  text-shadow: 2px 2px 1px #39c0ba;
+}
+
+
+.jumbotron p {
+  color: #fff;
+  text-shadow: 2px 2px 1px #39c0ba;
+
+}
+
+
+/* ### Navigation #### */
+
+.navbar-inverse {
+  color: #000;
+  background-image: linear-gradient(to bottom,#39c0ba 0,#39c0ba 100%);
+  border-color: #39c0ba;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: #fff;
+}
+
+
+.navbar-inverse .navbar-nav>li>a:hover {
+  color: #1D4D4A;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #fff;
+}
+
+.navbar-brand {
+  padding-top: 3px;
+}
+
+.navbar-brand img {
+  width: 45px;
+}
+
+
+
+
+ /* ### BUTTON STYLYING ##### */
+
+
+ .btn-default {
+  background: #fff;
+  border: 2px solid #1D4D4A;
+  color: #1D4D4A;
+ }
+
+ .btn-default:hover, .btn-default:focus,  .open > .dropdown-toggle.btn-default {
+   background: #fff;
+   border-color: #39c0ba;
+   color: #39c0ba;
+ }
+
+ .btn-default:active, .btn-default.active {
+   border-color: #39c0ba;
+   box-shadow: none;
+ }
+
+ .btn-default>a {
+/*  background: #fff;
+  border: 2px solid #1D4D4A;*/
+  color: #1D4D4A;
+ }
+
+  .btn-default>a:hover{
+   color: #39c0ba;
+   text-decoration: none;
+  }
+
+
+/* ### LINKS #### */
+
+a {
+  color: #39c0ba;
+}
+
+a:hover {
+  color: #1D4D4A;
+  text-decoration: none;
+}
+
+
+
+
+
+/* ### drop down  nav #### */
+
+.navbar-inverse .navbar-nav>.open>a  {
+  background-image: linear-gradient(to bottom,#39c0ba 0,#39c0ba 100%);
+}
+
+.dropdown-menu>li>a {
+  color: #39c0ba;
+}
+
+.dropdown-menu>li>a:hover {
+  color: #1D4D4A;
+
+}
+
+@media (max-width: 767px) {
+  .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+    color: #fff;
+  }
+}
+
+
+
+
+
+/* ## for images on details page ## */
+.mealDetailsImg {
+  width: 50%;
+}
+
+.ingredient-heading h3 {
+  margin-top: 30px;
+}
+
+/* ## for weekly plan layout ### */
+
+.dayofweek {
+  font-weight: bold;
+}
+
+.seven-cols, .rating, .center {
+  text-align: center;
+}
+
+.col-md-1 {
+  margin-top: 15px;
+}
+
+.dayItem {
+  margin-top: 10px;
+}
+
+.weekly-row-height {
+  min-height: 50px;
+}
+
+.shop-list-row-height {
+  margin-top: 25px;
+  margin-left: 10px;
+}
+
+
+
+
+/* ####  Likes and Dislikes Styling ###### */
+
+
+
+.likes,
+.dislikes {
+  background: #39c0ba ;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 40px;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 -30px 0 40px;
+  text-align: center;
+  font-weight: 200;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: background 500ms;
+}
+
+.likes:hover,
+.dislikes:hover {
+  color: #1D4D4A ;
+  background: rgba(57, 192, 186, 0.25);
+  transition: background 500ms;
+}
+
+
+
+
+/* ## for images on home page ##  */
+
+.col-md-3{
+  width: 292.5px;
+  height: 305px;
+}
+
+.thumbnail a>img {
+  width: 500px;
+  height: 175px;
+}
+
+/* ## all images expcet jumptron ## */
+.imageBoxShadow img {
+  box-shadow: 0 8px 6px -6px black;
+}
+
+
+
+/* ##### FORMS - sign up ########## */
+
+.signup, .login {
+  width: 50%;
+  padding-right: 100px;
+}
+
+
+/* ### toogle for shopping list page #####*/
+
+.red {
+    color: rgba(255, 0, 0, 0.5);
+    /*color: red;*/
+    text-decoration:line-through;
+}
+
+
+
+
+/* ########## MEDIA QUERIS ######################################### */
+
+
+/* ## alignment for images on home page when mobile ## */
+@media(max-width:767px){
+	.col-sm-6{
+		text-align: center;
+		margin: 0 auto;
+	}
+  .col-lg-12 {
+    text-align: center;
+  }
+
+  .signup, .login {
+    width:100%;
+    padding-right: 0;
+  }
+}
+
+
+/* ### 7 columns on meal details page for  Weekly Plan */
+@media (min-width: 768px) {
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1  {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1 {
+    width: 14.285714285714285714285714285714%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1 {
+    width: 14.285714285714285714285714285714%;
+  }
+}

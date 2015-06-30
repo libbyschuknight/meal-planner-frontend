@@ -3,15 +3,15 @@
 
 * {
   font-family: 'Montserrat', sans-serif;
-  color: #4ECDC4;
+  color: #1D4D4A;
 }
 
 html, .thumbnail, .caption {
-  color: #4ECDC4;
+  color: #1D4D4A;
 }
 
 .thumbnail .caption {
-  color: #4ECDC4;
+  color: #1D4D4A;
 }
 
 .jumbotron {

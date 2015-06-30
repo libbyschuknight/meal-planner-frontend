@@ -16,14 +16,14 @@
 
 
             <div class="weekly-row-height">
-              <a href="#MealDetails/{{$index}}">
+              <a href="#MealDetails/{{meal.Meal.Id - 1 }}">
                 {{meal.Meal.Name}}
               </a>
             </div>
 
             <div class="button">
               <button type="button" class="btn btn-default btn-xs dayItem" ng-controller="MainController">
-                <a href="#WeekPlanner" value="delete" ng-click="deleteMeal($index)">delete</a>
+                <a href="#WeekPlanner" value="delete" ng-click="deleteMeal(meal.Id)">delete</a>
               </button>
             </div>
 

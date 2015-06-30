@@ -2,11 +2,10 @@
 
 
 * {
-  font-family: 'Montserrat', sans-serif;
-  color: #1D4D4A;
 }
 
-html, .thumbnail, .caption {
+html, body, .thumbnail, .caption {
+  font-family: 'Montserrat', sans-serif;
   color: #1D4D4A;
 }
 

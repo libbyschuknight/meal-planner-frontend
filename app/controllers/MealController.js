@@ -128,7 +128,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
      var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
      $http({
       method: 'POST',
-      url: 'http://roameals.azurewebsites.net/api/MealPlans/DeleteFromMealPlan?mealindex='+index,
+      url: 'http://roameals.azurewebsites.net/api/MealPlans/DeleteFromMealPlan/' + index,
       data: index,
       headers: {
         'Content-Type': 'application/json',

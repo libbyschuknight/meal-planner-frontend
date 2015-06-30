@@ -1,4 +1,3 @@
-// var app = angular.module('MealsApp'); - this is in app.js, don't need here - LIBBY
 
 app.controller("MainController",
   ["$scope", "$http", "meals", "userAuthenticationService", "$window","$rootScope", function($scope, $http, meals, userAuthenticationService, $window,$rootScope) {
@@ -22,24 +21,14 @@ if($window.sessionStorage.getItem('tokenKey') != null){
         var sout = document.getElementById("signout");
         sout.style.display = localStorage.loggedout;
 
-
-
     var userResponse = userAuthenticationService.GetUserName();
       userResponse.success(function(data)
       {
         $scope.UserName = data.Name;
-
-        // var sup = document.getElementById("signup");
-        // sup.style.display = localStorage.loggedin;
-        // var sin = document.getElementById("signin");
-        // sin.style.display = localStorage.loggedin;
-        // var sout = document.getElementById("signout");
-        // sout.style.display = localStorage.loggedout;
       })
-      .error(function(data){
-        // have made this error message below an emptu string so we don't have "error" coming up on the home page when viewing with no user logged in
 
-         //  $window.location.href = '#Login';
+      .error(function(data){
+
       });
 
     meals.success(function(data) {

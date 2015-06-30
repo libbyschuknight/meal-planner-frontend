@@ -1,7 +1,6 @@
 // var menuApp = angular.module('MealsApp');
 
 app.controller('LoginController', function ($scope, $http, $window,$rootScope, userAuthenticationService) {
-// angular.module('MealsApp', []).controller('LoginController', function ($scope, $http, $window) {
     
     localStorage.loggedin = "block";
      localStorage.loggedout = "none";
@@ -32,28 +31,15 @@ console.log("This is Q", q)
                 console.log(data.userName)
             $rootScope.$emit("logged-in", data.userName)
 
-            // console.log("sucessfully logedIn.......");
-            // console.log("Token", data.access_token);
-            //     console.log(data.Name)
-
             var userResponse = userAuthenticationService.GetUserName();
               userResponse.success(function(data)
               {
                 console.log("nameee", data.Name)
                 $scope.UserName = data.Name;
                 $rootScope.$emit("logged-in", data.Name)
-                //var sup = document.getElementById("signup");
-                //sup.style.display = "none";
                 localStorage.loggedin = "none";
-                //sup.style.display = localStorage.loggedin;
+                localStorage.loggedout = "block";
 
-                //Session["signup"]= sin.style.display = "none";
-                //var sin = document.getElementById("signin");
-                //sin.style.display = 'none';
-                //var sout = document.getElementById("signout");
-                //sout.style.display = 'block';
-               localStorage.loggedout = "block";
-                //sout.style.display = localStorage.loggedout;
               })
             
 
@@ -61,7 +47,6 @@ console.log("This is Q", q)
             $window.location.href = '#Index';
         }).error(function (data) {
             console.log("Error Logging in ..." + data);
-             //$window.location.href = '#Login';
              console.log(data.error_description)
              $scope.errormessage=data.error_description;
         });

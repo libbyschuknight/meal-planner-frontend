@@ -15,14 +15,12 @@
   background-color: #303030;
   margin-bottom: 0;
   border-radius: 0;
- /* position:fixed;*/
   width:100%;
 }
 
 
 .navbar-toggle {
   background-color: rgb(255, 255, 255);
-  /*background-image: url("http://www2.psd100.com/ppp/2013/11/0601/Down-button-icon-1106172647.png");*/
   border: 1px solid transparent;
  }
 
@@ -41,7 +39,6 @@ a {
 .jumbotron {
   height: 250px;
   text-align: center;
-  /*opacity: 0.5;*/
   background-color: gray;
   background-image: url("https://lovemynutbutt.files.wordpress.com/2013/12/cooking_at_home.jpg");
   background-size: cover;
@@ -61,15 +58,12 @@ a {
 
 .col-md-4 {
   text-align: center;
-  /*border: 1px solid gray;*/
-  /*margin: 0 auto;*/
   margin-bottom: 0px;
 
 }
 
 .col-md-4 img{
   height: 175px;
-  /*width: 250px;*/
 }
 
 .col-md-4 p {
@@ -138,7 +132,6 @@ h5{
 }
 
 .col-md-6 {
-  /*border: 1px solid pink;*/
   margin-top: 30px;
   margin-bottom: 30px;
   text-align: center;
@@ -151,7 +144,6 @@ h5{
 
 .list-group {
   box-shadow: none;
-/*overflow:hidden; overflow-y:scroll;*/
   height: 580px;
 }
 
@@ -226,24 +218,11 @@ margin-left: 34%;
 margin-top: 10px;
   margin-left: 45%
 }
-/*
-#ingredientlist{
 
-  overflow-y: scroll;
-  height: 200px;
-  width: 250px;
-  list-style-type: none;
-}*/
 
 /*///////////////////////////Sign Up////////////////////////////////*/
-
-/*.form-horizontal, .form-group {
-  border: 1px solid red;
-}*/
 
 .form-horizontal {
   width: 500px;
   margin: 0 auto;
 }
-
-

@@ -29,7 +29,6 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       }
     })
       .success(function (data) {
-      // console.log("yolo swag", data);
     })
       .error(function (data) {
       console.log("add meal error", data);
@@ -57,8 +56,6 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
   }()
 
   $scope.showMealPlan = "";
-
-
 
 
   var IngredientList = [];
@@ -126,6 +123,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     });
   };
 
+
   $scope.deleteMeal = function (index) {
      var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
      $http({
@@ -147,8 +145,6 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
 
 
   $scope.plusOne = function(mealId) {
-  // console.log("Meal ID", mealId)
-
   var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
    $http({
     method: 'POST',
@@ -170,8 +166,6 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
 
 
   $scope.minusOne = function(mealId) {
-  // console.log("Meal ID", mealId)
-
   var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
 
    $http({

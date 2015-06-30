@@ -2,7 +2,7 @@
 
 app.controller("MainController",
   ["$scope", "$http", "meals", "userAuthenticationService", "$window","$rootScope", function($scope, $http, meals, userAuthenticationService, $window,$rootScope) {
-   angular.element(document).ready(function () { 
+   angular.element(document).ready(function () {
 
 if($window.sessionStorage.getItem('tokenKey') != null){
 
@@ -28,7 +28,7 @@ if($window.sessionStorage.getItem('tokenKey') != null){
       userResponse.success(function(data)
       {
         $scope.UserName = data.Name;
-        
+
         // var sup = document.getElementById("signup");
         // sup.style.display = localStorage.loggedin;
         // var sin = document.getElementById("signin");
@@ -54,27 +54,24 @@ if($window.sessionStorage.getItem('tokenKey') != null){
 
     });
 
-      $scope.getShoppingList = function() {
-        $scope.arrayOfIng = "test";
+    $scope.getShoppingList = function() {
+      $scope.arrayOfIng = "test";
       var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
       $http({
-        method: 'GET',
-        url: 'http://roameals.azurewebsites.net/api/MealPlans/ShoppingList',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': authoriz
-        }
-      })
+      method: 'GET',
+      url: 'http://roameals.azurewebsites.net/api/MealPlans/ShoppingList',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': authoriz
+      }
+    })
       .success(function(data){
-
         $scope.arrayOfIng = data;
-        console.log("Array of ingredients", $scope.arrayOfIng);
-    	})
-
+  	})
       .error(function(data){
-        console.log("error: ", data);
+
       })
-  }()
+    }()
 
 
   $scope.arrayOfIng=" ";
@@ -88,7 +85,13 @@ if($window.sessionStorage.getItem('tokenKey') != null){
     }
     $rootScope.$on("logged-in", logindisplay);
     $rootScope.$on("logged-out", logoutdisplay);
-})
+  })
+
+
+  $scope.toggleCSS = function () {
+    window.print();
+  }
+
 }]);
 
 

@@ -62,7 +62,8 @@ console.log("This is Q", q)
         }).error(function (data) {
             console.log("Error Logging in ..." + data);
              //$window.location.href = '#Login';
-             $scope.errormessage="Incorrect UserName or Password";
+             console.log(data.error_description)
+             $scope.errormessage=data.error_description;
         });
 
 

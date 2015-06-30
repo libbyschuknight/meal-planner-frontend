@@ -28,8 +28,6 @@
         </li>
       </ul>
 
-
-
       <div class="dropdown" ng-controller="MealController">
           <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             Select Day
@@ -48,6 +46,12 @@
       </div>
     </div>
   </div>
+
+      <div class="rating">
+          <p class="likes" ng-click="plusOne(detail.Id)">{{ detail.Likes }}</p>
+          <p class="dislikes" ng-click="minusOne(detail.Id)">{{ detail.Dislikes }}</p>
+        </div>
+
 
   <div class="row">
       <div class="container">

@@ -1,0 +1,55 @@
+
+
+<div id="section" class="container" ng-controller="MealController">
+  <h1>WEEKLY PLANNER</h1>
+  <h2>Planned Meals</h2>
+
+  <hr>
+
+  <div class="row">
+      <div class="container">
+        <div class="row seven-cols">
+          <div class="col-md-1 dayofweek">Monday</div>
+          <div class="col-md-1 dayofweek">Tuesday</div>
+          <div class="col-md-1 dayofweek">Wednesday</div>
+          <div class="col-md-1 dayofweek">Thursday</div>
+          <div class="col-md-1 dayofweek">Friday</div>
+          <div class="col-md-1 dayofweek">Saturday</div>
+          <div class="col-md-1 dayofweek">Sunday</div>
+        </div>
+
+        <div class="row seven-cols">
+          <div class="col-md-1 " ng-repeat="meal in showMealPlan.Meals">
+
+            <div class="row weekly-row-height">
+              <a href="#MealDetails/{{$index}}">
+                {{meal.Name}}
+              </a>
+            </div>
+
+            <div class="row">
+              <button type="button" class="btn btn-default btn-xs dayItem" ng-controller="MainController">
+                <a href="#WeekPlanner" value="delete" ng-click="deleteMeal($index)">delete</a>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row shop-list-row-height">
+    <button type="button" class="btn btn-default btn-sm" ng-controller= "MainController">
+      <a href="#ShoppingList" ng-click="getShoppingList()">
+        My Shopping List</a>
+    </button>
+  </div>
+</div>
+
+
+
+
+
+
+
+

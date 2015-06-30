@@ -10,23 +10,24 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     $window.location.href = '#Login';
   }
 
-  $scope.AddToMealPlan = function () {
-    // console.log(index)
+  $scope.AddToMealPlan = function (day) {
+    console.log("day add to meal", day)
     var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
     var meal = $scope.detail;
     var id = meal.Id;
 
     $http({
-      url: "http://roameals.azurewebsites.net/api/MealPlans/AddTo",
+      url: "http://roameals.azurewebsites.net/api/MealPlans/AddTo?day=" + day,
       method: "POST",
       data: meal,
+      uri: day,
       headers: {
         'Content-Type': 'application/json',
         'Authorization': authoriz
       }
     })
       .success(function (data) {
-      console.log("yolo swag");
+      // console.log("yolo swag", data);
     })
       .error(function (data) {
       console.log("add meal error", data);
@@ -46,7 +47,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     })
       .success(function (data) {
       $scope.showMealPlan = data;
-      // console.log($scope.showMealPlan);
+      console.log("show meal plan data", $scope.showMealPlan);
     })
       .error(function (data) {
       console.log("error: ", data);
@@ -54,6 +55,9 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
   }()
 
   $scope.showMealPlan = "";
+
+
+
 
   var IngredientList = [];
 
@@ -111,7 +115,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     })
       .success(function (data) {
       console.log("ADDING A MEAL");
-      console.log(data);
+      // console.log(data);
       IngredientList.length = 0;
       location.reload();
     })

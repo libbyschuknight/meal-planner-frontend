@@ -11,21 +11,17 @@
   <div class="row">
       <div class="container">
         <div class="row seven-cols">
-          <div class="col-md-1 dayofweek">Monday</div>
-          <div class="col-md-1 dayofweek">Tuesday</div>
-          <div class="col-md-1 dayofweek">Wednesday</div>
-          <div class="col-md-1 dayofweek">Thursday</div>
-          <div class="col-md-1 dayofweek">Friday</div>
-          <div class="col-md-1 dayofweek">Saturday</div>
-          <div class="col-md-1 dayofweek">Sunday</div>
+          <div class="col-md-1 dayofweek" ng-repeat="meal in showMealPlan.MealPlanItems">
+            <p>{{meal.Day}}</p>
+          </div>
         </div>
 
         <div class="row seven-cols">
-          <div class="col-md-1 " ng-repeat="meal in showMealPlan.Meals">
+          <div class="col-md-1 " ng-repeat="meal in showMealPlan.MealPlanItems">
 
             <div class="row weekly-row-height">
               <a href="#MealDetails/{{$index}}">
-                {{meal.Name}}
+                {{meal.Meal.Name}}
               </a>
             </div>
 

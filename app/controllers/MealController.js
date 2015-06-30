@@ -139,7 +139,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
           location.reload();
       }).error(function(data)
       {
-         console.log("error deleting ");
+         console.log("error deleting ", data);
       });
   };
 }]);

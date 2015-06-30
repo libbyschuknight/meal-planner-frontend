@@ -13,19 +13,15 @@
         <div class="row seven-cols">
           <div class="col-md-1 dayofweek" ng-repeat="meal in showMealPlan.MealPlanItems">
             <p>{{meal.Day}}</p>
-          </div>
-        </div>
 
-        <div class="row seven-cols">
-          <div class="col-md-1 " ng-repeat="meal in showMealPlan.MealPlanItems">
 
-            <div class="row weekly-row-height">
+            <div class="weekly-row-height">
               <a href="#MealDetails/{{$index}}">
                 {{meal.Meal.Name}}
               </a>
             </div>
 
-            <div class="row">
+            <div class="button">
               <button type="button" class="btn btn-default btn-xs dayItem" ng-controller="MainController">
                 <a href="#WeekPlanner" value="delete" ng-click="deleteMeal($index)">delete</a>
               </button>

@@ -19,15 +19,15 @@
 
         <div class="form-group" ng-model="ingredientModel">
             <label class="sr-only">Ingredient Name</label>
-            <input type="text" class="form-control" id="ingredientname" placeholder="Ingredient name." ng-model="ingredientName">
+            <input type="text" class="form-control" id="ingredientname" placeholder="Ingredient name" ng-model="ingredientName">
 
             <label class="sr-only">Quantity</label>
-            <input type="number" class="form-control" id="quantity" placeholder="Ingredient quantity." ng-model="quantity">
+            <input type="number" class="form-control" id="quantity" placeholder="Ingredient quantity" ng-model="quantity">
 
          
-            <select class="form-control" id="measurement" placeholder="Ingredient quantity." ng-model="measurement">
-               <option value="" selected disabled>Measurement</option>
-                <option>Whole</option>     
+            <select class="form-control" id="measurement" ng-model="measurement">
+               <option class="form-control"value="" selected disabled>Measurement</option>
+                <option >Whole</option>     
                 <option>Litres (L)</option>
                 <option>Kilograms (kg)</option>
                                

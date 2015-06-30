@@ -22,23 +22,33 @@
 
 
       <div class="row center">
-        <div class="col-md-4">
-          <button type="button" class="btn btn-default btn-sm" ng-controller= "MainController">
-            <a href="#index">
-              View All Meals</a>
-          </button>
-        </div>
-
-        <div class="col-md-4">
-          <div class="rating">
-            <p class="likes" ng-click="plusOne(detail.Id)">{{ detail.Likes }}</p>
-            <p>likes</p>
+        <div class="col-md-4 col-xs-4">
+          <div class="row view-meal-details">
+            <button type="button" class="btn btn-default btn-sm" ng-controller= "MainController">
+              <a href="#index">View All Meals</a>
+            </button>
           </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 col-xs-4">
+          <div class="rating">
+            <div class="row likes" ng-click="plusOne(detail.Id)">
+              {{ detail.Likes }}
+            </div>
+            <div class="row">
+              <p>likes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-xs-4">
          <div class="rating">
-           <p class="dislikes" ng-click="minusOne(detail.Id)">{{ detail.Dislikes }}</p>
+           <div class=" row dislikes" ng-click="minusOne(detail.Id)">
+            {{ detail.Dislikes }}
+           </div>
+           <div class="row">
+             <p>dislikes</p>
+           </div>
          </div>
         </div>
       </div>

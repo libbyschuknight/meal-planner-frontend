@@ -22,18 +22,23 @@ html, body, .thumbnail, .caption {
   background-size: cover;
   background-repeat: no-repeat;
   /*opacity: 0.8;*/
-  color: #fff;
+  color: #39c0ba;
+  text-shadow: 2px 4px 3px rgba(255,255,255,0.5)
 }
 
+  /*2px 2px 1px #fff;*/
+
+
 .jumbotron p {
-  color: #fff;
+  color: #39c0ba;
+  text-shadow: 2px 4px 3px rgba(255,255,255,0.5);
 
 }
 
 .navbar-inverse {
   color: #000;
-  background-image: linear-gradient(to bottom,#4ECDC4 0,#4ECDC4 100%);
-  border-color: #4ECDC4;
+  background-image: linear-gradient(to bottom,#39c0ba 0,#39c0ba 100%);
+  border-color: #39c0ba;
 }
 
 .navbar-inverse .navbar-nav>li>a {
@@ -49,15 +54,24 @@ html, body, .thumbnail, .caption {
   color: #fff;
 }
 
+.navbar-brand {
+  padding-top: 3px;
+}
+
+.navbar-brand img {
+  width: 45px;
+}
+
+
 
 /* ### drop down  nav #### */
 
 .navbar-inverse .navbar-nav>.open>a  {
-  background-image: linear-gradient(to bottom,#4ECDC4 0,#4ECDC4 100%);
+  background-image: linear-gradient(to bottom,#39c0ba 0,#39c0ba 100%);
 }
 
 .dropdown-menu>li>a {
-  color: #4ECDC4;
+  color: #39c0ba;
 }
 
 .dropdown-menu>li>a:hover {

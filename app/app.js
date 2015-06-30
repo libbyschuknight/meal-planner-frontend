@@ -49,6 +49,11 @@ app.config(['$routeProvider', function($routeProvider) {
   controller: "MainController",
     templateUrl: "views/SearchedMeals.html"
   })
+    .when("/ContactUs", {
+  controller: "MainController",
+    templateUrl: "views/Contact.html"
+  })
+
   .otherwise({redirectTo: '/index'
 
   });

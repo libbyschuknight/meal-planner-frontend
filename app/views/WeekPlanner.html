@@ -3,31 +3,25 @@
 <div id="section" class="container" ng-controller="MealController">
   <h1>WEEKLY PLANNER</h1>
   <h2>Planned Meals</h2>
+  {{ showMealPlan.MealPlanItems[5].Day}}
+  {{ showMealPlan.MealPlanItems[5].Meal.Name}}
 
   <hr>
 
   <div class="row">
       <div class="container">
         <div class="row seven-cols">
-          <div class="col-md-1 dayofweek">Monday</div>
-          <div class="col-md-1 dayofweek">Tuesday</div>
-          <div class="col-md-1 dayofweek">Wednesday</div>
-          <div class="col-md-1 dayofweek">Thursday</div>
-          <div class="col-md-1 dayofweek">Friday</div>
-          <div class="col-md-1 dayofweek">Saturday</div>
-          <div class="col-md-1 dayofweek">Sunday</div>
-        </div>
+          <div class="col-md-1 dayofweek" ng-repeat="meal in showMealPlan.MealPlanItems">
+            <p>{{meal.Day}}</p>
 
-        <div class="row seven-cols">
-          <div class="col-md-1 " ng-repeat="meal in showMealPlan.Meals">
 
-            <div class="row weekly-row-height">
+            <div class="weekly-row-height">
               <a href="#MealDetails/{{$index}}">
-                {{meal.Name}}
+                {{meal.Meal.Name}}
               </a>
             </div>
 
-            <div class="row">
+            <div class="button">
               <button type="button" class="btn btn-default btn-xs dayItem" ng-controller="MainController">
                 <a href="#WeekPlanner" value="delete" ng-click="deleteMeal($index)">delete</a>
               </button>

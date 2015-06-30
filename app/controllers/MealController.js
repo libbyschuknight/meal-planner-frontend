@@ -1,9 +1,9 @@
 app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$window', function($scope, $http, meals, $routeParams, $window) {
 
   meals.success(function(data) {
-    console.log("meals success", data);
+    // console.log("meals success", data);
     $scope.detail = data[$routeParams.id];
-    console.log("Scope detail data", $scope.detail);
+    // console.log("Scope detail data", $scope.detail);
   });
 
   if ($window.sessionStorage.length == 0) {
@@ -26,7 +26,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       }
     })
       .success(function (data) {
-      console.log("yolo swag");
+      // console.log("yolo swag");
     })
       .error(function (data) {
       console.log("add meal error", data);
@@ -96,7 +96,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
         Ingredients: IngredientList
       };
 
-    console.log(IngredientList);
+    // console.log(IngredientList);
 
 
     var mealData = JSON.stringify(data);
@@ -110,8 +110,8 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       }
     })
       .success(function (data) {
-      console.log("ADDING A MEAL");
-      console.log(data);
+      // console.log("ADDING A MEAL");
+      // console.log(data);
       IngredientList.length = 0;
       location.reload();
     })
@@ -131,7 +131,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
         'Authorization': authoriz
       }}).success(function(data)
       {
-         console.log("deleted successfully ");
+         // console.log("deleted successfully ");
           location.reload();
       }).error(function(data)
       {

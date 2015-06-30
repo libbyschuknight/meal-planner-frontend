@@ -74,7 +74,29 @@ console.log("This is Q", q)
 	 $window.location.href = '#Register';
     };
 
+//
+
+
+
+    $scope.SignInWithGoogle = function(){
+        console.log("signin google");
+        $http({
+            method: 'GET',
+            url: 'http://localhost:62555/api/Account/ExternalLogins?returnUrl=%2F&generateState=true',
+            headers: { 'Content-Type': 'application/json'}
+        }).success(function (data) {
+          console.log(data[0].Url);
+
+            window.location = data[0].Url;
+
+
+        }).error(function(){
+            console.log("error");
+        })
+
+    }
 
 });
+
 
 

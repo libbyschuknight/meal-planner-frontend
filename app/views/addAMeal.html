@@ -36,10 +36,12 @@
             <button type="button" ng-click= "newIngred()" class="btn btn-default" aria-label="Left Align">
               <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
             </button>
+            <div ng-repeat="ingred in displayIngredient">{{ingred.Name}}&nbsp; {{ingred.Quantity}} &nbsp;{{ingred.Measurement}}</div>
         </div>
       </form>
 
       <button type="submit" ng-click="addAMeal()" class="btn btn-default">Add Meal</button>
+      
   </div>
 </div>
 

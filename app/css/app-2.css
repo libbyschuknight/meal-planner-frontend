@@ -11,6 +11,8 @@ html, body, .thumbnail, .caption {
   font-family: 'Montserrat', sans-serif;
   color: #1D4D4A;
 }
+ul .dropdown-menu{width:300px;}
+form.navbar-form {margin-right: 15px;}
 
 .thumbnail .caption {
   color: #1D4D4A;

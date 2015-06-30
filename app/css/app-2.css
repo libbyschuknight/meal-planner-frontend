@@ -2,7 +2,10 @@
 
 
 * {
+  /*border: 1px solid gray;*/
 }
+
+/* Nav color = 39c0ba / Text color = 1D4D4A */
 
 html, body, .thumbnail, .caption {
   font-family: 'Montserrat', sans-serif;
@@ -18,20 +21,19 @@ html, body, .thumbnail, .caption {
   text-align: center;
   /*opacity: 0.5;*/
   /*background-color: gray;*/
-  background-image: url("http://prasinostcharles.com/wp-content/uploads/2014/09/gallery-large_food_cod.jpg");
+  background-image: url("jumbotroncolor.png");
   background-size: cover;
   background-repeat: no-repeat;
   /*opacity: 0.8;*/
-  color: #39c0ba;
-  text-shadow: 2px 4px 3px rgba(255,255,255,0.5)
+  color: #fff;
+  text-shadow: 2px 2px 1px #39c0ba;
 }
 
-  /*2px 2px 1px #fff;*/
 
 
 .jumbotron p {
-  color: #39c0ba;
-  text-shadow: 2px 4px 3px rgba(255,255,255,0.5);
+  color: #fff;
+  text-shadow: 2px 2px 1px #39c0ba;
 
 }
 
@@ -95,7 +97,7 @@ html, body, .thumbnail, .caption {
   font-weight: bold;
 }
 
-.seven-cols {
+.seven-cols, .rating, .center {
   text-align: center;
 }
 
@@ -115,6 +117,40 @@ html, body, .thumbnail, .caption {
   margin-top: 25px;
   margin-left: 10px;
 }
+
+
+
+
+/* ####  Likes and Dislikes Styling ###### */
+
+
+
+.likes,
+.dislikes {
+  background: #39c0ba ;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 40px;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 -30px 0 40px;
+  text-align: center;
+  font-weight: 200;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: background 500ms;
+}
+
+.likes:hover,
+.dislikes:hover {
+  color: #1D4D4A ;
+  background: rgba(57, 192, 186, 0.25);
+  transition: background 500ms;
+}
+
+
 
 
 /* ## for images on home page ##  */

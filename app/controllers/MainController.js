@@ -54,27 +54,24 @@ if($window.sessionStorage.getItem('tokenKey') != null){
 
     });
 
-      $scope.getShoppingList = function() {
-        $scope.arrayOfIng = "test";
+    $scope.getShoppingList = function() {
+      $scope.arrayOfIng = "test";
       var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
       $http({
-        method: 'GET',
-        url: 'http://roameals.azurewebsites.net/api/MealPlans/ShoppingList',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': authoriz
-        }
-      })
+      method: 'GET',
+      url: 'http://roameals.azurewebsites.net/api/MealPlans/ShoppingList',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': authoriz
+      }
+    })
       .success(function(data){
-
         $scope.arrayOfIng = data;
-        console.log("Array of ingredients", $scope.arrayOfIng);
-    	})
-
+  	})
       .error(function(data){
-        console.log("error: ", data);
+
       })
-  }()
+    }()
 
 
   $scope.arrayOfIng=" ";

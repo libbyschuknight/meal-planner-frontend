@@ -24,7 +24,7 @@ console.log("eferer")
 
         $http({
             method: 'POST',
-            url: 'http://localhost:62555/Token',
+            url: 'http://roameals.azurewebsites.net/Token',
             data: q,
             headers: { 'Content-Type': 'application/x-www-form-urlencoded'}
         }).success(function (data) {

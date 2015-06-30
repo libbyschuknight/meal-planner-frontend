@@ -3,8 +3,6 @@
 <div id="section" class="container" ng-controller="MealController">
   <h1>WEEKLY PLANNER</h1>
   <h2>Planned Meals</h2>
-  {{ showMealPlan.MealPlanItems[5].Day}}
-  {{ showMealPlan.MealPlanItems[5].Meal.Name}}
 
   <hr>
 
@@ -36,6 +34,11 @@
     <button type="button" class="btn btn-default btn-sm" ng-controller= "MainController">
       <a href="#ShoppingList" ng-click="getShoppingList()">
         My Shopping List</a>
+    </button>
+
+    <button type="button" class="btn btn-default btn-sm" ng-controller= "MainController">
+      <a href="#index">
+        View All Meals</a>
     </button>
   </div>
 </div>

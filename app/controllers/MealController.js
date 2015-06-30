@@ -5,7 +5,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     $scope.detail = data[$routeParams.id];
     console.log("Scope detail data", $scope.detail);
 
-  
+
   });
 
   if ($window.sessionStorage.length == 0) {
@@ -145,53 +145,51 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       });
   };
 
-$scope.plusOne = function(mealId) {
-  console.log("Meal ID", mealId)
+
+  $scope.plusOne = function(mealId) {
+  // console.log("Meal ID", mealId)
+
+  var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
+   $http({
+    method: 'POST',
+    url: 'http://roameals.azurewebsites.net/api/Vote/Like/'+mealId,
+    data: mealId,
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': authoriz
+    }}).success(function(data)
+    {
+       location.reload();
+
+    }).error(function(data)
+    {
+       console.log("error voting", data);
+    });
+
+  };
+
+
+  $scope.minusOne = function(mealId) {
+  // console.log("Meal ID", mealId)
 
   var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
 
+   $http({
+    method: 'POST',
+    url: 'http://roameals.azurewebsites.net/api/Vote/Dislike/'+mealId,
+    data: mealId,
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': authoriz
+    }}).success(function(data)
+    {
+       location.reload();
 
-     $http({
-      method: 'POST',
-      url: 'http://roameals.azurewebsites.net/api/Vote/Like/'+mealId,
-      data: mealId,
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': authoriz
-      }}).success(function(data)
-      {
-         location.reload();
-
-      }).error(function(data)
-      {
-         console.log("error voting", data);
-      });
-  
-    };
-
-    $scope.minusOne = function(mealId) {
-  console.log("Meal ID", mealId)
-
-  var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
-
-
-     $http({
-      method: 'POST',
-      url: 'http://roameals.azurewebsites.net/api/Vote/Dislike/'+mealId,
-      data: mealId,
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': authoriz
-      }}).success(function(data)
-      {
-         location.reload();
-
-      }).error(function(data)
-      {
-         console.log("error voting", data);
-      });
-  
-    };
+    }).error(function(data)
+    {
+       console.log("error voting", data);
+    });
+  };
 
 
 }]);

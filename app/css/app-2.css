@@ -3,6 +3,15 @@
 
 * {
   font-family: 'Montserrat', sans-serif;
+  color: #4ECDC4;
+}
+
+html, .thumbnail, .caption {
+  color: #4ECDC4;
+}
+
+.thumbnail .caption {
+  color: #4ECDC4;
 }
 
 .jumbotron {
@@ -15,6 +24,46 @@
   background-repeat: no-repeat;
   /*opacity: 0.8;*/
   color: #fff;
+}
+
+.jumbotron p {
+  color: #fff;
+
+}
+
+.navbar-inverse {
+  color: #000;
+  background-image: linear-gradient(to bottom,#4ECDC4 0,#4ECDC4 100%);
+  border-color: #4ECDC4;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: #fff;
+}
+
+
+.navbar-inverse .navbar-nav>li>a:hover {
+  color: #1D4D4A;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #fff;
+}
+
+
+/* ### drop down  nav #### */
+
+.navbar-inverse .navbar-nav>.open>a  {
+  background-image: linear-gradient(to bottom,#4ECDC4 0,#4ECDC4 100%);
+}
+
+.dropdown-menu>li>a {
+  color: #4ECDC4;
+}
+
+.dropdown-menu>li>a:hover {
+  color: #1D4D4A;
+
 }
 
 
@@ -110,8 +159,6 @@
     width:100%;
     padding-right: 0;
   }
-
-
 }
 
 

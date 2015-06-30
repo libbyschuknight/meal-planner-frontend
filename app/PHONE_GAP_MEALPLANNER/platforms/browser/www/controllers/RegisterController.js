@@ -67,6 +67,31 @@ console.log("eferer")
         })
         .error(function (data) {
             console.log("Error Registering..." + data);
+            $scope.errormessage= data.ModelState[Object.keys(data.ModelState)[0]][0];
+         //var model = 'model.Password'
+
+
+           // console.log("tets",data.ModelState['model.Password'][0])
+           // $scope.errormessage= data.ModelState['model.Password'][0]
+
+            
+         //    for (var k in data) {
+
+         //        if (data.hasOwnProperty(k)) { 
+         //      // console.log("message", data[k])
+         //       //console.log(JSON.stringify(data[k]));
+         //       //console.log(k)
+         //        console.log("KKKKKKKKKk",data[k]) 
+         //       // console.log(data[k[data]])
+                                       
+         //        }
+         //    }             
+         //        var error_message = data[k][0];
+       
+
+         // $scope.errormessage= error_message
+     
+         //data.ModelState.model;
         });
 
     };

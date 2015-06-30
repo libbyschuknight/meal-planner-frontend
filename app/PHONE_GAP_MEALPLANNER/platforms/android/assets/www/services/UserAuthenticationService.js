@@ -12,19 +12,19 @@
         }
       })
       .success(function(data){
-        console.log("ttttttttttttttttttt", data)
+        // console.log("ttttttttttttttttttt", data)
         return data;
       })
       .error(function(data){
-        return data;      
+        return data;
       });
     };
-    
+
     return {
       GetUserName: getUserName
       };
   };
-  
+
   var menuApp = angular.module('MealsApp');
   menuApp.factory('userAuthenticationService', ['$http','$window', userAuthenticationService]);
 }());

@@ -8,18 +8,21 @@
           <th>Ingredient</th>
           <th>Quantity</th>
           <th>Measurement</th>
-          <th>Already Have</th>
+          <th>Have</th>
         </tr>
 
-        <tr class="this-row" ng-repeat="ing in arrayOfIng" ng-style="myStyle">
+        <tr class="this-row" ng-repeat="ing in arrayOfIng" ng-class="{'red' : toggle}">
           <td > {{ing.Name}}</td>
           <td>{{ ing.Quantity}} </td>
           <td>{{ ing.Measurement}} </td>
           <td>
-            <div class="checkbox" ng-click="myStyle={color:'gray'}">
-              <label>
-                <input type="checkbox">Already have
-              </label>
+
+            <!-- <button id="btn" ng-click="toggle = !toggle" ng-class="{'red' : toggle}">have</button> -->
+
+            <div class="checkbox">
+                <label>
+                  <input type="checkbox" ng-click="toggle = !toggle" ng-class="{'red' : toggle}">
+                </label>
             </div>
 
           </td>
@@ -28,17 +31,17 @@
     </div>
   </div>
 
-  <div class="pdf-print">
+  <!-- <div class="pdf-print" ng-controller="MainController">
     <p>
-      <script src="http://cdn.printfriendly.com/printfriendly.js" type="text/javascript"></script>
-      <a href="http://www.printfriendly.com" style=" color:#6D9F00; text-decoration:none;" class="printfriendly" onclick="window.print(); return false;" title="Printer Friendly and PDF">
-        <button type="button" class="btn btn-default" aria-label="Left Align">
+
+        <button type="button" ng-click="toggleCSS()" class="btn btn-default" aria-label="Left Align">
           <span class="glyphicon glyphicon-print" aria-hidden="true"></span>
         </button>
-
       </a>
     </p>
-  </div>
+
+
+  </div> -->
 </div>
 
 

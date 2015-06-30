@@ -2,7 +2,20 @@
 
 
 * {
+  /*border: 1px solid gray;*/
+}
+
+/* Nav color = 39c0ba / Text color = 1D4D4A */
+
+html, body, .thumbnail, .caption {
   font-family: 'Montserrat', sans-serif;
+  color: #1D4D4A;
+}
+ul .dropdown-menu{width:300px;}
+form.navbar-form {margin-right: 15px;}
+
+.thumbnail .caption {
+  color: #1D4D4A;
 }
 
 .jumbotron {
@@ -10,12 +23,124 @@
   text-align: center;
   /*opacity: 0.5;*/
   /*background-color: gray;*/
-  background-image: url("http://prasinostcharles.com/wp-content/uploads/2014/09/gallery-large_food_cod.jpg");
+  background-image: url("jumbotroncolor.png");
   background-size: cover;
   background-repeat: no-repeat;
   /*opacity: 0.8;*/
   color: #fff;
+  text-shadow: 2px 2px 1px #39c0ba;
 }
+
+
+.jumbotron p {
+  color: #fff;
+  text-shadow: 2px 2px 1px #39c0ba;
+
+}
+
+
+/* ### Navigation #### */
+
+.navbar-inverse {
+  color: #000;
+  background-image: linear-gradient(to bottom,#39c0ba 0,#39c0ba 100%);
+  border-color: #39c0ba;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: #fff;
+}
+
+
+.navbar-inverse .navbar-nav>li>a:hover {
+  color: #1D4D4A;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #fff;
+}
+
+.navbar-brand {
+  padding-top: 3px;
+}
+
+.navbar-brand img {
+  width: 45px;
+}
+
+
+
+
+ /* ### BUTTON STYLYING ##### */
+
+
+ .btn-default {
+  background: #fff;
+  border: 2px solid #1D4D4A;
+  color: #1D4D4A;
+ }
+
+ .btn-default:hover, .btn-default:focus,  .open > .dropdown-toggle.btn-default {
+   background: #fff;
+   border-color: #39c0ba;
+   color: #39c0ba;
+ }
+
+ .btn-default:active, .btn-default.active {
+   border-color: #39c0ba;
+   box-shadow: none;
+ }
+
+ .btn-default>a {
+/*  background: #fff;
+  border: 2px solid #1D4D4A;*/
+  color: #1D4D4A;
+ }
+
+  .btn-default>a:hover{
+   color: #39c0ba;
+   text-decoration: none;
+  }
+
+
+/* ### LINKS #### */
+
+a {
+  color: #39c0ba;
+}
+
+a:hover {
+  color: #1D4D4A;
+  text-decoration: none;
+}
+
+
+
+
+
+/* ### drop down  nav #### */
+
+.navbar-inverse .navbar-nav>.open>a  {
+  background-image: linear-gradient(to bottom,#39c0ba 0,#39c0ba 100%);
+}
+
+.dropdown-menu>li>a {
+  color: #39c0ba;
+}
+
+.dropdown-menu>li>a:hover {
+  color: #1D4D4A;
+
+}
+
+@media (max-width: 767px) {
+  .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+    color: #fff;
+  }
+}
+
+
+
 
 
 /* ## for images on details page ## */
@@ -33,7 +158,7 @@
   font-weight: bold;
 }
 
-.seven-cols {
+.seven-cols, .rating, .center {
   text-align: center;
 }
 
@@ -53,6 +178,40 @@
   margin-top: 25px;
   margin-left: 10px;
 }
+
+
+
+
+/* ####  Likes and Dislikes Styling ###### */
+
+
+
+.likes,
+.dislikes {
+  background: #39c0ba ;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 40px;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 -30px 0 40px;
+  text-align: center;
+  font-weight: 200;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: background 500ms;
+}
+
+.likes:hover,
+.dislikes:hover {
+  color: #1D4D4A ;
+  background: rgba(57, 192, 186, 0.25);
+  transition: background 500ms;
+}
+
+
 
 
 /* ## for images on home page ##  */
@@ -82,6 +241,16 @@
 }
 
 
+/* ### toogle for shopping list page #####*/
+
+.red {
+    color: rgba(255, 0, 0, 0.5);
+    /*color: red;*/
+    text-decoration:line-through;
+}
+
+
+
 
 /* ########## MEDIA QUERIS ######################################### */
 
@@ -100,8 +269,6 @@
     width:100%;
     padding-right: 0;
   }
-
-
 }
 
 

@@ -4,29 +4,32 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     console.log("meals success", data);
     $scope.detail = data[$routeParams.id];
     console.log("Scope detail data", $scope.detail);
+
+
   });
 
   if ($window.sessionStorage.length == 0) {
     $window.location.href = '#Login';
   }
 
-  $scope.AddToMealPlan = function () {
-    // console.log(index)
+  $scope.AddToMealPlan = function (day) {
+    console.log("day add to meal", day)
     var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
     var meal = $scope.detail;
     var id = meal.Id;
 
     $http({
-      url: "http://roameals.azurewebsites.net/api/MealPlans/AddTo",
+      url: "http://roameals.azurewebsites.net/api/MealPlans/AddTo?day=" + day,
       method: "POST",
       data: meal,
+      uri: day,
       headers: {
         'Content-Type': 'application/json',
         'Authorization': authoriz
       }
     })
       .success(function (data) {
-      console.log("yolo swag");
+      // console.log("yolo swag", data);
     })
       .error(function (data) {
       console.log("add meal error", data);
@@ -46,7 +49,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     })
       .success(function (data) {
       $scope.showMealPlan = data;
-      // console.log($scope.showMealPlan);
+      console.log("show meal plan data", $scope.showMealPlan);
     })
       .error(function (data) {
       console.log("error: ", data);
@@ -54,6 +57,9 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
   }()
 
   $scope.showMealPlan = "";
+
+
+
 
   var IngredientList = [];
 
@@ -111,7 +117,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     })
       .success(function (data) {
       console.log("ADDING A MEAL");
-      console.log(data);
+      // console.log(data);
       IngredientList.length = 0;
       location.reload();
     })
@@ -124,7 +130,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
      var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
      $http({
       method: 'POST',
-      url: 'http://roameals.azurewebsites.net/api/MealPlans/DeleteFromMealPlan?mealindex='+index,
+      url: 'http://roameals.azurewebsites.net/api/MealPlans/DeleteFromMealPlan/' + index,
       data: index,
       headers: {
         'Content-Type': 'application/json',
@@ -135,9 +141,57 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
           location.reload();
       }).error(function(data)
       {
-         console.log("error deleting ");
+         console.log("error deleting ", data);
       });
   };
+
+
+  $scope.plusOne = function(mealId) {
+  // console.log("Meal ID", mealId)
+
+  var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
+   $http({
+    method: 'POST',
+    url: 'http://roameals.azurewebsites.net/api/Vote/Like/'+mealId,
+    data: mealId,
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': authoriz
+    }}).success(function(data)
+    {
+       location.reload();
+
+    }).error(function(data)
+    {
+       console.log("error voting", data);
+    });
+
+  };
+
+
+  $scope.minusOne = function(mealId) {
+  // console.log("Meal ID", mealId)
+
+  var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
+
+   $http({
+    method: 'POST',
+    url: 'http://roameals.azurewebsites.net/api/Vote/Dislike/'+mealId,
+    data: mealId,
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': authoriz
+    }}).success(function(data)
+    {
+       location.reload();
+
+    }).error(function(data)
+    {
+       console.log("error voting", data);
+    });
+  };
+
+
 }]);
 
 

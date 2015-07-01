@@ -33,7 +33,6 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       }
 
     }).success(function (data) {
-     // location.reload();
 
     })
       .error(function (data) {
@@ -142,7 +141,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
         'Content-Type': 'application/json',
         'Authorization': authoriz
       }}).success(function(data)
-      {        
+      {
            console.log("Meal PLan", data);
            $scope.showMealPlan = data;
 

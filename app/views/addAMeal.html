@@ -36,7 +36,27 @@
             <button type="button" ng-click= "newIngred()" class="btn btn-default" aria-label="Left Align">
               <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
             </button>
-            <div ng-repeat="ingred in displayIngredient">{{ingred.Name}}&nbsp; {{ingred.Quantity}} &nbsp;{{ingred.Measurement}}</div>
+
+            <h3 id ="indgredientheading">Current Ingredients</h3>
+          
+            <table class="table table-striped">
+                    <thead>
+                          <tr>
+                            <th>Ingredient</th>
+                            <th>Quantity</th>
+                            <th>Measurement</th>
+                          </tr>
+                    </thead>
+                    
+                    <tbody ng-repeat="ingred in displayIngredient">                     
+                      <tr>
+                        <td>{{ingred.Name}}&nbsp;</td>
+                        <td>{{ingred.Quantity}} &nbsp;</td>
+                        <td>{{ingred.Measurement}}</td>
+                      </tr>                      
+                    </tbody>
+                  </table>
+            
         </div>
       </form>
 

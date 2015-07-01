@@ -12,15 +12,15 @@
         </tr>
 
         <tr class="this-row" ng-repeat="ing in arrayOfIng" ng-class="{'red' : toggle}">
-          <td > {{ing.Name}}</td>
-          <td>{{ ing.Quantity}}</td>
-          <td>{{ ing.Measurement}}</td>
+          <td>{{ ing.Name }}</td>
+          <td>{{ ing.Quantity }}</td>
+          <td>{{ ing.Measurement }}</td>
           <td>
-            <div class="checkbox">
-                <label>
-                  <input type="checkbox" ng-click="toggle = !toggle" ng-class="{'red' : toggle}">
-                </label>
-            </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" ng-click="toggle = !toggle" ng-class="{'red' : toggle}">
+            </label>
+          </div>
           </td>
         </tr>
       </table>
@@ -34,4 +34,5 @@
       </button>
     </p>
   </div>
+  
 </div>

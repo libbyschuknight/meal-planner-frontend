@@ -8,11 +8,10 @@
       <div class="container">
         <div class="row seven-cols">
           <div class="col-md-1 dayofweek" ng-repeat="meal in showMealPlan.MealPlanItems">
-            <p>{{meal.Day}}</p>
+            <p>{{ meal.Day }}</p>
 
             <div class="weekly-row-height">
-              <a href="#MealDetails/{{meal.Meal.Id - 1 }}">
-                {{meal.Meal.Name}}
+              <a href="#MealDetails/{{meal.Meal.Id - 1 }}">{{ meal.Meal.Name }}
               </a>
             </div>
 
@@ -28,13 +27,12 @@
 
   <div class="row shop-list-row-height">
     <button type="button" class="btn btn-default btn-sm" ng-controller= "MainController">
-      <a href="#ShoppingList" ng-click="getShoppingList()">
-        My Shopping List</a>
+      <a href="#ShoppingList" ng-click="getShoppingList()">My Shopping List</a>
     </button>
 
     <button type="button" class="btn btn-default btn-sm" ng-controller= "MainController">
-      <a href="#index">
-        View All Meals</a>
+      <a href="#index">View All Meals</a>
     </button>
   </div>
+  
 </div>

@@ -25,18 +25,20 @@ form.navbar-form {margin-right: 15px;}
   color: #7D1935;
 }
 
-.jumbotron {
-  /*height: 250px;*/
-  text-align: center;
-  /*opacity: 0.5;*/
+.background-jumbo {
   background-color: #7D1935;
+  opacity: 0.5;
+}
+
+
+.jumbotron {
+  text-align: center;
   background-image: url("jumbotroncolor.png");
   background-size: cover;
   background-repeat: no-repeat;
-  /*opacity: 0.8;*/
-  color: #7D1935;
-  /*text-shadow: 2px 2px 1px #39c0ba;*/
+  color: #F5F3EE;
 }
+
 
 
 .jumbotron h1 {
@@ -44,8 +46,7 @@ form.navbar-form {margin-right: 15px;}
 }
 
 .jumbotron p {
-  color: #7D1935;
-  /*text-shadow: 2px 2px 1px #39c0ba;*/
+  color: #F5F3EE;
 
 }
 
@@ -106,11 +107,11 @@ form.navbar-form {margin-right: 15px;}
  .btn-default>a {
 /*  background: #fff;
   border: 2px solid #1D4D4A;*/
-  color: #1D4D4A;
+  color: #F5F3EE;
  }
 
   .btn-default>a:hover{
-   color: #39c0ba;
+   color: #4A96AD;
    text-decoration: none;
   }
 
@@ -118,11 +119,11 @@ form.navbar-form {margin-right: 15px;}
 /* ### LINKS #### */
 
 a {
-  color: #F5F3EE;
+  color: #4A96AD;
 }
 
 a:hover {
-  color: #1D4D4A;
+  color: #7D1935;
   text-decoration: none;
 }
 
@@ -131,22 +132,44 @@ a:hover {
 /* ### drop down  nav #### */
 
 .navbar-inverse .navbar-nav>.open>a  {
-  background-image: linear-gradient(to bottom,#39c0ba 0,#39c0ba 100%);
+  background-image: linear-gradient(to bottom,#7D1935 0,#7D1935 100%);
 }
 
 .dropdown-menu>li>a {
-  color: #39c0ba;
+  color: #7D1935;
 }
 
 .dropdown-menu>li>a:hover {
-  color: #1D4D4A;
+  color: #4A96AD;
 
 }
 
 @media (max-width: 767px) {
   .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
-    color: #fff;
+    color: #F5F3EE;
   }
+
+  .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover {
+    color: #4A96AD;
+  }
+
+
+  .jumbotron h1 {
+    font-size: 4em;
+  }
+
+  .jumbotron p {
+    font-size: 1.5em;
+  }
+
+  .navbar-inverse .navbar-toggle {
+    border-color: #F5F3EE;
+  }
+
+  .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    background-color: #7D1935;
+  }
+
 }
 
 
@@ -198,8 +221,8 @@ a:hover {
 
 .likes,
 .dislikes {
-  background: #39c0ba ;
-  color: #fff;
+  background: #F5F3EE ;
+  color: #4A96AD;
   cursor: pointer;
   display: inline-block;
   font-size: 15px;
@@ -216,8 +239,8 @@ a:hover {
 
 .likes:hover,
 .dislikes:hover {
-  color: #1D4D4A ;
-  background: rgba(57, 192, 186, 0.25);
+  color: #4A96AD ;
+  background: rgba(74, 150, 173, 0.25);
   transition: background 500ms;
 }
 

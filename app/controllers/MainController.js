@@ -91,11 +91,7 @@ if($window.sessionStorage.getItem('tokenKey') != null){
   // for selecting a meal from the home page meal boxes
   $scope.AddToMealPlanHome = function (day, id) {
     var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
-    // var meal = $scope.mealsInfo;
-    // console.log("meal AddToMealPlanHome", meal)
-    // var idPlusOne = id + 1;
     var meal = $scope.mealsInfo[id]
-    // console.log("meal id", meal)
 
     $http({
       url: "http://roameals.azurewebsites.net/api/MealPlans/AddTo?day=" + day,
@@ -108,8 +104,6 @@ if($window.sessionStorage.getItem('tokenKey') != null){
       }
     })
       .success(function (data) {
-          // location.reload();
-      // console.log("yolo swag", data);
     })
       .error(function (data) {
       console.log("add meal error", data);

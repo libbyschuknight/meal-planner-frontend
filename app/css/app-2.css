@@ -53,6 +53,10 @@ p.login.error.ng-binding{width:380px;}
 
 }
 
+.contact-height{
+  margin-top:25px;
+}
+
 
 /* ### Navigation #### */
 
@@ -276,7 +280,7 @@ a:hover {
 }
 
 /* ## all images expcet jumptron ## */
-.imageBoxShadow img {
+.imageBoxShadow img, .contact-height img{
   box-shadow: 0 8px 6px -6px black;
 }
 
@@ -345,3 +349,7 @@ a:hover {
     width: 14.285714285714285714285714285714%;
   }
 }
+
+
+/* ###### Contact Page ######*/
+

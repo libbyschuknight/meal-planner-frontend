@@ -48,8 +48,8 @@ if($window.sessionStorage.getItem('tokenKey') != null){
 
 
    	$scope.searchMeals = function() {
-    		console.log("search meals", $scope.search);
-    		console.log("meals info", $scope.mealsInfo);
+    		// console.log("search meals", $scope.search);
+    		// console.log("meals info", $scope.mealsInfo);
     	}()
 
     });

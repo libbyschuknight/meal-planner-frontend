@@ -54,17 +54,40 @@
 
          </div>
         </div>
-        <p>{{voteError}}</p>
       </div>
 
+      <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-8 error-vote">
+          <p>{{voteError}}</p>
+        </div>
+      </div>
     </div>
 
     <div class="col-md-4" >
       <ul class="list-group">
-        <li class="list-group-item" ng-repeat="ingredient in detail.Ingredients">
-          {{ ingredient.Name }}
-        </li>
+          <table class="table table-striped">
+                    <thead>
+                          <tr>
+                            <th>Ingredient</th>
+                            <th>Quantity</th>
+                            <th>Measurement</th>
+                          </tr>
+                    </thead>
+                    
+                    <tbody ng-repeat="ingredient in detail.Ingredients">                     
+                      <tr>
+                        <td>{{ingredient.Name}}&nbsp;</td>
+                        <td>{{ingredient.Quantity}} &nbsp;</td>
+                        <td>{{ingredient.Measurement}}</td>
+                      </tr>                      
+                    </tbody>
+                  </table>
+        </li>      
       </ul>
+    </div>
+
 
       <div class="dropdown" ng-controller="MealController">
           <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">

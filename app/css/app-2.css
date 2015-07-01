@@ -5,36 +5,49 @@
   /*border: 1px solid gray;*/
 }
 
-/* Nav color = 39c0ba / Text color = 1D4D4A */
+/*  colours
+  red = 7D1935 - nav background/ body text /
+  white = F5F3EE  - body background
+  blue = 4A96AD - button colours
+  */
+
 
 html, body, .thumbnail, .caption {
   font-family: 'Montserrat', sans-serif;
-  color: #1D4D4A;
+  color: #7D1935;
+  background-color: #F5F3EE;
 }
+
 ul .dropdown-menu{width:300px;}
 form.navbar-form {margin-right: 15px;}
 
 .thumbnail .caption {
-  color: #1D4D4A;
+  color: #7D1935;
 }
 
+.background-jumbo {
+  background-color: #7D1935;
+  opacity: 0.5;
+}
+
+
 .jumbotron {
-  /*height: 250px;*/
   text-align: center;
-  /*opacity: 0.5;*/
-  /*background-color: gray;*/
+
   background-image: url("jumbotroncolor.png");
   background-size: cover;
   background-repeat: no-repeat;
-  /*opacity: 0.8;*/
-  color: #fff;
-  text-shadow: 2px 2px 1px #39c0ba;
+  color: #F5F3EE;
 }
 
 
+
+.jumbotron h1 {
+  font-size: 7em;
+}
+
 .jumbotron p {
-  color: #fff;
-  text-shadow: 2px 2px 1px #39c0ba;
+  color: #F5F3EE;
 
 }
 
@@ -43,8 +56,8 @@ form.navbar-form {margin-right: 15px;}
 
 .navbar-inverse {
   color: #000;
-  background-image: linear-gradient(to bottom,#39c0ba 0,#39c0ba 100%);
-  border-color: #39c0ba;
+  background-image: linear-gradient(to bottom,#7D1935 0,#7D1935 100%);
+  border-color: #7D1935;
 }
 
 .navbar-inverse .navbar-nav>li>a {
@@ -53,7 +66,7 @@ form.navbar-form {margin-right: 15px;}
 
 
 .navbar-inverse .navbar-nav>li>a:hover {
-  color: #1D4D4A;
+  color: #4A96AD;
 }
 
 .navbar-inverse .navbar-brand {
@@ -75,15 +88,16 @@ form.navbar-form {margin-right: 15px;}
 
 
  .btn-default {
-  background: #fff;
-  border: 2px solid #1D4D4A;
-  color: #1D4D4A;
+  background: #4A96AD;
+  /*border: 2px solid #1D4D4A;*/
+  color: #F5F3EE;
+  text-shadow: none;
  }
 
  .btn-default:hover, .btn-default:focus,  .open > .dropdown-toggle.btn-default {
-   background: #fff;
-   border-color: #39c0ba;
-   color: #39c0ba;
+   background: #F5F3EE;
+   border-color: #4A96AD;
+   color: #4A96AD;
  }
 
  .btn-default:active, .btn-default.active {
@@ -94,11 +108,11 @@ form.navbar-form {margin-right: 15px;}
  .btn-default>a {
 /*  background: #fff;
   border: 2px solid #1D4D4A;*/
-  color: #1D4D4A;
+  color: #F5F3EE;
  }
 
   .btn-default>a:hover{
-   color: #39c0ba;
+   color: #4A96AD;
    text-decoration: none;
   }
 
@@ -106,11 +120,11 @@ form.navbar-form {margin-right: 15px;}
 /* ### LINKS #### */
 
 a {
-  color: #39c0ba;
+  color: #4A96AD;
 }
 
 a:hover {
-  color: #1D4D4A;
+  color: #7D1935;
   text-decoration: none;
 }
 
@@ -119,22 +133,44 @@ a:hover {
 /* ### drop down  nav #### */
 
 .navbar-inverse .navbar-nav>.open>a  {
-  background-image: linear-gradient(to bottom,#39c0ba 0,#39c0ba 100%);
+  background-image: linear-gradient(to bottom,#7D1935 0,#7D1935 100%);
 }
 
 .dropdown-menu>li>a {
-  color: #39c0ba;
+  color: #7D1935;
 }
 
 .dropdown-menu>li>a:hover {
-  color: #1D4D4A;
+  color: #4A96AD;
 
 }
 
 @media (max-width: 767px) {
   .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
-    color: #fff;
+    color: #F5F3EE;
   }
+
+  .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover {
+    color: #4A96AD;
+  }
+
+
+  .jumbotron h1 {
+    font-size: 4em;
+  }
+
+  .jumbotron p {
+    font-size: 1.5em;
+  }
+
+  .navbar-inverse .navbar-toggle {
+    border-color: #F5F3EE;
+  }
+
+  .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    background-color: #7D1935;
+  }
+
 }
 
 
@@ -182,12 +218,10 @@ a:hover {
 
 /* ####  Likes and Dislikes Styling ###### */
 
-
-
 .likes,
 .dislikes {
-  background: #39c0ba ;
-  color: #fff;
+  background: #F5F3EE ;
+  color: #4A96AD;
   cursor: pointer;
   display: inline-block;
   font-size: 15px;
@@ -204,9 +238,13 @@ a:hover {
 
 .likes:hover,
 .dislikes:hover {
-  color: #1D4D4A ;
-  background: rgba(57, 192, 186, 0.25);
+  color: #4A96AD ;
+  background: rgba(74, 150, 173, 0.25);
   transition: background 500ms;
+}
+
+.error-vote {
+  text-align: center;
 }
 
 

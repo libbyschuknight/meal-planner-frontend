@@ -27,6 +27,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       }
     })
       .success(function (data) {
+           location.reload();
       // console.log("yolo swag", data);
     })
       .error(function (data) {
@@ -47,7 +48,6 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     })
       .success(function (data) {
       $scope.showMealPlan = data;
-      // console.log("show meal plan data", $scope.showMealPlan);
     })
       .error(function (data) {
       console.log("error: ", data);
@@ -76,9 +76,9 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     }
     IngredientList.push(ingredient);
  $scope.displayIngredient.push(ingredient);
-    $scope.ingredientName = "";
-    $scope.quantity = "";
-    $scope.measurement = "";
+    $scope.ingredientName = null;
+    $scope.quantity = null;
+    $scope.measurement = null;
     console.log(IngredientList);
   }
 
@@ -149,7 +149,6 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
   $scope.plusOne = function(mealId) {
   $scope.likes = data[$routeParams.id].Likes
 
-  // console.log("Meal ID", mealId)
   var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
    $http({
     method: 'POST',
@@ -161,7 +160,6 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     }}).success(function(data)
     {
        $scope.likes = data;
-       //$scope.likes += 1;
 
 
     }).error(function(data)
@@ -169,13 +167,11 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       $scope.voteError = data.Message;
        });
 
-  //});
   }
 
 
 
   $scope.minusOne = function(mealId) {
-  // console.log("Meal ID", mealId)
   $scope.dislikes = data[$routeParams.id].Dislikes
 
 

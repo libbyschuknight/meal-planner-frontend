@@ -1,11 +1,10 @@
 app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$window', function($scope, $http, meals, $routeParams, $window) {
 
   meals.success(function(data) {
-    console.log("meals success", data);
+    // console.log("meals success", data);
     $scope.detail = data[$routeParams.id];
-    console.log("Scope detail data", $scope.detail);
-
-
+    $scope.likes = data[$routeParams.id].Likes
+     $scope.dislikes = data[$routeParams.id].Dislikes
   });
 
   if ($window.sessionStorage.length == 0) {
@@ -13,10 +12,11 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
   }
 
   $scope.AddToMealPlan = function (day) {
-    console.log("day add to meal", day)
+   console.log("day add to meal", day)
     var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
     var meal = $scope.detail;
     var id = meal.Id;
+    // console.log("meal id", id)
 
     $http({
       url: "http://roameals.azurewebsites.net/api/MealPlans/AddTo?day=" + day,
@@ -29,6 +29,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       }
     })
       .success(function (data) {
+           location.reload();
       // console.log("yolo swag", data);
     })
       .error(function (data) {
@@ -49,7 +50,6 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     })
       .success(function (data) {
       $scope.showMealPlan = data;
-      console.log("show meal plan data", $scope.showMealPlan);
     })
       .error(function (data) {
       console.log("error: ", data);
@@ -62,6 +62,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
 
 
   var IngredientList = [];
+  $scope.displayIngredient=[];
 
   var localName = $scope.ingredientName;
   var localQuantity = $scope.quantity;
@@ -76,10 +77,10 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
 
     }
     IngredientList.push(ingredient);
-
-    $scope.ingredientName = "";
-    $scope.quantity = "";
-    $scope.measurement = "";
+ $scope.displayIngredient.push(ingredient);
+    $scope.ingredientName = null;
+    $scope.quantity = null;
+    $scope.measurement = null;
     console.log(IngredientList);
   }
 
@@ -94,6 +95,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     }
 
     IngredientList.push(ingredient);
+
     var data =
       {
         Name: $scope.mealName,
@@ -119,6 +121,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       console.log("ADDING A MEAL");
       // console.log(data);
       IngredientList.length = 0;
+       $scope.displayIngredient.length=0;
       location.reload();
     })
       .error(function (data) {
@@ -145,9 +148,8 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       });
   };
 
-
   $scope.plusOne = function(mealId) {
-  // console.log("Meal ID", mealId)
+  
 
   var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
    $http({
@@ -159,18 +161,21 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       'Authorization': authoriz
     }}).success(function(data)
     {
-       location.reload();
+       $scope.likes = data;
+
 
     }).error(function(data)
     {
-       console.log("error voting", data);
-    });
+      $scope.voteError = data.Message;
+       });
 
-  };
+  }
+
 
 
   $scope.minusOne = function(mealId) {
-  // console.log("Meal ID", mealId)
+ 
+
 
   var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
 
@@ -183,11 +188,10 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       'Authorization': authoriz
     }}).success(function(data)
     {
-       location.reload();
-
+      $scope.dislikes = data;
     }).error(function(data)
     {
-       console.log("error voting", data);
+       $scope.voteError = data.Message;
     });
   };
 

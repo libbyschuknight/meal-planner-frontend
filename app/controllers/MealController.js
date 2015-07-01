@@ -80,9 +80,9 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     }
     IngredientList.push(ingredient);
  $scope.displayIngredient.push(ingredient);
-    $scope.ingredientName = "";
-    $scope.quantity = "";
-    $scope.measurement = "";
+    $scope.ingredientName = null;
+    $scope.quantity = null;
+    $scope.measurement = null;
     console.log(IngredientList);
   }
 

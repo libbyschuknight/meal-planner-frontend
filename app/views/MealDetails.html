@@ -32,26 +32,26 @@
 
         <div class="col-md-4 col-xs-4">
           <div class="rating">
-
             <div class="row likes" ng-click="plusOne(detail.Id)">
               {{ likes }}
             </div>
             <div class="row">
               <p>likes</p>
             </div>
+            <p class="likes" ng-click="plusOne(detail.Id)">{{ likes }}</p>
+            <p>likes</p>
           </div>
         </div>
 
         <div class="col-md-4 col-xs-4">
          <div class="rating">
-
            <div class=" row dislikes" ng-click="minusOne(detail.Id)">
             {{ dislikes }}
            </div>
            <div class="row">
              <p>dislikes</p>
            </div>
-
+           <p class="dislikes" ng-click="minusOne(detail.Id)">{{ dislikes }}</p>
          </div>
         </div>
       </div>

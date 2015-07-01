@@ -24,13 +24,13 @@
             <label class="sr-only">Quantity</label>
             <input type="number" class="form-control" id="quantity" placeholder="Ingredient quantity" ng-model="quantity">
 
-         
+
             <select class="form-control" id="measurement" ng-model="measurement">
                <option class="form-control"value="" selected disabled>Measurement</option>
-                <option >Whole</option>     
+                <option >Whole</option>
                 <option>Litres (L)</option>
                 <option>Kilograms (kg)</option>
-                               
+
             </select>
 
             <button type="button" ng-click= "newIngred()" class="btn btn-default" aria-label="Left Align">
@@ -38,7 +38,7 @@
             </button>
 
             <h3 id ="indgredientheading">Current Ingredients</h3>
-          
+
             <table class="table table-striped">
                     <thead>
                           <tr>
@@ -47,21 +47,21 @@
                             <th>Measurement</th>
                           </tr>
                     </thead>
-                    
-                    <tbody ng-repeat="ingred in displayIngredient">                     
+
+                    <tbody ng-repeat="ingred in displayIngredient">
                       <tr>
                         <td>{{ingred.Name}}&nbsp;</td>
                         <td>{{ingred.Quantity}} &nbsp;</td>
                         <td>{{ingred.Measurement}}</td>
-                      </tr>                      
+                      </tr>
                     </tbody>
                   </table>
-            
+
         </div>
       </form>
 
       <button type="submit" ng-click="addAMeal()" class="btn btn-default">Add Meal</button>
-      
+
   </div>
 </div>
 

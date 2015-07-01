@@ -32,8 +32,9 @@
 
         <div class="col-md-4 col-xs-4">
           <div class="rating">
+
             <div class="row likes" ng-click="plusOne(detail.Id)">
-              {{ detail.Likes }}
+              {{ likes }}
             </div>
             <div class="row">
               <p>likes</p>
@@ -43,14 +44,17 @@
 
         <div class="col-md-4 col-xs-4">
          <div class="rating">
+
            <div class=" row dislikes" ng-click="minusOne(detail.Id)">
-            {{ detail.Dislikes }}
+            {{ dislikes }}
            </div>
            <div class="row">
              <p>dislikes</p>
            </div>
+
          </div>
         </div>
+        <p>{{voteError}}</p>
       </div>
 
     </div>

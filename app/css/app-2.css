@@ -21,6 +21,8 @@ html, body, .thumbnail, .caption {
 ul .dropdown-menu{width:300px;}
 form.navbar-form {margin-right: 15px;}
 
+p.login.error.ng-binding{width:380px;}
+
 .thumbnail .caption {
   color: #7D1935;
 }

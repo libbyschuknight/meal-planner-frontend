@@ -32,26 +32,26 @@
 
         <div class="col-md-4 col-xs-4">
           <div class="rating">
+
             <div class="row likes" ng-click="plusOne(detail.Id)">
               {{ likes }}
             </div>
             <div class="row">
               <p>likes</p>
             </div>
-            <p class="likes" ng-click="plusOne(detail.Id)">{{ likes }}</p>
-            <p>likes</p>
           </div>
         </div>
 
         <div class="col-md-4 col-xs-4">
          <div class="rating">
+
            <div class=" row dislikes" ng-click="minusOne(detail.Id)">
             {{ dislikes }}
            </div>
            <div class="row">
              <p>dislikes</p>
            </div>
-           <p class="dislikes" ng-click="minusOne(detail.Id)">{{ dislikes }}</p>
+
          </div>
         </div>
       </div>
@@ -67,12 +67,26 @@
 
     <div class="col-md-4" >
       <ul class="list-group">
-        <li class="list-group-item" ng-repeat="ingredient in detail.Ingredients">
-          {{ ingredient.Name }}&nbsp;  {{ ingredient.Quantity }}&nbsp; {{ ingredient.Measurement }}
-         
-        </li>
-       
+          <table class="table table-striped">
+                    <thead>
+                          <tr>
+                            <th>Ingredient</th>
+                            <th>Quantity</th>
+                            <th>Measurement</th>
+                          </tr>
+                    </thead>
+                    
+                    <tbody ng-repeat="ingredient in detail.Ingredients">                     
+                      <tr>
+                        <td>{{ingredient.Name}}&nbsp;</td>
+                        <td>{{ingredient.Quantity}} &nbsp;</td>
+                        <td>{{ingredient.Measurement}}</td>
+                      </tr>                      
+                    </tbody>
+                  </table>
+        </li>      
       </ul>
+    </div>
 
 
       <div class="dropdown" ng-controller="MealController">

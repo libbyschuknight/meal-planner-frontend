@@ -15,7 +15,7 @@ app.controller('LoginController', function ($scope, $http, $window,$rootScope, u
         console.log(postdata)
 
         var q = "grant_type=password&username=" + encodeURIComponent($scope.username) + "&password=" + encodeURIComponent($scope.password);
-console.log("This is Q", q)
+        console.log("This is Q", q)
 
         $http({
             method: 'POST',
@@ -55,35 +55,23 @@ console.log("This is Q", q)
         console.log("signin google");
         $http({
             method: 'GET',
-            url: 'http://localhost:62555/api/Account/ExternalLogins?returnUrl=%2F&generateState=true',
+            url: 'http://roameals.azurewebsites.net/api/Account/ExternalLogins?returnUrl=%2F&generateState=true',
             headers: { 'Content-Type': 'application/json'}
         }).success(function (data) {
             alert(JSON.stringify(data));
-            window.location = "http://localhost:62555" + data[0].Url;
+            window.location = "http://roameals.azurewebsites.net" + data[0].Url;
         }).error(function(data){
             console.log("could not redirect to google", data);
         })
     }
 });
 
-function TestRegister(){
-    $.ajax({
-    method: 'POST',
-    url: 'http://localhost:62555/api/Account/RegisterExternal',
-    headers: { 'Content-Type': 'application/json'}
-    }).success(function (data) {
-        window.location = "http://localhost:8000" + data[0].Url;
-    }).error(function(){
-        console.log("could not redirect to google");
-    })
-}
-
 function CheckUser()
 {
     console.log("CheckUser: accessToken = " + accessToken);
    $.ajax({
         method: 'GET',
-        url: 'http://localhost:62555/api/Account/UserInfo',
+        url: 'http://roameals.azurewebsites.net/api/Account/UserInfo',
         headers: { 'Content-Type': 'application/json',
                     'Authorization': "Bearer " + accessToken }
     }).success(function (data) {
@@ -102,8 +90,9 @@ function GoogleSignIn(){
     console.log("user is registered")
     $.ajax({
         method: 'GET',
-        url: '/api/Account/ExternalLogin?provider=Google&response_type=token&client_id=self&redirect_uri=http%3A%2F%2Flocalhost%3A62555%2F&state=lbs_GOWdVHyqMb1YqKR9E72-xoucA029p0ApTY-mQtc1',
-        headers: { 'Content-Type': 'application/json'}
+        url: 'http://roameals.azurewebsites.net/api/Account/ExternalLogin?provider=Google&response_type=token&client_id=self&redirect_uri=http%3A%2F%2Flocalhost%3A62555%2F&state=lbs_GOWdVHyqMb1YqKR9E72-xoucA029p0ApTY-mQtc1',
+        headers: {  'Content-Type': 'application/json',
+                    "Authorization": "Bearer " + accessToken}
     }).success(function (data) {
         console.log("success of login ajax get");
         // window.location = "http://localhost:62555" + data[0].Url;
@@ -115,7 +104,7 @@ function GoogleSignIn(){
 function GoogleRegister(){
     $.ajax({
         method: 'POST',
-        url: 'http://localhost:62555/api/Account/RegisterExternal',
+        url: 'http://roameals.azurewebsites.net/api/Account/RegisterExternal',
         headers: { "Content-Type": "application/json",
                     "Authorization": "Bearer " + accessToken}, 
         data: JSON.stringify({

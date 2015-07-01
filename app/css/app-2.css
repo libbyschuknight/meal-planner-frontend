@@ -94,7 +94,7 @@ form.navbar-form {margin-right: 15px;}
   text-shadow: none;
  }
 
- .btn-default:hover, .btn-default:focus,  .open > .dropdown-toggle.btn-default {
+ .btn-default:hover, .btn-default:focus, .open > .dropdown-toggle.btn-default {
    background: #F5F3EE;
    border-color: #4A96AD;
    color: #4A96AD;
@@ -114,7 +114,16 @@ form.navbar-form {margin-right: 15px;}
   .btn-default>a:hover{
    color: #4A96AD;
    text-decoration: none;
-  }
+}
+
+
+.open>.dropdown-toggle.btn-default:focus, .open>.dropdown-toggle.btn-default:hover {
+  color: #4A96AD;
+  background-color: #F5F3EE;
+  border-color: #4A96AD;
+}
+
+
 
 
 /* ### LINKS #### */

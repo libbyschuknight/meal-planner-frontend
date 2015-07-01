@@ -3,6 +3,8 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
   meals.success(function(data) {
     // console.log("meals success", data);
     $scope.detail = data[$routeParams.id];
+    $scope.likes = data[$routeParams.id].Likes
+     $scope.dislikes = data[$routeParams.id].Dislikes
   });
 
   if ($window.sessionStorage.length == 0) {
@@ -147,7 +149,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
   };
 
   $scope.plusOne = function(mealId) {
-  $scope.likes = data[$routeParams.id].Likes
+  
 
   var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
    $http({
@@ -172,7 +174,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
 
 
   $scope.minusOne = function(mealId) {
-  $scope.dislikes = data[$routeParams.id].Dislikes
+ 
 
 
   var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');

@@ -5,14 +5,19 @@
   /*border: 1px solid gray;*/
 }
 
-/* Nav color = 39c0ba / Text color = 1D4D4A */
+/*  colours
+  red = 7D1935 - nav background/ body text /
+  white = F5F3EE  - body background
+  blue = 4A96AD - button colours
+  */
+
 
 html, body, .thumbnail, .caption {
   font-family: 'Montserrat', sans-serif;
   color: #7D1935;
   background-color: #F5F3EE;
-
 }
+
 ul .dropdown-menu{width:300px;}
 form.navbar-form {margin-right: 15px;}
 
@@ -25,18 +30,22 @@ form.navbar-form {margin-right: 15px;}
   text-align: center;
   /*opacity: 0.5;*/
   background-color: #7D1935;
-  /*background-image: url("jumbotroncolor.png");*/
+  background-image: url("jumbotroncolor.png");
   background-size: cover;
   background-repeat: no-repeat;
   /*opacity: 0.8;*/
-  color: #fff;
-  text-shadow: 2px 2px 1px #39c0ba;
+  color: #7D1935;
+  /*text-shadow: 2px 2px 1px #39c0ba;*/
 }
 
 
+.jumbotron h1 {
+  font-size: 7em;
+}
+
 .jumbotron p {
-  color: #fff;
-  text-shadow: 2px 2px 1px #39c0ba;
+  color: #7D1935;
+  /*text-shadow: 2px 2px 1px #39c0ba;*/
 
 }
 
@@ -77,15 +86,16 @@ form.navbar-form {margin-right: 15px;}
 
 
  .btn-default {
-  background: #fff;
-  border: 2px solid #1D4D4A;
-  color: #1D4D4A;
+  background: #4A96AD;
+  /*border: 2px solid #1D4D4A;*/
+  color: #F5F3EE;
+  text-shadow: none;
  }
 
  .btn-default:hover, .btn-default:focus,  .open > .dropdown-toggle.btn-default {
-   background: #fff;
-   border-color: #39c0ba;
-   color: #39c0ba;
+   background: #F5F3EE;
+   border-color: #4A96AD;
+   color: #4A96AD;
  }
 
  .btn-default:active, .btn-default.active {
@@ -108,7 +118,7 @@ form.navbar-form {margin-right: 15px;}
 /* ### LINKS #### */
 
 a {
-  color: #39c0ba;
+  color: #F5F3EE;
 }
 
 a:hover {

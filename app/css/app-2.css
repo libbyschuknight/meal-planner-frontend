@@ -9,21 +9,23 @@
 
 html, body, .thumbnail, .caption {
   font-family: 'Montserrat', sans-serif;
-  color: #1D4D4A;
+  color: #7D1935;
+  background-color: #F5F3EE;
+
 }
 ul .dropdown-menu{width:300px;}
 form.navbar-form {margin-right: 15px;}
 
 .thumbnail .caption {
-  color: #1D4D4A;
+  color: #7D1935;
 }
 
 .jumbotron {
   /*height: 250px;*/
   text-align: center;
   /*opacity: 0.5;*/
-  /*background-color: gray;*/
-  background-image: url("jumbotroncolor.png");
+  background-color: #7D1935;
+  /*background-image: url("jumbotroncolor.png");*/
   background-size: cover;
   background-repeat: no-repeat;
   /*opacity: 0.8;*/
@@ -43,8 +45,8 @@ form.navbar-form {margin-right: 15px;}
 
 .navbar-inverse {
   color: #000;
-  background-image: linear-gradient(to bottom,#39c0ba 0,#39c0ba 100%);
-  border-color: #39c0ba;
+  background-image: linear-gradient(to bottom,#7D1935 0,#7D1935 100%);
+  border-color: #7D1935;
 }
 
 .navbar-inverse .navbar-nav>li>a {
@@ -53,7 +55,7 @@ form.navbar-form {margin-right: 15px;}
 
 
 .navbar-inverse .navbar-nav>li>a:hover {
-  color: #1D4D4A;
+  color: #4A96AD;
 }
 
 .navbar-inverse .navbar-brand {

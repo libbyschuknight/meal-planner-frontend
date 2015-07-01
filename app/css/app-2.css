@@ -32,12 +32,14 @@ form.navbar-form {margin-right: 15px;}
 }
 
 
-
 .jumbotron p {
   color: #fff;
   text-shadow: 2px 2px 1px #39c0ba;
 
 }
+
+
+/* ### Navigation #### */
 
 .navbar-inverse {
   color: #000;
@@ -68,6 +70,52 @@ form.navbar-form {margin-right: 15px;}
 
 
 
+
+ /* ### BUTTON STYLYING ##### */
+
+
+ .btn-default {
+  background: #fff;
+  border: 2px solid #1D4D4A;
+  color: #1D4D4A;
+ }
+
+ .btn-default:hover, .btn-default:focus,  .open > .dropdown-toggle.btn-default {
+   background: #fff;
+   border-color: #39c0ba;
+   color: #39c0ba;
+ }
+
+ .btn-default:active, .btn-default.active {
+   border-color: #39c0ba;
+   box-shadow: none;
+ }
+
+ .btn-default>a {
+/*  background: #fff;
+  border: 2px solid #1D4D4A;*/
+  color: #1D4D4A;
+ }
+
+  .btn-default>a:hover{
+   color: #39c0ba;
+   text-decoration: none;
+  }
+
+
+/* ### LINKS #### */
+
+a {
+  color: #39c0ba;
+}
+
+a:hover {
+  color: #1D4D4A;
+  text-decoration: none;
+}
+
+
+
 /* ### drop down  nav #### */
 
 .navbar-inverse .navbar-nav>.open>a  {
@@ -82,6 +130,15 @@ form.navbar-form {margin-right: 15px;}
   color: #1D4D4A;
 
 }
+
+@media (max-width: 767px) {
+  .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+    color: #fff;
+  }
+}
+
+
+
 
 
 /* ## for images on details page ## */
@@ -138,7 +195,7 @@ form.navbar-form {margin-right: 15px;}
   min-width: 40px;
   height: 40px;
   border-radius: 50%;
-  margin: 0 -30px 0 40px;
+  margin: 5px 0 10px 0;
   text-align: center;
   font-weight: 200;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
@@ -153,7 +210,9 @@ form.navbar-form {margin-right: 15px;}
 }
 
 
-
+.view-meal-details {
+  margin-top: 15px;
+}
 
 /* ## for images on home page ##  */
 

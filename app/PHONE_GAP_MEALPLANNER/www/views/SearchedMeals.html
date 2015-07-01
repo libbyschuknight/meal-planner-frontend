@@ -1,0 +1,14 @@
+
+
+<div class="row text-center" ng-controller="MainController">
+
+    <div class="col-md-3 col-sm-6 " ng-repeat="meal in mealsInfo | filter:search">
+        <div class="thumbnail imageBoxShadow mealBox">
+          <!-- class="img-responsive" -->
+          <a href="#MealDetails/{{$index}}"><img class="mealsImgs" ng-src='{{ meal.ImageUrl }}'></a>
+          <div class="caption">
+              <h4>{{ meal.Name }}</h4>
+          </div>
+        </div>
+    </div>
+</div>

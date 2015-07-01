@@ -30,7 +30,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     })
       .success(function (data) {
 
-           location.reload();
+          // location.reload();
            
     })
       .error(function (data) {
@@ -56,13 +56,6 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
   }()
 
   $scope.showMealPlan = "";
-
-
-
- 
-
-
-
 
   var IngredientList = [];
   $scope.displayIngredient=[];

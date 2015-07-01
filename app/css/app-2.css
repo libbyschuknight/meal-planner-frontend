@@ -209,6 +209,10 @@ a:hover {
   transition: background 500ms;
 }
 
+.error-vote {
+  text-align: center;
+}
+
 
 .view-meal-details {
   margin-top: 15px;

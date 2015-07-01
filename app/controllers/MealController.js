@@ -1,7 +1,6 @@
 app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$window', function($scope, $http, meals, $routeParams, $window) {
 
   meals.success(function(data) {
-    // console.log("meals success", data);
     $scope.detail = data[$routeParams.id];
     $scope.likes = data[$routeParams.id].Likes
      $scope.dislikes = data[$routeParams.id].Dislikes
@@ -11,12 +10,13 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     $window.location.href = '#Login';
   }
 
+
+  // for selecting meal from meal details page
   $scope.AddToMealPlan = function (day) {
    console.log("day add to meal", day)
     var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
     var meal = $scope.detail;
     var id = meal.Id;
-    // console.log("meal id", id)
 
     $http({
       url: "http://roameals.azurewebsites.net/api/MealPlans/AddTo?day=" + day,
@@ -30,12 +30,13 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     })
       .success(function (data) {
            location.reload();
-      // console.log("yolo swag", data);
     })
       .error(function (data) {
       console.log("add meal error", data);
     })
   }
+
+
 
 
   $scope.getMealPlan = function () {
@@ -149,7 +150,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
   };
 
   $scope.plusOne = function(mealId) {
-  
+
 
   var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
    $http({
@@ -174,7 +175,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
 
 
   $scope.minusOne = function(mealId) {
- 
+
 
 
   var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');

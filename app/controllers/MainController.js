@@ -44,15 +44,8 @@ if($window.sessionStorage.getItem('tokenKey') != null){
 
     meals.success(function(data) {
       $scope.mealsInfo = data;
-
-
-
-   	$scope.searchMeals = function() {
-    		// console.log("search meals", $scope.search);
-    		// console.log("meals info", $scope.mealsInfo);
-    	}()
-
     });
+
 
     $scope.getShoppingList = function() {
       $scope.arrayOfIng = "test";
@@ -90,6 +83,36 @@ if($window.sessionStorage.getItem('tokenKey') != null){
 
   $scope.toggleCSS = function () {
     window.print();
+  }
+
+
+
+  // for selecting a meal from the home page meal boxes
+  $scope.AddToMealPlanHome = function (day, id) {
+    var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
+    // var meal = $scope.mealsInfo;
+    // console.log("meal AddToMealPlanHome", meal)
+    // var idPlusOne = id + 1;
+    var meal = $scope.mealsInfo[id]
+    // console.log("meal id", meal)
+
+    $http({
+      url: "http://roameals.azurewebsites.net/api/MealPlans/AddTo?day=" + day,
+      method: "POST",
+      data: meal,
+      uri: day,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': authoriz
+      }
+    })
+      .success(function (data) {
+           location.reload();
+      // console.log("yolo swag", data);
+    })
+      .error(function (data) {
+      console.log("add meal error", data);
+    })
   }
 
 }]);

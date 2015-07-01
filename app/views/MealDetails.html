@@ -32,38 +32,37 @@
 
         <div class="col-md-4 col-xs-4">
           <div class="rating">
-<<<<<<< HEAD
             <div class="row likes" ng-click="plusOne(detail.Id)">
-              {{ detail.Likes }}
+              {{ likes }}
             </div>
             <div class="row">
               <p>likes</p>
             </div>
-=======
             <p class="likes" ng-click="plusOne(detail.Id)">{{ likes }}</p>
             <p>likes</p>
-
->>>>>>> fe837ad1af8c93b4afca5e83173d35eccd428f13
           </div>
         </div>
 
         <div class="col-md-4 col-xs-4">
          <div class="rating">
-<<<<<<< HEAD
            <div class=" row dislikes" ng-click="minusOne(detail.Id)">
-            {{ detail.Dislikes }}
+            {{ dislikes }}
            </div>
            <div class="row">
              <p>dislikes</p>
            </div>
-=======
            <p class="dislikes" ng-click="minusOne(detail.Id)">{{ dislikes }}</p>
->>>>>>> fe837ad1af8c93b4afca5e83173d35eccd428f13
          </div>
         </div>
-        <p>{{voteError}}</p>
       </div>
 
+      <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-8 error-vote">
+          <p>{{voteError}}</p>
+        </div>
+      </div>
     </div>
 
     <div class="col-md-4" >

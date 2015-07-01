@@ -29,6 +29,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       }
     })
       .success(function (data) {
+           location.reload();
       // console.log("yolo swag", data);
     })
       .error(function (data) {
@@ -50,6 +51,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       .success(function (data) {
       $scope.showMealPlan = data;
       console.log("show meal plan data", $scope.showMealPlan);
+   
     })
       .error(function (data) {
       console.log("error: ", data);

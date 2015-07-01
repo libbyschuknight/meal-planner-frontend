@@ -25,8 +25,50 @@
             <a href="#MealDetails/{{$index}}"><img class="mealsImgs" ng-src='{{ meal.ImageUrl }}'></a>
             <div class="caption">
                 <h4>{{ meal.Name }}</h4>
+
             </div>
-          </div>
+
+
+            <div class="dropdown" ng-controller="MealController">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  Select Day
+                  <span class="caret"></span>
+                </button>
+
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                   <li><a href="#WeekPlanner" ng-click="AddToMealPlan('Monday')">Monday </a></li>
+                  <li><a href="#WeekPlanner" ng-click="AddToMealPlan('Tuesday')">Tuesday</a></li>
+                  <li><a href="#WeekPlanner" ng-click="AddToMealPlan('Wednesday')">Wednesday</a></li>
+                  <li><a href="#WeekPlanner" ng-click="AddToMealPlan('Thursday')">Thursday</a></li>
+                  <li><a href="#WeekPlanner" ng-click="AddToMealPlan('Friday')">Friday</a></li>
+                  <li><a href="#WeekPlanner" ng-click="AddToMealPlan('Saturday')">Saturday</a></li>
+                  <li><a href="#WeekPlanner" ng-click="AddToMealPlan('Sunday')">Sunday</a></li>
+                </ul>
+            </div>
+
+
+
+
+
+            <!-- <div class="row">
+              <div class="col-md-6 rating">
+                <div class="row likes" ng-click="plusOne(detail.Id)">
+                  {{ detail.Likes }}
+                </div>
+                <div class="row">
+                  <p>likes</p>
+                </div>
+              </div>
+
+              <div class="col-md-6 rating">
+                <div class=" row dislikes" ng-click="minusOne(detail.Id)">
+                 {{ detail.Dislikes }}
+                </div>
+                <div class="row">
+                  <p>dislikes</p>
+                </div>
+              </div>
+            </div> -->
       </div>
 
   </div>

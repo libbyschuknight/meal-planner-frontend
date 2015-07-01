@@ -3,9 +3,6 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
   meals.success(function(data) {
     // console.log("meals success", data);
     $scope.detail = data[$routeParams.id];
-    $scope.likes = data[$routeParams.id].Likes
-    $scope.dislikes = data[$routeParams.id].Dislikes
-
   });
 
   if ($window.sessionStorage.length == 0) {
@@ -13,10 +10,11 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
   }
 
   $scope.AddToMealPlan = function (day) {
- //   console.log("day add to meal", day)
+   console.log("day add to meal", day)
     var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
     var meal = $scope.detail;
     var id = meal.Id;
+    // console.log("meal id", id)
 
     $http({
       url: "http://roameals.azurewebsites.net/api/MealPlans/AddTo?day=" + day,
@@ -50,8 +48,6 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     })
       .success(function (data) {
       $scope.showMealPlan = data;
-      console.log("show meal plan data", $scope.showMealPlan);
-   
     })
       .error(function (data) {
       console.log("error: ", data);
@@ -97,7 +93,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     }
 
     IngredientList.push(ingredient);
-    
+
     var data =
       {
         Name: $scope.mealName,
@@ -151,7 +147,8 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
   };
 
   $scope.plusOne = function(mealId) {
-  // console.log("Meal ID", mealId)
+  $scope.likes = data[$routeParams.id].Likes
+
   var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
    $http({
     method: 'POST',
@@ -163,20 +160,20 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     }}).success(function(data)
     {
        $scope.likes = data;
-       //$scope.likes += 1;
-       
+
 
     }).error(function(data)
     {
       $scope.voteError = data.Message;
        });
 
-  //});
   }
 
 
+
   $scope.minusOne = function(mealId) {
-  // console.log("Meal ID", mealId)
+  $scope.dislikes = data[$routeParams.id].Dislikes
+
 
   var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
 

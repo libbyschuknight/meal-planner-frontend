@@ -102,7 +102,7 @@ function GoogleSignIn(){
     console.log("user is registered")
     $.ajax({
         method: 'GET',
-        url: '/api/Account/ExternalLogin?provider=Google&response_type=token&client_id=self&redirect_uri=http%3A%2F%2Flocalhost%3A62555%2F&state=lbs_GOWdVHyqMb1YqKR9E72-xoucA029p0ApTY-mQtc1',
+        url: '/api/Account/ExternalLogin?provider=Facebook&response_type=token&client_id=self&redirect_uri=http%3A%2F%2Flocalhost%3A62555%2F&state=LHZKqh-hYWiIKHT3SflCcLY9Iwbz1Xfh1bsRLlD8mQ01',
         headers: { 'Content-Type': 'application/json'}
     }).success(function (data) {
         console.log("success of login ajax get");
@@ -118,10 +118,10 @@ function GoogleRegister(){
         url: 'http://localhost:62555/api/Account/RegisterExternal',
         headers: { "Content-Type": "application/json",
                     "Authorization": "Bearer " + accessToken}, 
-        data: JSON.stringify({
-                            // Only wants email
-                            "Email": "samnz19@gmail.com"
-                            })                         
+        // data: JSON.stringify({
+        //                     // Only wants email
+        //                     "Email": "samnz19@gmail.com"
+        //                     })                         
     }).success(function(){
             console.log("registered post ajax thing")
             $window.location.href = '#Index';

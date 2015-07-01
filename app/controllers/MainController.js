@@ -26,9 +26,7 @@ if($window.sessionStorage.getItem('tokenKey') != null){
       {
         $scope.UserName = data.Name;
       })
-
       .error(function(data){
-
       });
 
     meals.success(function(data) {
@@ -36,12 +34,16 @@ if($window.sessionStorage.getItem('tokenKey') != null){
 
 
 
+    //////// Search For Meals Code
+
    	$scope.searchMeals = function() {
     		console.log("search meals", $scope.search);
     		console.log("meals info", $scope.mealsInfo);
     	}()
-
     });
+
+
+    /////// Get Shopping List Code
 
     $scope.getShoppingList = function() {
       $scope.arrayOfIng = "test";
@@ -58,29 +60,24 @@ if($window.sessionStorage.getItem('tokenKey') != null){
         $scope.arrayOfIng = data;
   	})
       .error(function(data){
-
       })
     }()
 
 
-  $scope.arrayOfIng=" ";
+    $scope.arrayOfIng=" ";
     var logindisplay=function(event, dataforme)
     {
       $scope.UserName=dataforme
     }
-     var logoutdisplay=function(event, dataforme )
+    var logoutdisplay=function(event, dataforme )
     {
       $scope.UserName=" ";
     }
     $rootScope.$on("logged-in", logindisplay);
     $rootScope.$on("logged-out", logoutdisplay);
-  })
+    })
 
-
-  $scope.toggleCSS = function () {
-    window.print();
-  }
-
+    $scope.toggleCSS = function () {
+      window.print();
+    }
 }]);
-
-

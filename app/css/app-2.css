@@ -1,18 +1,23 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
-
 * {
   /*border: 1px solid gray;*/
 }
 
-/* Nav color = 39c0ba / Text color = 1D4D4A */
+/* KEEP  Nav color = 39c0ba / Text color = 1D4D4A */
 
 html, body, .thumbnail, .caption {
   font-family: 'Montserrat', sans-serif;
   color: #1D4D4A;
 }
-ul .dropdown-menu{width:300px;}
-form.navbar-form {margin-right: 15px;}
+
+ul .dropdown-menu {
+  width:300px;
+}
+
+form.navbar-form {
+  margin-right: 15px;
+}
 
 .thumbnail .caption {
   color: #1D4D4A;
@@ -31,12 +36,10 @@ form.navbar-form {margin-right: 15px;}
 .jumbotron p {
   color: #fff;
   text-shadow: 2px 2px 1px #39c0ba;
-
 }
 
 
 /* ### Navigation #### */
-
 .navbar-inverse {
   color: #000;
   background-image: linear-gradient(to bottom,#39c0ba 0,#39c0ba 100%);
@@ -46,7 +49,6 @@ form.navbar-form {margin-right: 15px;}
 .navbar-inverse .navbar-nav>li>a {
   color: #fff;
 }
-
 
 .navbar-inverse .navbar-nav>li>a:hover {
   color: #1D4D4A;
@@ -65,11 +67,7 @@ form.navbar-form {margin-right: 15px;}
 }
 
 
-
-
  /* ### BUTTON STYLYING ##### */
-
-
  .btn-default {
   background: #fff;
   border: 2px solid #1D4D4A;
@@ -100,7 +98,6 @@ form.navbar-form {margin-right: 15px;}
 
 
 /* ### LINKS #### */
-
 a {
   color: #39c0ba;
 }
@@ -114,8 +111,7 @@ a:hover {
 
 
 
-/* ### drop down  nav #### */
-
+/* ### DROP DOWN NAV BAR #### */
 .navbar-inverse .navbar-nav>.open>a  {
   background-image: linear-gradient(to bottom,#39c0ba 0,#39c0ba 100%);
 }
@@ -126,7 +122,6 @@ a:hover {
 
 .dropdown-menu>li>a:hover {
   color: #1D4D4A;
-
 }
 
 @media (max-width: 767px) {
@@ -139,7 +134,7 @@ a:hover {
 
 
 
-/* ## for images on details page ## */
+/* ## IMAGE DETAILS ON PAGE ## */
 .mealDetailsImg {
   width: 50%;
 }
@@ -148,8 +143,9 @@ a:hover {
   margin-top: 30px;
 }
 
-/* ## for weekly plan layout ### */
 
+
+/* ## WEEKLY PLAN LAYOUT ### */
 .dayofweek {
   font-weight: bold;
 }
@@ -178,12 +174,8 @@ a:hover {
 
 
 
-/* ####  Likes and Dislikes Styling ###### */
-
-
-
-.likes,
-.dislikes {
+/* ####  VOTING ###### */
+.likes,.dislikes {
   background: #39c0ba ;
   color: #fff;
   cursor: pointer;
@@ -200,8 +192,7 @@ a:hover {
   transition: background 500ms;
 }
 
-.likes:hover,
-.dislikes:hover {
+.likes:hover,.dislikes:hover {
   color: #1D4D4A ;
   background: rgba(57, 192, 186, 0.25);
   transition: background 500ms;
@@ -210,8 +201,7 @@ a:hover {
 
 
 
-/* ## for images on home page ##  */
-
+/* ## IMAGES ON HOME PAGE ##  */
 .col-md-3{
   width: 292.5px;
   height: 305px;
@@ -222,7 +212,7 @@ a:hover {
   height: 175px;
 }
 
-/* ## all images expcet jumptron ## */
+/* ## ALL IMAGES EXCEPT JUMBOTRON ## */
 .imageBoxShadow img {
   box-shadow: 0 8px 6px -6px black;
 }
@@ -230,15 +220,13 @@ a:hover {
 
 
 /* ##### FORMS - sign up ########## */
-
 .signup, .login {
   width: 50%;
   padding-right: 100px;
 }
 
 
-/* ### toogle for shopping list page #####*/
-
+/* ### TOGGLE FOR SHOPPING LIST PAGE #####*/
 .red {
     color: rgba(255, 0, 0, 0.5);
     /*color: red;*/
@@ -251,7 +239,7 @@ a:hover {
 /* ########## MEDIA QUERIS ######################################### */
 
 
-/* ## alignment for images on home page when mobile ## */
+/* ## ALIGNMENT FOR MOBILE HOME PAGE IMAGES */
 @media(max-width:767px){
 	.col-sm-6{
 		text-align: center;
@@ -260,7 +248,6 @@ a:hover {
   .col-lg-12 {
     text-align: center;
   }
-
   .signup, .login {
     width:100%;
     padding-right: 0;
@@ -268,7 +255,7 @@ a:hover {
 }
 
 
-/* ### 7 columns on meal details page for  Weekly Plan */
+/* ### 7 COLUMNS ON WEEKLY PLANNER: MEAL DETAILS */
 @media (min-width: 768px) {
   .seven-cols .col-md-1,
   .seven-cols .col-sm-1,

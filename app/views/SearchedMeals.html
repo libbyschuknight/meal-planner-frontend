@@ -1,6 +1,5 @@
 
 <div class="row text-center" ng-controller="MainController">
-
     <div class="col-md-3 col-sm-6 " ng-repeat="meal in mealsInfo | filter:search">
         <div class="thumbnail imageBoxShadow mealBox">
           <a href="#MealDetails/{{$index}}"><img class="mealsImgs" ng-src='{{ meal.ImageUrl }}'></a>

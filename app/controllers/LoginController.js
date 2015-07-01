@@ -29,36 +29,20 @@ console.log("This is Q", q)
             console.log("Token", data.access_token);
                 console.log(data.userName)
             $rootScope.$emit("logged-in", data.userName)
-
-            // console.log("sucessfully logedIn.......");
-            // console.log("Token", data.access_token);
-            //     console.log(data.Name)
-
             var userResponse = userAuthenticationService.GetUserName();
               userResponse.success(function(data)
               {
                 console.log("nameee", data.Name)
                 $scope.UserName = data.Name;
                 $rootScope.$emit("logged-in", data.Name)
-                //var sup = document.getElementById("signup");
-                //sup.style.display = "none";
                 localStorage.loggedin = "none";
-                //sup.style.display = localStorage.loggedin;
-
-                //Session["signup"]= sin.style.display = "none";
-                //var sin = document.getElementById("signin");
-                //sin.style.display = 'none';
-                //var sout = document.getElementById("signout");
-                //sout.style.display = 'block';
-               localStorage.loggedout = "block";
-                //sout.style.display = localStorage.loggedout;
+                localStorage.loggedout = "block";
               })
             $window.location.href = '#Index';
         }).error(function (data) {
             console.log("Error Logging in ..." + data);
-             //$window.location.href = '#Login';
-             console.log(data.error_description)
-             $scope.errormessage=data.error_description;
+            console.log(data.error_description)
+            $scope.errormessage=data.error_description;
         });
     };
 
@@ -82,7 +66,7 @@ console.log("This is Q", q)
     }
 });
 
-function Register(){
+function TestRegister(){
     $.ajax({
     method: 'POST',
     url: 'http://localhost:62555/api/Account/RegisterExternal',
@@ -103,48 +87,46 @@ function CheckUser()
         headers: { 'Content-Type': 'application/json',
                     'Authorization': "Bearer " + accessToken }
     }).success(function (data) {
-        //alert(JSON.stringify(data));
-        // window.location = "http://localhost:62555" + data[0].Url;
         console.log("the data from check user:", data);
-        // if fale register else signin
-        if(data.HasRegistered == false)
-        {
-            $.ajax({
-                method: 'POST',
-                url: 'http://localhost:62555/api/Account/RegisterExternal',
-                headers: { "Content-Type": "application/json",
-                            "Authorization": "Bearer " + accessToken}, 
-                data: JSON.stringify({
-                                    // Only wants email
-                                    "Email": "samnz19@gmail.com"
-                                    })                         
-            }).success(function(){
-                    console.log("registered post ajax thing")
-                    $window.location.href = '#Index';
-
-            }).error(function(e){
-                    console.log("error RegisterExternal", e)
-            });
+        if(data.HasRegistered == false) {
+            GoogleRegister();
         } else {
-            console.log("user is registered")
-            $.ajax({
-                method: 'GET',
-                url: '/api/Account/ExternalLogin?provider=Google&response_type=token&client_id=self&redirect_uri=http%3A%2F%2Flocalhost%3A62555%2F&state=lbs_GOWdVHyqMb1YqKR9E72-xoucA029p0ApTY-mQtc1',
-                headers: { 'Content-Type': 'application/json'}
-            }).success(function (data) {
-                console.log("success of login ajax get");
-                // window.location = "http://localhost:62555" + data[0].Url;
-            }).error(function(data){
-                console.log("could not redirect to google", data);
-            })                    
+            GoogleSignIn();
         }
-
-
-        }).error(function(){
-            console.log("CHECKUSER ERROR!!!");
+    }).error(function(){
+        console.log("CHECKUSER ERROR!!!");
     });   
 }
 
 function GoogleSignIn(){
+    console.log("user is registered")
+    $.ajax({
+        method: 'GET',
+        url: '/api/Account/ExternalLogin?provider=Google&response_type=token&client_id=self&redirect_uri=http%3A%2F%2Flocalhost%3A62555%2F&state=lbs_GOWdVHyqMb1YqKR9E72-xoucA029p0ApTY-mQtc1',
+        headers: { 'Content-Type': 'application/json'}
+    }).success(function (data) {
+        console.log("success of login ajax get");
+        // window.location = "http://localhost:62555" + data[0].Url;
+    }).error(function(data){
+        console.log("could not redirect to google", data);
+    }) 
+}
 
+function GoogleRegister(){
+    $.ajax({
+        method: 'POST',
+        url: 'http://localhost:62555/api/Account/RegisterExternal',
+        headers: { "Content-Type": "application/json",
+                    "Authorization": "Bearer " + accessToken}, 
+        data: JSON.stringify({
+                            // Only wants email
+                            "Email": "samnz19@gmail.com"
+                            })                         
+    }).success(function(){
+            console.log("registered post ajax thing")
+            $window.location.href = '#Index';
+
+    }).error(function(e){
+            console.log("error RegisterExternal", e)
+    });
 }

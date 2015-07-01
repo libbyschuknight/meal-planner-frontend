@@ -4,7 +4,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
 
     $scope.detail = data[$routeParams.id];
     $scope.likes = data[$routeParams.id].Likes
-     $scope.dislikes = data[$routeParams.id].Dislikes
+    $scope.dislikes = data[$routeParams.id].Dislikes
 
   });
 
@@ -31,17 +31,19 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
         'Content-Type': 'application/json',
         'Authorization': authoriz
       }
-    })
-      .success(function (data) {
 
-           location.reload();
+    }).success(function (data) {
+      location.reload();
 
     })
       .error(function (data) {
       console.log("add meal error", data);
     })
   }
- $scope.getMealPlan = function () {
+
+
+  $scope.getMealPlan = function () {
+
     var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
     $http({
       method: 'GET',
@@ -120,6 +122,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       .success(function (data) {
 
       console.log("ADDING A MEAL");
+
       IngredientList.length = 0;
        $scope.displayIngredient.length=0;
       location.reload();

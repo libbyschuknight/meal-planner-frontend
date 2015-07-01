@@ -6,7 +6,9 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     // console.log("Scope detail data", $scope.detail);
   });
 
-  if ($window.sessionStorage.length == 0) {
+  if (accessToken != undefined || accessToken != null) {
+    CheckUser();
+  } else if($window.sessionStorage.length == 0) {
     $window.location.href = '#Login';
   }
 

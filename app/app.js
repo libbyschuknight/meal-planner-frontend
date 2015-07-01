@@ -11,6 +11,10 @@
 
 var app = angular.module('MealsApp', ['ngRoute'])
 
+if(window.location.hash.length > 100){
+    var accessToken =window.location.hash.split('&')[0].split('access_token=')[1];
+}
+
 app.config(['$routeProvider', function($routeProvider) {
   $routeProvider
   .when("/index", {

@@ -44,12 +44,24 @@ if($window.sessionStorage.getItem('tokenKey') != null){
 
     meals.success(function(data) {
       $scope.mealsInfo = data;
+<<<<<<< HEAD
+=======
+
+
+
+   	$scope.searchMeals = function() {
+    		// console.log("search meals", $scope.search);
+    		// console.log("meals info", $scope.mealsInfo);
+    	}()
+
+>>>>>>> oAuthfrontend
     });
 
 
     $scope.getShoppingList = function() {
       $scope.arrayOfIng = "test";
       var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
+      //console.log('authoriz', authoriz);
       $http({
       method: 'GET',
       url: 'http://roameals.azurewebsites.net/api/MealPlans/ShoppingList',

@@ -44,17 +44,6 @@ if($window.sessionStorage.getItem('tokenKey') != null){
 
     meals.success(function(data) {
       $scope.mealsInfo = data;
-<<<<<<< HEAD
-=======
-
-
-
-   	$scope.searchMeals = function() {
-    		// console.log("search meals", $scope.search);
-    		// console.log("meals info", $scope.mealsInfo);
-    	}()
-
->>>>>>> oAuthfrontend
     });
 
 

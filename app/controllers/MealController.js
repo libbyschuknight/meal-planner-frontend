@@ -1,15 +1,9 @@
 app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$window', function($scope, $http, meals, $routeParams, $window) {
 
   meals.success(function(data) {
-<<<<<<< HEAD
     $scope.detail = data[$routeParams.id];
     $scope.likes = data[$routeParams.id].Likes
-     $scope.dislikes = data[$routeParams.id].Dislikes
-=======
-    // console.log("meals success", data);
-    $scope.detail = data[$routeParams.id];
-    // console.log("Scope detail data", $scope.detail);
->>>>>>> oAuthfrontend
+    $scope.dislikes = data[$routeParams.id].Dislikes
   });
 
   if (accessToken != undefined || accessToken != null) {
@@ -35,21 +29,13 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
         'Content-Type': 'application/json',
         'Authorization': authoriz
       }
-    })
-      .success(function (data) {
-<<<<<<< HEAD
-           location.reload();
-=======
-      // console.log("yolo swag");
->>>>>>> oAuthfrontend
+    }).success(function (data) {
+      location.reload();
     })
       .error(function (data) {
       console.log("add meal error", data);
     })
   }
-
-
-
 
   $scope.getMealPlan = function () {
     var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
@@ -131,11 +117,6 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       }
     })
       .success(function (data) {
-<<<<<<< HEAD
-      console.log("ADDING A MEAL");
-=======
-      // console.log("ADDING A MEAL");
->>>>>>> oAuthfrontend
       // console.log(data);
       IngredientList.length = 0;
        $scope.displayIngredient.length=0;

@@ -108,7 +108,7 @@ if($window.sessionStorage.getItem('tokenKey') != null){
       }
     })
       .success(function (data) {
-           location.reload();
+          // location.reload();
       // console.log("yolo swag", data);
     })
       .error(function (data) {

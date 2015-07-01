@@ -33,6 +33,7 @@ form.navbar-form {margin-right: 15px;}
 
 .jumbotron {
   text-align: center;
+
   background-image: url("jumbotroncolor.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -216,8 +217,6 @@ a:hover {
 
 
 /* ####  Likes and Dislikes Styling ###### */
-
-
 
 .likes,
 .dislikes {

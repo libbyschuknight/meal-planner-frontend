@@ -142,8 +142,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
         'Content-Type': 'application/json',
         'Authorization': authoriz
       }}).success(function(data)
-      {        
-           console.log("Meal PLan", data);
+      {
            $scope.showMealPlan = data;
 
       }).error(function(data)

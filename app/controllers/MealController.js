@@ -29,17 +29,15 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       }
     })
       .success(function (data) {
+
            location.reload();
+           
     })
       .error(function (data) {
       console.log("add meal error", data);
     })
   }
-
-
-
-
-  $scope.getMealPlan = function () {
+ $scope.getMealPlan = function () {
     var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
     $http({
       method: 'GET',
@@ -58,6 +56,10 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
   }()
 
   $scope.showMealPlan = "";
+
+
+
+ 
 
 
 
@@ -141,8 +143,8 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
         'Authorization': authoriz
       }}).success(function(data)
       {
-         console.log("deleted successfully ");
-          location.reload();
+         console.log("Meal PLan", data);
+           $scope.showMealPlan = data;
       }).error(function(data)
       {
          console.log("error deleting ", data);

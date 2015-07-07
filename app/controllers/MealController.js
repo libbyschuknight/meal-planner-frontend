@@ -5,6 +5,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     $scope.detail = data[$routeParams.id];
 
     if($routeParams.id != null){
+
     $scope.likes = data[$routeParams.id].Likes
     $scope.dislikes = data[$routeParams.id].Dislikes
     }
@@ -19,29 +20,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
 
 
   // for selecting meal from meal details page
-  $scope.AddToMealPlan = function (day) {
-   console.log("day add to meal", day)
-    var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
-    var meal = $scope.detail;
-    var id = meal.Id;
-
-    $http({
-      url: "http://roameals.azurewebsites.net/api/MealPlans/AddTo?day=" + day,
-      method: "POST",
-      data: meal,
-      uri: day,
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': authoriz
-      }
-
-    }).success(function (data) {
-
-    })
-      .error(function (data) {
-      console.log("add meal error", data);
-    })
-  }
+  
 
 
   $scope.getMealPlan = function () {
@@ -56,7 +35,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       }
     })
       .success(function (data) {
-        console.log(data)
+        //console.log(data)
       $scope.showMealPlan = data;
     })
       .error(function (data) {
@@ -64,6 +43,8 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     })
   }()
 
+
+  
   $scope.showMealPlan = "";
 
   var IngredientList = [];
@@ -93,35 +74,35 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
   $scope.addAMeal = function () {
     var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
 
-    var ingredient = {
-      Name: localName,
-      Quantity: localQuantity,
-      Measurement: localMeasurement
-    }
-
-    IngredientList.push(ingredient);
-
-    var data =
-      {
-        Name: $scope.mealName,
-        Description: $scope.description,
-        ImageUrl: $scope.imageurl,
-        Ingredients: IngredientList
-      };
-
-    // console.log(IngredientList);
-
-
-    var mealData = JSON.stringify(data);
-    $http({
-      method: 'POST',
-      url: 'http://roameals.azurewebsites.net/api/Meals',
-      data: mealData,
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': authoriz
+      var ingredient = {
+        Name: localName,
+        Quantity: localQuantity,
+        Measurement: localMeasurement
       }
-    })
+
+      IngredientList.push(ingredient);
+
+      var data =
+        {
+          Name: $scope.mealName,
+          Description: $scope.description,
+          ImageUrl: $scope.imageurl,
+          Ingredients: IngredientList
+        };
+
+      // console.log(IngredientList);
+
+
+      var mealData = JSON.stringify(data);
+      $http({
+        method: 'POST',
+        url: 'http://roameals.azurewebsites.net/api/Meals',
+        data: mealData,
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': authoriz
+        }
+      })
       .success(function (data) {
 
       console.log("ADDING A MEAL");
@@ -134,6 +115,32 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       console.log("error: ", data);
     });
   };
+
+  $scope.AddToMealPlan = function (day) {
+     console.log("day add to meal", day)
+      var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
+      var meal = $scope.detail;
+      var id = meal.Id;
+
+      $http({
+        url: "http://roameals.azurewebsites.net/api/MealPlans/AddTo?day=" + day,
+        method: "POST",
+        data: meal,
+        uri: day,
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': authoriz
+        }
+
+      }).success(function (data) {
+        console.log(data)
+          $scope.showMealPlan = data;
+          window.location.href = '#/WeekPlanner';  
+      })
+        .error(function (data) {
+        console.log("add meal error", data);
+      })
+    }
 
   $scope.deleteMeal = function (index) {
      var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');

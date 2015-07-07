@@ -47,25 +47,25 @@ if($window.sessionStorage.getItem('tokenKey') != null){
     });
 
 
-    $scope.getShoppingList = function() {
-      $scope.arrayOfIng = "test";
-      var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
-      //console.log('authoriz', authoriz);
-      $http({
-      method: 'GET',
-      url: 'http://roameals.azurewebsites.net/api/MealPlans/ShoppingList',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': authoriz
-      }
-    })
-      .success(function(data){
-        $scope.arrayOfIng = data;
-  	})
-      .error(function(data){
+   //  $scope.getShoppingList = function() {
+   //    $scope.arrayOfIng = "test";
+   //    var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
+   //    //console.log('authoriz', authoriz);
+   //    $http({
+   //    method: 'GET',
+   //    url: 'http://roameals.azurewebsites.net/api/MealPlans/ShoppingList',
+   //    headers: {
+   //      'Content-Type': 'application/json',
+   //      'Authorization': authoriz
+   //    }
+   //  })
+   //    .success(function(data){
+   //      $scope.arrayOfIng = data;
+  	// })
+   //    .error(function(data){
 
-      })
-    }()
+   //    })
+   //  }()
 
 
   $scope.arrayOfIng=" ";

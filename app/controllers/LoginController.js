@@ -15,7 +15,7 @@ app.controller('LoginController', function ($scope, $http, $window,$rootScope, u
         console.log(postdata)
 
         var q = "grant_type=password&username=" + encodeURIComponent($scope.username) + "&password=" + encodeURIComponent($scope.password);
-console.log("This is Q", q)
+
 
         $http({
             method: 'POST',
@@ -26,13 +26,11 @@ console.log("This is Q", q)
             $window.sessionStorage.setItem('tokenKey', data.access_token);
             console.log("sucessfully logedIn.......");
             $scope.errormessage="";
-            console.log("Token", data.access_token);
-                console.log(data.userName)
-            $rootScope.$emit("logged-in", data.userName)
+           
+               $rootScope.$emit("logged-in", data.userName)
             var userResponse = userAuthenticationService.GetUserName();
               userResponse.success(function(data)
               {
-                console.log("nameee", data.Name)
                 $scope.UserName = data.Name;
                 $rootScope.$emit("logged-in", data.Name)
                 localStorage.loggedin = "none";

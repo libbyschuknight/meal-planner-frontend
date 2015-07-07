@@ -3,8 +3,11 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
   meals.success(function(data) {
 
     $scope.detail = data[$routeParams.id];
+
+    if($routeParams.id != null){
     $scope.likes = data[$routeParams.id].Likes
     $scope.dislikes = data[$routeParams.id].Dislikes
+    }
 
   });
 
@@ -42,7 +45,8 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
 
 
   $scope.getMealPlan = function () {
-
+    console.log("TESTING")
+    console.log($scope.detail)
     var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
     $http({
       method: 'GET',
@@ -53,6 +57,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
       }
     })
       .success(function (data) {
+        console.log(data)
       $scope.showMealPlan = data;
     })
       .error(function (data) {
@@ -60,7 +65,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     })
   }()
 
-  $scope.showMealPlan = "";
+ // $scope.showMealPlan = "";
 
   var IngredientList = [];
   $scope.displayIngredient=[];

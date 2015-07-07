@@ -46,7 +46,6 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
 
   $scope.getMealPlan = function () {
     console.log("TESTING")
-    console.log($scope.detail)
     var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
     $http({
       method: 'GET',
@@ -65,7 +64,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
     })
   }()
 
- // $scope.showMealPlan = "";
+  $scope.showMealPlan = "";
 
   var IngredientList = [];
   $scope.displayIngredient=[];
@@ -202,6 +201,26 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
        $scope.voteError = data.Message;
     });
   };
+
+   $scope.getShoppingList = function() {
+      $scope.arrayOfIng = "test";
+      var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
+      //console.log('authoriz', authoriz);
+      $http({
+      method: 'GET',
+      url: 'http://roameals.azurewebsites.net/api/MealPlans/ShoppingList',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': authoriz
+      }
+    })
+      .success(function(data){
+        $scope.arrayOfIng = data;
+    })
+      .error(function(data){
+
+      })
+    }()
 
 
 }]);

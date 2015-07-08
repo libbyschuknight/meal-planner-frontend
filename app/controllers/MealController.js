@@ -24,7 +24,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
 
 
   $scope.getMealPlan = function () {
-    console.log("TESTING")
+   
     var authoriz = 'Bearer ' + $window.sessionStorage.getItem('tokenKey');
     $http({
       method: 'GET',
@@ -63,7 +63,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
 
     }
     IngredientList.push(ingredient);
- $scope.displayIngredient.push(ingredient);
+    $scope.displayIngredient.push(ingredient);
     $scope.ingredientName = null;
     $scope.quantity = null;
     $scope.measurement = null;
@@ -228,6 +228,7 @@ app.controller("MealController", ["$scope", "$http", "meals", '$routeParams', '$
 
       })
     }()
+
 
 
 }]);
